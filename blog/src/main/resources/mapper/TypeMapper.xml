@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wsy.blog.mapper.TypeMapper">
+    <resultMap id="BaseResultMap" type="com.wsy.blog.pojo.Type">
+        <!--@mbg.generated-->
+        <!--@Table bl_type-->
+        <id column="type_id" jdbcType="INTEGER" property="typeId"/>
+        <result column="type_name" jdbcType="VARCHAR" property="typeName"/>
+        <result column="type_blog_count" jdbcType="INTEGER" property="typeBlogCount"/>
+        <result column="enable" jdbcType="INTEGER" property="enable"/>
+        <result column="deleted" jdbcType="INTEGER" property="deleted"/>
+    </resultMap>
+    <insert id="save">
+    insert into bl_type
+    (type_name)
+    values(
+    #{typeName}
+    )
+    </insert>
+    <select id="getAll" resultMap="BaseResultMap">
+    select type_id,type_name, type_blog_count
+    from bl_type
+    where enable = 1
+    and deleted = 0
+    </select>
+    <select id="getAllBack" resultMap="BaseResultMap">
+    select type_id,type_name, type_blog_count,`enable`,deleted
+    from bl_type
+    where deleted = 0
+    </select>
+    <select id="getById" resultMap="BaseResultMap">
+    select type_id,type_name, type_blog_count,`enable`
+    from bl_type
+    where type_id = #{value}
+    and deleted = 0
+    </select>
+    <select id="getByName" resultMap="BaseResultMap">
+    select type_id,type_name, type_blog_count,`enable`
+    from bl_type
+    where type_name = #{name}
+    and deleted = 0
+    </select>
+    <select id="getNameById" resultType="java.lang.String">
+        select type_name
+        from bl_type
+        where type_id = #{value}
+        and deleted = 0
+    </select>
+    <select id="getCount" resultType="java.lang.Integer">
+        select count(*)
+        from bl_type
+        where deleted = 0
+        and enable = 1
+    </select>
+    <update id="deleteById">
+        update bl_type set
+        deleted = 1
+        where type_id = #{value}
+    </update>
+    <update id="update">
+        update bl_type
+            <set>
+                <if test="typeName!=null and typeName!=''">
+                    type_name = #{typeName},
+                </if>
+                <if test="typeBlogCount!=null and typeName!=''">
+                    type_blog_count = #{typeBlogCount},
+                </if>
+                <if test="enable!=null">
+                    enable = #{enable},
+                </if>
+            </set>
+        where type_id = #{typeId}
+        and deleted = 0
+    </update>
+</mapper>

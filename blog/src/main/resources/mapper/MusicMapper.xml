@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wsy.blog.mapper.MusicMapper">
+    <resultMap id="BaseResultMap" type="com.wsy.blog.pojo.Music">
+        <!--@mbg.generated-->
+        <!--@Table bl_music-->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="artist" jdbcType="VARCHAR" property="artist"/>
+        <result column="url" jdbcType="VARCHAR" property="url"/>
+        <result column="cover" jdbcType="VARCHAR" property="cover"/>
+        <result column="lrc" jdbcType="LONGVARCHAR" property="lrc"/>
+        <result column="created_time" jdbcType="TIMESTAMP" property="createdTime"/>
+        <result column="enable" jdbcType="INTEGER" property="enable"/>
+        <result column="deleted" jdbcType="INTEGER" property="deleted"/>
+    </resultMap>
+    <insert id="save" parameterType="com.wsy.blog.pojo.Music">
+        insert into bl_music (
+          `name`, artist, url, cover, lrc
+        ) values(
+        #{name},#{artist},#{url},#{cover},#{lrc}
+        )
+    </insert>
+    <update id="deleteById">
+    update bl_music
+    set deleted = 1
+    where id = #{value}
+  </update>
+    <update id="update" parameterType="com.wsy.blog.pojo.Music">
+        update bl_music
+        <set>
+            <if test="name!=null and name!=''">
+                name = #{name},
+            </if>
+            <if test="artist!=null and artist!=''">
+                artist = #{artist},
+            </if>
+            <if test="url!=null and url!=''">
+                url = #{url},
+            </if>
+            <if test="cover!=null and cover!=''">
+                cover = #{cover},
+            </if>
+            <if test="lrc!=null and lrc!=''">
+                lrc = #{lrc},
+            </if>
+            <if test="enable!=null">
+                enable = #{enable},
+            </if>
+        </set>
+        where id = #{id}
+        and deleted = 0
+    </update>
+    <select id="getById" resultMap="BaseResultMap">
+    select id, `name`, artist, url, cover, lrc, created_time, `enable`
+    from bl_music
+    where deleted = 0
+    and id = #{value}
+  </select>
+  <select id="getPage" resultMap="BaseResultMap">
+    select id, `name`, artist, url, cover, lrc, created_time, `enable`
+    from bl_music
+    where deleted = 0
+  </select>
+    <select id="getList" resultType="com.wsy.blog.pojo.Music">
+        select id, `name`, artist, url, cover, lrc, created_time
+        from bl_music
+        where deleted = 0
+        and enable = 1
+        order by created_time desc
+        limit 10
+    </select>
+
+
+</mapper>

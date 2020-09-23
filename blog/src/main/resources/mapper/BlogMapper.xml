@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wsy.blog.mapper.BlogMapper">
+  <resultMap id="BaseResultMap" type="com.wsy.blog.pojo.Blog">
+    <!--@mbg.generated-->
+    <!--@Table bl_blog-->
+    <id column="blog_id" jdbcType="VARCHAR" property="blogId" />
+    <result column="blog_title" jdbcType="VARCHAR" property="blogTitle" />
+    <result column="blog_image" jdbcType="VARCHAR" property="blogImage" />
+    <result column="blog_content" jdbcType="LONGVARCHAR" property="blogContent" />
+    <result column="blog_goods" jdbcType="INTEGER" property="blogGoods" />
+    <result column="blog_read" jdbcType="INTEGER" property="blogRead" />
+    <result column="blog_collection" jdbcType="INTEGER" property="blogCollection" />
+    <result column="blog_type" jdbcType="INTEGER" property="blogType" />
+    <result column="blog_remark" jdbcType="VARCHAR" property="blogRemark" />
+    <result column="blog_comment" jdbcType="INTEGER" property="blogComment" />
+    <result column="blog_source" jdbcType="VARCHAR" property="blogSource" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="deleted" jdbcType="INTEGER" property="deleted" />
+  </resultMap>
+
+  <resultMap id="VoResultMap" type="com.wsy.blog.vo.BlogVo">
+    <id column="blog_id" property="blogId"/>
+    <result column="blog_title" property="blogTitle"/>
+    <result column="blog_image" property="blogImage"/>
+    <result column="blog_content" property="blogContent"/>
+    <result column="blog_goods" property="blogGoods"/>
+    <result column="blog_read" property="blogRead"/>
+    <result column="blog_collection" property="blogCollection"/>
+    <result column="type_name" property="typeName"/>
+    <result column="blog_remark" property="blogRemark"/>
+    <result column="blog_comment" property="blogComment"/>
+    <result column="blog_source" property="blogSource"/>
+    <result column="blog_month" property="blogMonth"/>
+    <result column="created_time" property="createdTime"/>
+    <result column="update_time" property="updateTime"/>
+  </resultMap>
+  <insert id="save" parameterType="com.wsy.blog.pojo.Blog">
+        insert into bl_blog(
+            blog_id, blog_title,blog_image, blog_content, blog_type, blog_remark, blog_source
+        ) values (
+            #{blogId}, #{blogTitle}, #{blogImage}, #{blogContent}, #{blogType}, #{blogRemark}, #{blogSource}
+        )
+  </insert>
+  <select id="getById" resultMap="BaseResultMap">
+    select blog_id, blog_title,blog_image, blog_content, blog_goods,
+    blog_read, blog_collection,blog_type, blog_remark, blog_comment,blog_source,created_time,update_time,version
+    from bl_blog
+    where blog_id = #{value}
+    and deleted = 0
+  </select>
+  <update id="deleteById">
+    update bl_blog
+    set deleted = 1
+    where blog_id = #{value}
+  </update>
+  <update id="update" parameterType="com.wsy.blog.pojo.Blog">
+    update bl_blog
+    set version = version + 1
+    <if test="blogTitle!=null and blogTitle!=''">
+        ,blog_Title = #{blogTitle}
+    </if>
+    <if test="blogImage!=null and blogImage!=''">
+        ,blog_Image = #{blogImage}
+    </if>
+    <if test="blogContent!=null and blogContent!=''">
+        ,blog_Content = #{blogContent}
+    </if>
+    <if test="blogGoods!=null and blogGoods!=''">
+        ,blog_Goods = #{blogGoods}
+    </if>
+    <if test="blogRead!=null and blogRead!=''">
+        ,blog_Read = #{blogRead}
+    </if>
+    <if test="blogCollection!=null and blogCollection!=''">
+        ,blog_Collection = #{blogCollection}
+    </if>
+    <if test="blogType!=null and blogType!=''">
+        ,blog_Type = #{blogType}
+    </if>
+    <if test="blogRemark!=null and blogRemark!=''">
+        ,blog_Remark = #{blogRemark}
+    </if>
+    <if test="blogComment!=null and blogComment!=''">
+        ,blog_Comment = #{blogComment}
+    </if>
+    <if test="blogSource!=null and blogSource!=''">
+        ,blog_source = #{blogSource}
+    </if>
+    where blog_id = #{blogId}
+    and version = #{version}
+    and deleted = 0
+  </update>
+    <update id="good">
+      update bl_blog
+      set blog_goods = blog_goods + 1
+      where blog_id = #{value}
+    </update>
+  <update id="comment">
+    update bl_blog
+    set blog_comment = blog_comment + 1
+    where blog_id = #{value}
+  </update>
+  <update id="collection">
+    update bl_blog
+    set blog_collection = blog_collection + 1
+    where blog_id = #{value}
+  </update>
+    <update id="reduceComment">
+      update bl_blog
+      set blog_comment = blog_comment - 1
+      where blog_id = #{value}
+    </update>
+  <update id="reduceCollection">
+    update bl_blog
+    set blog_collection = blog_collection - 1
+    where blog_id = #{value}
+  </update>
+    <select id="getPage" resultMap="BaseResultMap" parameterType="com.wsy.blog.utils.Page">
+    select blog_id,blog_title, blog_image, blog_goods, blog_read, blog_collection,
+    blog_type, blog_remark, blog_comment,blog_source,created_time, update_time,version
+    from bl_blog
+    where deleted = 0
+    <if test="params.blogTitle!=null and params.blogTitle!=''">
+      and blog_title like CONCAT('%', #{params.blogTitle}, '%')
+    </if>
+    <if test="typeId!=null and typeId != ''">
+      and blog_type = #{typeId}
+    </if>
+  </select>
+    <select id="recommendedRead" resultMap="BaseResultMap">
+      select blog_id,blog_title, blog_image, blog_goods, blog_read, blog_collection,
+             blog_type, blog_remark, blog_comment,blog_source,created_time
+      from bl_blog
+      where deleted = 0
+      order by (blog_goods + blog_read) desc
+      limit 5
+    </select>
+  <select id="getTimeLine" resultMap="VoResultMap">
+    select
+      blog_id, blog_title,
+      created_time,
+      date_format(created_time, '%Y-%m') as blog_month
+    from bl_blog
+    where deleted = 0
+    order by created_time desc
+  </select>
+</mapper>

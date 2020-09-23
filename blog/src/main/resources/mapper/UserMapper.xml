@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wsy.blog.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.wsy.blog.pojo.User">
+        <!--@mbg.generated-->
+        <!--@Table bl_user-->
+        <id column="user_id" jdbcType="INTEGER" property="userId"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="sex" jdbcType="INTEGER" property="sex"/>
+        <result column="header" jdbcType="VARCHAR" property="header"/>
+        <result column="nickname" jdbcType="VARCHAR" property="nickname"/>
+        <result column="user_email" jdbcType="VARCHAR" property="userEmail"/>
+        <result column="created_time" jdbcType="TIMESTAMP" property="createdTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="version" jdbcType="INTEGER" property="version"/>
+        <result column="deleted" jdbcType="INTEGER" property="deleted"/>
+    </resultMap>
+    <insert id="save">
+        insert into bl_user (username, `password`, sex,
+                             nickname, user_email)
+        values (#{username}, #{password}, #{sex}, #{nickname}, #{userEmail})
+    </insert>
+    <update id="deleteById">
+        update bl_user
+        set deleted = 1
+        where user_id = #{value}
+    </update>
+    <update id="update" parameterType="com.wsy.blog.pojo.User">
+        update bl_user
+        set version = version + 1
+        <if test="username!=null and username!=''">
+            ,username = #{username}
+        </if>
+        <if test="password!=null and password!=''">
+            ,password = #{password}
+        </if>
+        <if test="name!=null and name!=''">
+            ,name = #{name}
+        </if>
+        <if test="sex!=null and sex!=''">
+            ,sex = #{sex}
+        </if>
+        <if test="header!=null and header!=''">
+            ,header = #{header}
+        </if>
+        <if test="nickname!=null and nickname!=''">
+            ,nickname = #{nickname}
+        </if>
+        <if test="userEmail!=null and userEmail!=''">
+            ,user_email = #{userEmail}
+        </if>
+        where user_id = #{userId}
+        and version = #{version}
+        and deleted = 0
+    </update>
+    <update id="updatePassword">
+        update bl_user
+        set password = #{password}
+        where deleted = 0
+          and user_id = #{id}
+    </update>
+    <select id="getById" resultMap="BaseResultMap">
+        select user_id,
+               username,
+               `password`,
+               `name`,
+               sex,
+               `header`,
+               nickname,
+               user_email,
+               created_time,
+               update_time,
+               version
+        from bl_user
+        where deleted = 0
+          and user_id = #{value}
+    </select>
+    <select id="getPage" resultMap="BaseResultMap">
+        select user_id,
+               username,
+               `password`,
+               `name`,
+               sex,
+               `header`,
+               nickname,
+               user_email,
+               created_time,
+               update_time,
+               version
+        from bl_user
+        where deleted = 0
+    </select>
+    <select id="getByUsername" resultMap="BaseResultMap">
+        select user_id,
+               username,
+               `password`,
+               `name`,
+               sex,
+               `header`,
+               nickname,
+               user_email,
+               created_time,
+               update_time,
+               version
+        from bl_user
+        where deleted = 0
+        and username = #{value}
+    </select>
+</mapper>

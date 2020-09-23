@@ -1,0 +1,81 @@
+2020-08-15 11:14:14.308 WARN  [http-nio-8080-exec-3]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp;jsessionid=320BC8EC9105752020AE8E68185E438C
+2020-08-15 11:15:15.650 WARN  [http-nio-8080-exec-2]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 11:15:39.272 WARN  [http-nio-8080-exec-4]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 11:16:40.910 WARN  [http-nio-8080-exec-3]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 11:16:46.106 WARN  [http-nio-8080-exec-5]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 11:17:40.071 WARN  [http-nio-8080-exec-8]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 11:17:45.246 WARN  [http-nio-8080-exec-10]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 11:55:21.898 WARN  [http-nio-8080-exec-10]com.alibaba.druid.pool.DruidDataSource.getConnectionDirect:1260 -get connection timeout retry : 1
+2020-08-15 11:55:22.026 WARN  [http-nio-8080-exec-5]com.alibaba.druid.pool.DruidDataSource.getConnectionDirect:1260 -get connection timeout retry : 1
+2020-08-15 11:55:22.026 WARN  [http-nio-8080-exec-2]com.alibaba.druid.pool.DruidDataSource.getConnectionDirect:1260 -get connection timeout retry : 1
+2020-08-15 14:50:58.862 WARN  [http-nio-8080-exec-4]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp;jsessionid=4B77E9A50FA3F23A21A205C6777F4CBC
+2020-08-15 14:50:58.862 WARN  [http-nio-8080-exec-6]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp;jsessionid=D7E00C600C561D1A7C65CDC8ACB01425
+2020-08-15 14:51:15.959 WARN  [http-nio-8080-exec-7]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 14:51:15.964 WARN  [http-nio-8080-exec-10]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 14:51:33.173 WARN  [http-nio-8080-exec-2]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 14:51:33.174 WARN  [http-nio-8080-exec-1]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 14:52:23.956 WARN  [http-nio-8080-exec-5]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 14:52:23.959 WARN  [http-nio-8080-exec-3]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 15:13:49.866 WARN  [http-nio-8080-exec-10]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 15:13:54.492 WARN  [http-nio-8080-exec-5]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 16:51:19.379 WARN  [restartedMain]o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh:559 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'shiroFilterFactoryBean' defined in class path resource [com/wsy/blog/config/shiroConfig.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authorizationAttributeSourceAdvisor' defined in class path resource [com/wsy/blog/config/shiroConfig.class]: Unsatisfied dependency expressed through method 'authorizationAttributeSourceAdvisor' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityManager' defined in class path resource [com/wsy/blog/config/shiroConfig.class]: Unsatisfied dependency expressed through method 'securityManager' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminRealm': Unsatisfied dependency expressed through field 'adminService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'adminServiceImpl': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'adminMapper' defined in file [D:\MyProject\blog\target\classes\com\wsy\blog\mapper\AdminMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [com/alibaba/druid/spring/boot/autoconfigure/DruidDataSourceAutoConfigure.class]: Invocation of init method failed; nested exception is com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2020-08-15 16:55:43.926 WARN  [http-nio-8080-exec-8]o.s.w.s.mvc.support.DefaultHandlerExceptionResolver.logException:199 -Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('}' (code 125)): was expecting double-quote to start field name; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('}' (code 125)): was expecting double-quote to start field name
+ at [Source: (PushbackInputStream); line: 6, column: 2]]
+2020-08-15 17:21:01.878 WARN  [http-nio-8080-exec-6]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 17:21:25.117 WARN  [http-nio-8080-exec-8]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 20:43:56.379 WARN  [http-nio-8080-exec-2]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:43:56.377 WARN  [http-nio-8080-exec-10]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:43:56.381 WARN  [http-nio-8080-exec-9]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:43:56.381 WARN  [http-nio-8080-exec-5]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:44:07.857 WARN  [http-nio-8080-exec-1]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:44:07.858 WARN  [http-nio-8080-exec-8]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:44:07.861 WARN  [http-nio-8080-exec-10]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:44:07.861 WARN  [http-nio-8080-exec-9]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:44:18.612 WARN  [http-nio-8080-exec-4]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:44:18.612 WARN  [http-nio-8080-exec-3]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:44:18.615 WARN  [http-nio-8080-exec-8]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:44:18.621 WARN  [http-nio-8080-exec-10]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:44:58.394 WARN  [http-nio-8080-exec-6]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:44:58.407 WARN  [http-nio-8080-exec-4]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:44:58.410 WARN  [http-nio-8080-exec-3]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:47:18.967 WARN  [http-nio-8080-exec-1]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:47:18.967 WARN  [http-nio-8080-exec-10]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:47:18.967 WARN  [http-nio-8080-exec-9]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:47:28.169 WARN  [http-nio-8080-exec-7]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:47:28.170 WARN  [http-nio-8080-exec-8]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:47:28.171 WARN  [http-nio-8080-exec-9]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:48:17.783 WARN  [http-nio-8080-exec-4]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 20:48:47.006 WARN  [http-nio-8080-exec-2]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 20:50:55.284 WARN  [http-nio-8080-exec-5]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:50:55.284 WARN  [http-nio-8080-exec-7]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:50:55.284 WARN  [http-nio-8080-exec-6]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:51:12.623 WARN  [http-nio-8080-exec-3]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:51:12.626 WARN  [http-nio-8080-exec-8]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:51:12.633 WARN  [http-nio-8080-exec-5]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:51:22.697 WARN  [http-nio-8080-exec-2]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:51:22.701 WARN  [http-nio-8080-exec-3]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:51:22.706 WARN  [http-nio-8080-exec-8]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:52:08.639 WARN  [http-nio-8080-exec-6]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 20:57:53.141 WARN  [http-nio-8080-exec-14]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:57:53.141 WARN  [http-nio-8080-exec-16]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:57:53.141 WARN  [http-nio-8080-exec-1]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:58:04.794 WARN  [http-nio-8080-exec-18]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:58:04.796 WARN  [http-nio-8080-exec-10]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:58:04.799 WARN  [http-nio-8080-exec-5]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 20:58:57.169 WARN  [http-nio-8080-exec-11]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 20:59:06.904 WARN  [http-nio-8080-exec-2]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 20:59:13.585 WARN  [http-nio-8080-exec-17]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 20:59:19.898 WARN  [http-nio-8080-exec-18]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 20:59:45.069 WARN  [http-nio-8080-exec-5]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 21:01:54.640 WARN  [http-nio-8080-exec-2]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 21:02:05.156 WARN  [http-nio-8080-exec-3]o.s.w.s.mvc.support.DefaultHandlerExceptionResolver.logException:199 -Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-08-15 21:02:27.976 WARN  [http-nio-8080-exec-4]o.s.w.s.mvc.support.DefaultHandlerExceptionResolver.logException:199 -Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-08-15 21:04:30.773 WARN  [http-nio-8080-exec-7]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 21:04:42.140 WARN  [http-nio-8080-exec-10]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 21:05:22.921 WARN  [http-nio-8080-exec-1]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 21:05:44.593 WARN  [http-nio-8080-exec-2]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for GET /login.jsp
+2020-08-15 21:13:49.333 WARN  [http-nio-8080-exec-8]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 21:17:25.967 WARN  [http-nio-8080-exec-5]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp
+2020-08-15 21:17:36.141 WARN  [http-nio-8080-exec-2]org.springframework.web.servlet.PageNotFound.noHandlerFound:1251 -No mapping for OPTIONS /login.jsp

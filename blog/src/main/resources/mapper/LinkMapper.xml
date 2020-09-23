@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wsy.blog.mapper.LinkMapper">
+  <resultMap id="BaseResultMap" type="com.wsy.blog.pojo.Link">
+    <!--@mbg.generated-->
+    <!--@Table bl_link-->
+    <id column="link_id" jdbcType="INTEGER" property="linkId" />
+    <result column="link_name" jdbcType="VARCHAR" property="linkName" />
+    <result column="link_url" jdbcType="VARCHAR" property="linkUrl" />
+    <result column="created_time" jdbcType="TIMESTAMP" property="createdTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="deleted" jdbcType="INTEGER" property="deleted" />
+  </resultMap>
+
+  <insert id="save">
+    insert into bl_link (link_name,link_url)
+    values (#{linkName},#{linkUrl})
+  </insert>
+
+  <update id="deleteById" parameterType="java.lang.Integer">
+    update bl_link
+    set deleted = 1
+    where link_id = #{value}
+  </update>
+
+  <update id="update" parameterType="com.wsy.blog.pojo.Link">
+    update bl_link
+    set
+    version = version + 1
+    <if test="linkName!=null and linkName!=''">
+        ,link_name = #{linkName}
+    </if>
+    <if test="linkUrl!=null and linkUrl!=''">
+        ,link_url = #{linkUrl}
+    </if>
+    where link_id = #{linkId}
+    and version = #{version}
+    and deleted = 0
+  </update>
+
+  <select id="getAll" resultMap="BaseResultMap">
+    select link_id,link_name,link_url,version,created_time,update_time
+    from bl_link
+    where deleted = 0
+  </select>
+
+  <select id="getById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select link_id,link_name,link_url,version,created_time,update_time
+    from bl_link
+    where link_id = #{value}
+    and deleted = 0
+  </select>
+
+  <select id="getByName" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select link_id,link_name,link_url,version
+    from bl_link
+    where link_name = #{value}
+    and deleted = 0
+  </select>
+</mapper>

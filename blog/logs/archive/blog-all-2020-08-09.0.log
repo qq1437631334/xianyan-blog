@@ -1,0 +1,1598 @@
+2020-08-09 21:52:52.253 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarting:55 -Starting BlogApplication on DESKTOP-E7QN2JV with PID 7808 (D:\ideaProject\blog\target\classes started by wsy in D:\ideaProject\blog)
+2020-08-09 21:52:52.257 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-08-09 21:52:52.331 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-09 21:52:52.332 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-09 21:52:53.602 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:249 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-09 21:52:53.610 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-08-09 21:52:53.647 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 -Finished Spring Data repository scanning in 12ms. Found 0 Redis repository interfaces.
+2020-08-09 21:52:54.805 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:108 -Tomcat initialized with port(s): 8080 (http)
+2020-08-09 21:52:54.827 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-09 21:52:54.828 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-08-09 21:52:54.830 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-09 21:52:55.060 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-08-09 21:52:55.061 INFO  [restartedMain]o.s.b.w.s.context.ServletWebServerApplicationContext.prepareWebApplicationContext:285 -Root WebApplicationContext: initialization completed in 2728 ms
+2020-08-09 21:52:55.279 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-08-09 21:52:57.685 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-08-09 21:52:58.495 INFO  [restartedMain]s.d.s.web.PropertySourcedRequestMappingHandlerMapping.initHandlerMethods:69 -Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-08-09 21:52:58.683 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-09 21:52:58.762 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-08-09 21:52:59.542 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-08-09 21:52:59.564 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:220 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-09 21:52:59.565 INFO  [restartedMain]s.d.spring.web.plugins.DocumentationPluginsBootstrapper.start:147 -Context refreshed
+2020-08-09 21:52:59.577 INFO  [restartedMain]s.d.spring.web.plugins.DocumentationPluginsBootstrapper.start:150 -Found 1 custom documentation plugin(s)
+2020-08-09 21:52:59.611 INFO  [restartedMain]s.d.spring.web.scanners.ApiListingReferenceScanner.scan:41 -Scanning for api listing references
+2020-08-09 21:52:59.637 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarted:61 -Started BlogApplication in 8.361 seconds (JVM running for 10.314)
+2020-08-09 21:53:09.004 INFO  [http-nio-8080-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-09 21:53:09.004 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-08-09 21:53:09.017 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 13 ms
+2020-08-09 21:57:02.541 INFO  [http-nio-8080-exec-4]com.wsy.blog.aspect.RequestAspect.printRequestLog:95 -请求地址 : /test/testException
+2020-08-09 21:57:02.542 INFO  [http-nio-8080-exec-4]com.wsy.blog.aspect.RequestAspect.printRequestLog:96 -请求方式 : GET
+2020-08-09 21:57:02.551 INFO  [http-nio-8080-exec-4]com.wsy.blog.aspect.RequestAspect.printRequestLog:99 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 21:57:02.553 INFO  [http-nio-8080-exec-4]com.wsy.blog.aspect.RequestAspect.printRequestLog:101 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 21:57:02.554 INFO  [http-nio-8080-exec-4]com.wsy.blog.aspect.RequestAspect.printRequestLog:103 -请求参数：[1]
+2020-08-09 21:57:02.634 INFO  [http-nio-8080-exec-4]com.wsy.blog.aspect.RequestAspect.doAfterReturning:73 -返回值：{}
+2020-08-09 21:57:02.634 INFO  [http-nio-8080-exec-4]com.wsy.blog.aspect.RequestAspect.doAround:61 -耗时 : 93
+2020-08-09 21:57:02.641 WARN  [http-nio-8080-exec-4]o.s.w.s.mvc.support.DefaultHandlerExceptionResolver.logException:199 -Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter found for return value of type: class com.wsy.blog.utils.Result]
+2020-08-09 21:57:43.901 INFO  [http-nio-8080-exec-8]com.wsy.blog.aspect.RequestAspect.printRequestLog:95 -请求地址 : /test/testException
+2020-08-09 21:57:43.902 INFO  [http-nio-8080-exec-8]com.wsy.blog.aspect.RequestAspect.printRequestLog:96 -请求方式 : GET
+2020-08-09 21:57:43.903 INFO  [http-nio-8080-exec-8]com.wsy.blog.aspect.RequestAspect.printRequestLog:99 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 21:57:43.904 INFO  [http-nio-8080-exec-8]com.wsy.blog.aspect.RequestAspect.printRequestLog:101 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 21:57:43.905 INFO  [http-nio-8080-exec-8]com.wsy.blog.aspect.RequestAspect.printRequestLog:103 -请求参数：[2]
+2020-08-09 21:57:43.912 ERROR [http-nio-8080-exec-8]com.wsy.blog.advice.BlogExceptionAdvice.exceptionHandler:29 -统一异常处理：
+com.wsy.blog.exception.BlogException: 出现异常了
+	at com.wsy.blog.controller.TestController.testException(TestController.java:25)
+	at com.wsy.blog.controller.TestController$$FastClassBySpringCGLIB$$d51549b2.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:62)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at com.wsy.blog.aspect.RequestAspect.doAround(RequestAspect.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.wsy.blog.controller.TestController$$EnhancerBySpringCGLIB$$607ed7d1.testException(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-08-09 21:57:43.916 WARN  [http-nio-8080-exec-8]o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException:414 -Failure in @ExceptionHandler com.wsy.blog.advice.BlogExceptionAdvice#exceptionHandler(BlogException)
+org.springframework.http.converter.HttpMessageNotWritableException: No converter found for return value of type: class com.wsy.blog.utils.Result
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor.writeWithMessageConverters(AbstractMessageConverterMethodProcessor.java:230)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.handleReturnValue(RequestResponseBodyMethodProcessor.java:181)
+	at org.springframework.web.method.support.HandlerMethodReturnValueHandlerComposite.handleReturnValue(HandlerMethodReturnValueHandlerComposite.java:82)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:123)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:407)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:61)
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:141)
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80)
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1300)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1111)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-08-09 21:57:43.922 ERROR [http-nio-8080-exec-8]o.a.c.c.C.[Tomcat].[localhost].[/].[dispatcherServlet].log:175 -Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is com.wsy.blog.exception.BlogException: 出现异常了] with root cause
+com.wsy.blog.exception.BlogException: 出现异常了
+	at com.wsy.blog.controller.TestController.testException(TestController.java:25)
+	at com.wsy.blog.controller.TestController$$FastClassBySpringCGLIB$$d51549b2.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:62)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at com.wsy.blog.aspect.RequestAspect.doAround(RequestAspect.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.wsy.blog.controller.TestController$$EnhancerBySpringCGLIB$$607ed7d1.testException(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-08-09 22:00:15.048 INFO  [http-nio-8080-exec-5]com.wsy.blog.aspect.RequestAspect.printRequestLog:95 -请求地址 : /test/testException
+2020-08-09 22:00:15.052 INFO  [http-nio-8080-exec-5]com.wsy.blog.aspect.RequestAspect.printRequestLog:96 -请求方式 : GET
+2020-08-09 22:00:15.053 INFO  [http-nio-8080-exec-5]com.wsy.blog.aspect.RequestAspect.printRequestLog:99 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 22:00:15.054 INFO  [http-nio-8080-exec-5]com.wsy.blog.aspect.RequestAspect.printRequestLog:101 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 22:00:15.055 INFO  [http-nio-8080-exec-5]com.wsy.blog.aspect.RequestAspect.printRequestLog:103 -请求参数：[1]
+2020-08-09 22:00:15.058 INFO  [http-nio-8080-exec-5]com.wsy.blog.aspect.RequestAspect.doAfterReturning:73 -返回值：{}
+2020-08-09 22:00:15.058 INFO  [http-nio-8080-exec-5]com.wsy.blog.aspect.RequestAspect.doAround:61 -耗时 : 10
+2020-08-09 22:00:15.059 WARN  [http-nio-8080-exec-5]o.s.w.s.mvc.support.DefaultHandlerExceptionResolver.logException:199 -Resolved [org.springframework.http.converter.HttpMessageNotWritableException: No converter found for return value of type: class com.wsy.blog.utils.Result]
+2020-08-09 22:05:12.111 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarting:55 -Starting BlogApplication on DESKTOP-E7QN2JV with PID 7588 (D:\ideaProject\blog\target\classes started by wsy in D:\ideaProject\blog)
+2020-08-09 22:05:12.114 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-08-09 22:05:12.153 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-09 22:05:12.154 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-09 22:05:12.757 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:249 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-09 22:05:12.759 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-08-09 22:05:12.802 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 -Finished Spring Data repository scanning in 7ms. Found 0 Redis repository interfaces.
+2020-08-09 22:05:13.562 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:108 -Tomcat initialized with port(s): 8080 (http)
+2020-08-09 22:05:13.572 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-09 22:05:13.572 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-08-09 22:05:13.573 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-09 22:05:13.669 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-08-09 22:05:13.669 INFO  [restartedMain]o.s.b.w.s.context.ServletWebServerApplicationContext.prepareWebApplicationContext:285 -Root WebApplicationContext: initialization completed in 1515 ms
+2020-08-09 22:05:13.818 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-08-09 22:05:16.052 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-08-09 22:05:16.587 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-09 22:05:17.330 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-08-09 22:05:17.355 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-08-09 22:05:17.374 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:220 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-09 22:05:17.382 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarted:61 -Started BlogApplication in 6.083 seconds (JVM running for 7.629)
+2020-08-09 22:05:43.743 INFO  [http-nio-8080-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-09 22:05:43.743 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-08-09 22:05:43.756 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 12 ms
+2020-08-09 22:05:43.790 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:95 -请求地址 : /test/testException
+2020-08-09 22:05:43.791 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:96 -请求方式 : GET
+2020-08-09 22:05:43.795 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:99 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 22:05:43.796 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:101 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 22:05:43.799 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:103 -请求参数：[1]
+2020-08-09 22:05:43.853 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.doAfterReturning:73 -返回值：{"code":20000,"msg":"操作成功！"}
+2020-08-09 22:05:43.853 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.doAround:61 -耗时 : 63
+2020-08-09 22:05:48.237 INFO  [http-nio-8080-exec-3]com.wsy.blog.aspect.RequestAspect.printRequestLog:95 -请求地址 : /test/testException
+2020-08-09 22:05:48.238 INFO  [http-nio-8080-exec-3]com.wsy.blog.aspect.RequestAspect.printRequestLog:96 -请求方式 : GET
+2020-08-09 22:05:48.238 INFO  [http-nio-8080-exec-3]com.wsy.blog.aspect.RequestAspect.printRequestLog:99 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 22:05:48.239 INFO  [http-nio-8080-exec-3]com.wsy.blog.aspect.RequestAspect.printRequestLog:101 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 22:05:48.239 INFO  [http-nio-8080-exec-3]com.wsy.blog.aspect.RequestAspect.printRequestLog:103 -请求参数：[2]
+2020-08-09 22:05:48.377 ERROR [http-nio-8080-exec-3]com.wsy.blog.advice.BlogExceptionAdvice.exceptionHandler:29 -统一异常处理：
+com.wsy.blog.exception.BlogException: 出现异常了
+	at com.wsy.blog.controller.TestController.testException(TestController.java:25)
+	at com.wsy.blog.controller.TestController$$FastClassBySpringCGLIB$$d51549b2.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:62)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at com.wsy.blog.aspect.RequestAspect.doAround(RequestAspect.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.wsy.blog.controller.TestController$$EnhancerBySpringCGLIB$$55bb8756.testException(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-08-09 22:05:48.379 WARN  [http-nio-8080-exec-3]o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver.logException:199 -Resolved [com.wsy.blog.exception.BlogException: 出现异常了]
+2020-08-09 22:05:51.561 INFO  [http-nio-8080-exec-7]com.wsy.blog.aspect.RequestAspect.printRequestLog:95 -请求地址 : /test/testException
+2020-08-09 22:05:51.562 INFO  [http-nio-8080-exec-7]com.wsy.blog.aspect.RequestAspect.printRequestLog:96 -请求方式 : GET
+2020-08-09 22:05:51.562 INFO  [http-nio-8080-exec-7]com.wsy.blog.aspect.RequestAspect.printRequestLog:99 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 22:05:51.564 INFO  [http-nio-8080-exec-7]com.wsy.blog.aspect.RequestAspect.printRequestLog:101 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 22:05:51.566 INFO  [http-nio-8080-exec-7]com.wsy.blog.aspect.RequestAspect.printRequestLog:103 -请求参数：[3]
+2020-08-09 22:05:51.569 ERROR [http-nio-8080-exec-7]com.wsy.blog.advice.BlogExceptionAdvice.exceptionHandler:29 -统一异常处理：
+com.wsy.blog.exception.BlogException: 出现异常了
+	at com.wsy.blog.controller.TestController.testException(TestController.java:25)
+	at com.wsy.blog.controller.TestController$$FastClassBySpringCGLIB$$d51549b2.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:62)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at com.wsy.blog.aspect.RequestAspect.doAround(RequestAspect.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.wsy.blog.controller.TestController$$EnhancerBySpringCGLIB$$55bb8756.testException(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-08-09 22:05:51.572 WARN  [http-nio-8080-exec-7]o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver.logException:199 -Resolved [com.wsy.blog.exception.BlogException: 出现异常了]
+2020-08-09 22:08:19.439 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:95 -请求地址 : /test/testException
+2020-08-09 22:08:19.440 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:96 -请求方式 : GET
+2020-08-09 22:08:19.440 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:99 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 22:08:19.440 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:101 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 22:08:19.441 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:103 -请求参数：[1]
+2020-08-09 22:08:19.441 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.doAfterReturning:73 -返回值：{"code":20000,"msg":"操作成功！"}
+2020-08-09 22:08:19.442 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.doAround:61 -耗时 : 3
+2020-08-09 22:08:22.256 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:95 -请求地址 : /test/testException
+2020-08-09 22:08:22.258 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:96 -请求方式 : GET
+2020-08-09 22:08:22.259 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:99 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 22:08:22.259 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:101 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 22:08:22.259 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:103 -请求参数：[2]
+2020-08-09 22:08:22.261 ERROR [http-nio-8080-exec-2]com.wsy.blog.advice.BlogExceptionAdvice.exceptionHandler:29 -统一异常处理：
+com.wsy.blog.exception.BlogException: 出现异常了
+	at com.wsy.blog.controller.TestController.testException(TestController.java:25)
+	at com.wsy.blog.controller.TestController$$FastClassBySpringCGLIB$$d51549b2.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:62)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at com.wsy.blog.aspect.RequestAspect.doAround(RequestAspect.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.wsy.blog.controller.TestController$$EnhancerBySpringCGLIB$$55bb8756.testException(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-08-09 22:08:22.272 WARN  [http-nio-8080-exec-2]o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver.logException:199 -Resolved [com.wsy.blog.exception.BlogException: 出现异常了]
+2020-08-09 22:08:33.009 INFO  [http-nio-8080-exec-3]com.wsy.blog.aspect.RequestAspect.printRequestLog:95 -请求地址 : /test/testException
+2020-08-09 22:08:33.010 INFO  [http-nio-8080-exec-3]com.wsy.blog.aspect.RequestAspect.printRequestLog:96 -请求方式 : GET
+2020-08-09 22:08:33.011 INFO  [http-nio-8080-exec-3]com.wsy.blog.aspect.RequestAspect.printRequestLog:99 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 22:08:33.012 INFO  [http-nio-8080-exec-3]com.wsy.blog.aspect.RequestAspect.printRequestLog:101 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 22:08:33.013 INFO  [http-nio-8080-exec-3]com.wsy.blog.aspect.RequestAspect.printRequestLog:103 -请求参数：[-1]
+2020-08-09 22:08:33.017 ERROR [http-nio-8080-exec-3]com.wsy.blog.advice.BlogExceptionAdvice.exceptionHandler:29 -统一异常处理：
+com.wsy.blog.exception.BlogException: 出现异常了
+	at com.wsy.blog.controller.TestController.testException(TestController.java:25)
+	at com.wsy.blog.controller.TestController$$FastClassBySpringCGLIB$$d51549b2.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:62)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at com.wsy.blog.aspect.RequestAspect.doAround(RequestAspect.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.wsy.blog.controller.TestController$$EnhancerBySpringCGLIB$$55bb8756.testException(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-08-09 22:08:33.021 WARN  [http-nio-8080-exec-3]o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver.logException:199 -Resolved [com.wsy.blog.exception.BlogException: 出现异常了]
+2020-08-09 23:00:58.255 INFO  [http-nio-8080-exec-8]com.wsy.blog.aspect.RequestAspect.printRequestLog:95 -请求地址 : /test/testException/
+2020-08-09 23:00:58.258 INFO  [http-nio-8080-exec-8]com.wsy.blog.aspect.RequestAspect.printRequestLog:96 -请求方式 : GET
+2020-08-09 23:00:58.259 INFO  [http-nio-8080-exec-8]com.wsy.blog.aspect.RequestAspect.printRequestLog:99 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 23:00:58.260 INFO  [http-nio-8080-exec-8]com.wsy.blog.aspect.RequestAspect.printRequestLog:101 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 23:00:58.262 INFO  [http-nio-8080-exec-8]com.wsy.blog.aspect.RequestAspect.printRequestLog:103 -请求参数：[null]
+2020-08-09 23:00:58.295 ERROR [http-nio-8080-exec-8]o.a.c.c.C.[Tomcat].[localhost].[/].[dispatcherServlet].log:175 -Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.wsy.blog.controller.TestController.testException(TestController.java:22)
+	at com.wsy.blog.controller.TestController$$FastClassBySpringCGLIB$$d51549b2.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:62)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at com.wsy.blog.aspect.RequestAspect.doAround(RequestAspect.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.wsy.blog.controller.TestController$$EnhancerBySpringCGLIB$$55bb8756.testException(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-08-09 23:01:00.136 INFO  [http-nio-8080-exec-9]com.wsy.blog.aspect.RequestAspect.printRequestLog:95 -请求地址 : /test/testException/
+2020-08-09 23:01:00.140 INFO  [http-nio-8080-exec-9]com.wsy.blog.aspect.RequestAspect.printRequestLog:96 -请求方式 : GET
+2020-08-09 23:01:00.144 INFO  [http-nio-8080-exec-9]com.wsy.blog.aspect.RequestAspect.printRequestLog:99 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 23:01:00.145 INFO  [http-nio-8080-exec-9]com.wsy.blog.aspect.RequestAspect.printRequestLog:101 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 23:01:00.146 INFO  [http-nio-8080-exec-9]com.wsy.blog.aspect.RequestAspect.printRequestLog:103 -请求参数：[null]
+2020-08-09 23:01:00.150 ERROR [http-nio-8080-exec-9]o.a.c.c.C.[Tomcat].[localhost].[/].[dispatcherServlet].log:175 -Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.wsy.blog.controller.TestController.testException(TestController.java:22)
+	at com.wsy.blog.controller.TestController$$FastClassBySpringCGLIB$$d51549b2.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:62)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at com.wsy.blog.aspect.RequestAspect.doAround(RequestAspect.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.wsy.blog.controller.TestController$$EnhancerBySpringCGLIB$$55bb8756.testException(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-08-09 23:01:02.067 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:95 -请求地址 : /test/testException/
+2020-08-09 23:01:02.068 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:96 -请求方式 : GET
+2020-08-09 23:01:02.069 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:99 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 23:01:02.074 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:101 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 23:01:02.075 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:103 -请求参数：[1]
+2020-08-09 23:01:02.077 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.doAfterReturning:73 -返回值：{"code":20000,"msg":"操作成功！"}
+2020-08-09 23:01:02.078 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.doAround:61 -耗时 : 11
+2020-08-09 23:32:28.981 INFO  [Thread-6]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:32:29.041 INFO  [Thread-6]com.alibaba.druid.pool.DruidDataSource.close:1825 -{dataSource-1} closed
+2020-08-09 23:32:29.668 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarting:55 -Starting BlogApplication on DESKTOP-E7QN2JV with PID 7588 (D:\ideaProject\blog\target\classes started by wsy in D:\ideaProject\blog)
+2020-08-09 23:32:29.669 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-08-09 23:32:30.270 WARN  [restartedMain]org.mybatis.spring.mapper.ClassPathMapperScanner.doScan:166 -No MyBatis mapper was found in '[com.wsy.blog]' package. Please check your configuration.
+2020-08-09 23:32:30.313 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:249 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-09 23:32:30.315 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-08-09 23:32:30.319 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 -Finished Spring Data repository scanning in 2ms. Found 0 Redis repository interfaces.
+2020-08-09 23:32:30.759 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:108 -Tomcat initialized with port(s): 8080 (http)
+2020-08-09 23:32:30.764 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:32:30.767 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-08-09 23:32:30.769 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-09 23:32:30.836 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-08-09 23:32:30.837 INFO  [restartedMain]o.s.b.w.s.context.ServletWebServerApplicationContext.prepareWebApplicationContext:285 -Root WebApplicationContext: initialization completed in 1158 ms
+2020-08-09 23:32:31.063 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:32:31.217 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-08-09 23:32:34.002 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-2} inited
+2020-08-09 23:32:34.069 WARN  [restartedMain]o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh:559 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\ideaProject\blog\target\classes\mapper\AboutMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\ideaProject\blog\target\classes\mapper\AboutMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.wsy.blog.pojo.About'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.wsy.blog.pojo.About
+2020-08-09 23:32:34.073 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.close:1825 -{dataSource-2} closed
+2020-08-09 23:32:34.077 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:32:34.080 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Stopping service [Tomcat]
+2020-08-09 23:32:34.096 INFO  [restartedMain]o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logMessage:136 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-09 23:32:34.167 ERROR [restartedMain]org.springframework.boot.SpringApplication.reportFailure:837 -Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\ideaProject\blog\target\classes\mapper\AboutMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\ideaProject\blog\target\classes\mapper\AboutMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.wsy.blog.pojo.About'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.wsy.blog.pojo.About
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:655)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:635)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1176)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:556)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:516)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:226)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:322)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:897)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:551)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.wsy.blog.BlogApplication.main(BlogApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\ideaProject\blog\target\classes\mapper\AboutMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\ideaProject\blog\target\classes\mapper\AboutMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.wsy.blog.pojo.About'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.wsy.blog.pojo.About
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:650)
+	... 25 common frames omitted
+Caused by: org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [D:\ideaProject\blog\target\classes\mapper\AboutMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\ideaProject\blog\target\classes\mapper\AboutMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.wsy.blog.pojo.About'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.wsy.blog.pojo.About
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:523)
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:380)
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:547)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:153)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$7c91e3d1.CGLIB$sqlSessionFactory$0(<generated>)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$7c91e3d1$$FastClassBySpringCGLIB$$f97a348d.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:331)
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration$$EnhancerBySpringCGLIB$$7c91e3d1.sqlSessionFactory(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 26 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [D:\ideaProject\blog\target\classes\mapper\AboutMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.wsy.blog.pojo.About'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.wsy.blog.pojo.About
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92)
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:521)
+	... 39 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.wsy.blog.pojo.About'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.wsy.blog.pojo.About
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:118)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:265)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElement(XMLMapperBuilder.java:252)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.resultMapElements(XMLMapperBuilder.java:244)
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:116)
+	... 41 common frames omitted
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.wsy.blog.pojo.About'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.wsy.blog.pojo.About
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:120)
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:149)
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:116)
+	... 45 common frames omitted
+Caused by: java.lang.ClassNotFoundException: Cannot find class: com.wsy.blog.pojo.About
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:200)
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:89)
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:261)
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:116)
+	... 47 common frames omitted
+2020-08-09 23:33:00.737 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarting:55 -Starting BlogApplication on DESKTOP-E7QN2JV with PID 7588 (D:\ideaProject\blog\target\classes started by wsy in D:\ideaProject\blog)
+2020-08-09 23:33:00.738 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-08-09 23:33:01.000 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:249 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-09 23:33:01.000 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-08-09 23:33:01.004 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 -Finished Spring Data repository scanning in 3ms. Found 0 Redis repository interfaces.
+2020-08-09 23:33:01.383 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:108 -Tomcat initialized with port(s): 8080 (http)
+2020-08-09 23:33:01.384 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:33:01.385 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-08-09 23:33:01.385 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-09 23:33:01.435 INFO  [restartedMain]o.a.c.core.ContainerBase.[Tomcat-1].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-08-09 23:33:01.436 INFO  [restartedMain]o.s.b.w.s.context.ServletWebServerApplicationContext.prepareWebApplicationContext:285 -Root WebApplicationContext: initialization completed in 696 ms
+2020-08-09 23:33:01.553 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-08-09 23:33:04.234 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarting:55 -Starting BlogApplication on DESKTOP-E7QN2JV with PID 10752 (D:\ideaProject\blog\target\classes started by wsy in D:\ideaProject\blog)
+2020-08-09 23:33:04.238 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-08-09 23:33:04.290 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-09 23:33:04.291 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-09 23:33:04.977 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-3} inited
+2020-08-09 23:33:05.047 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:249 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-09 23:33:05.049 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-08-09 23:33:05.126 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 -Finished Spring Data repository scanning in 11ms. Found 0 Redis repository interfaces.
+2020-08-09 23:33:05.633 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:33:06.270 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-08-09 23:33:06.301 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:33:06.305 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:220 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-09 23:33:06.314 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarted:61 -Started BlogApplication in 5.636 seconds (JVM running for 5276.561)
+2020-08-09 23:33:06.317 INFO  [restartedMain]o.s.b.d.a.ConditionEvaluationDeltaLoggingListener.onApplicationEvent:63 -Condition evaluation unchanged
+2020-08-09 23:33:06.330 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:108 -Tomcat initialized with port(s): 8080 (http)
+2020-08-09 23:33:06.339 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:33:06.340 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-08-09 23:33:06.341 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-09 23:33:06.449 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-08-09 23:33:06.450 INFO  [restartedMain]o.s.b.w.s.context.ServletWebServerApplicationContext.prepareWebApplicationContext:285 -Root WebApplicationContext: initialization completed in 2159 ms
+2020-08-09 23:33:06.612 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-08-09 23:33:10.003 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-08-09 23:33:10.624 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:33:11.470 WARN  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:61 -Unable to start LiveReload server
+2020-08-09 23:33:11.501 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:33:11.513 WARN  [restartedMain]o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh:559 -Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2020-08-09 23:33:11.535 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:33:11.538 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.close:1825 -{dataSource-1} closed
+2020-08-09 23:33:11.541 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Pausing ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:33:11.541 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Stopping service [Tomcat]
+2020-08-09 23:33:11.547 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Stopping ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:33:11.547 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Destroying ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:33:11.552 INFO  [restartedMain]o.s.b.a.logging.ConditionEvaluationReportLoggingListener.logMessage:136 -
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-09 23:33:11.556 ERROR [restartedMain]o.s.boot.diagnostics.LoggingFailureAnalysisReporter.report:40 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2020-08-09 23:33:44.333 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarting:55 -Starting BlogApplication on DESKTOP-E7QN2JV with PID 17628 (D:\ideaProject\blog\target\classes started by wsy in D:\ideaProject\blog)
+2020-08-09 23:33:44.336 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-08-09 23:33:44.385 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-09 23:33:44.385 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-09 23:33:45.086 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:249 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-09 23:33:45.088 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-08-09 23:33:45.159 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 -Finished Spring Data repository scanning in 8ms. Found 0 Redis repository interfaces.
+2020-08-09 23:33:46.016 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:108 -Tomcat initialized with port(s): 8080 (http)
+2020-08-09 23:33:46.023 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:33:46.023 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-08-09 23:33:46.023 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-09 23:33:46.112 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-08-09 23:33:46.113 INFO  [restartedMain]o.s.b.w.s.context.ServletWebServerApplicationContext.prepareWebApplicationContext:285 -Root WebApplicationContext: initialization completed in 1727 ms
+2020-08-09 23:33:46.239 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-08-09 23:33:49.269 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-08-09 23:33:49.939 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:33:51.103 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-08-09 23:33:51.140 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:33:51.174 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:220 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-09 23:33:51.190 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarted:61 -Started BlogApplication in 7.484 seconds (JVM running for 8.64)
+2020-08-09 23:33:59.965 INFO  [http-nio-8080-exec-2]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-09 23:33:59.966 INFO  [http-nio-8080-exec-2]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-08-09 23:33:59.977 INFO  [http-nio-8080-exec-2]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 11 ms
+2020-08-09 23:34:00.017 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:113 -请求地址 : /test/testException/
+2020-08-09 23:34:00.017 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:114 -请求方式 : GET
+2020-08-09 23:34:00.032 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:117 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 23:34:00.034 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:119 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 23:34:00.034 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:121 -请求参数：[1]
+2020-08-09 23:34:00.100 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.doAfterReturning:84 -返回值：{"code":20000,"msg":"操作成功！"}
+2020-08-09 23:34:00.100 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.doAround:70 -耗时 : 83
+2020-08-09 23:35:07.770 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarting:55 -Starting BlogApplication on DESKTOP-E7QN2JV with PID 6580 (D:\ideaProject\blog\target\classes started by wsy in D:\ideaProject\blog)
+2020-08-09 23:35:07.783 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-08-09 23:35:07.970 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-09 23:35:07.970 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-09 23:35:09.922 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:249 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-09 23:35:09.929 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-08-09 23:35:10.101 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 -Finished Spring Data repository scanning in 31ms. Found 0 Redis repository interfaces.
+2020-08-09 23:35:12.936 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:108 -Tomcat initialized with port(s): 8080 (http)
+2020-08-09 23:35:12.970 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:35:12.973 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-08-09 23:35:12.974 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-09 23:35:13.299 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-08-09 23:35:13.301 INFO  [restartedMain]o.s.b.w.s.context.ServletWebServerApplicationContext.prepareWebApplicationContext:285 -Root WebApplicationContext: initialization completed in 5331 ms
+2020-08-09 23:35:13.712 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-08-09 23:35:18.936 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-08-09 23:35:21.357 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:35:24.515 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-08-09 23:35:24.606 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:35:24.668 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:220 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-09 23:35:24.700 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarted:61 -Started BlogApplication in 18.804 seconds (JVM running for 22.564)
+2020-08-09 23:35:32.532 INFO  [http-nio-8080-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-09 23:35:32.533 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-08-09 23:35:32.554 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 21 ms
+2020-08-09 23:35:32.616 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:113 -请求地址 : /test/testException/
+2020-08-09 23:35:32.617 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:114 -请求方式 : GET
+2020-08-09 23:35:32.627 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:117 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 23:35:32.633 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:119 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 23:35:32.633 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:121 -请求参数：[1]
+2020-08-09 23:35:32.738 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.doAfterReturning:84 -返回值：{"code":20000,"msg":"操作成功！"}
+2020-08-09 23:35:33.340 ERROR [http-nio-8080-exec-1]o.a.c.c.C.[Tomcat].[localhost].[/].[dispatcherServlet].log:175 -Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'log_time' cannot be null
+### The error may involve com.wsy.blog.mapper.LogMapper.save-Inline
+### The error occurred while setting parameters
+### SQL: insert into bl_log (     log_url, log_params, log_status, log_message, log_method, log_time, log_result,     log_ip     ) values (     ?,?,?,?,?,?,?,     ?     )
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'log_time' cannot be null
+; Column 'log_time' cannot be null; nested exception is java.sql.SQLIntegrityConstraintViolationException: Column 'log_time' cannot be null] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Column 'log_time' cannot be null
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.execute(ClientPreparedStatement.java:370)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3409)
+	at com.alibaba.druid.filter.FilterEventAdapter.preparedStatement_execute(FilterEventAdapter.java:440)
+	at com.alibaba.druid.filter.FilterChainImpl.preparedStatement_execute(FilterChainImpl.java:3407)
+	at com.alibaba.druid.proxy.jdbc.PreparedStatementProxyImpl.execute(PreparedStatementProxyImpl.java:167)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:498)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy75.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:58)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy76.save(Unknown Source)
+	at com.wsy.blog.service.LogService.save(LogService.java:19)
+	at com.wsy.blog.aspect.RequestAspect.doAfterReturning(RequestAspect.java:87)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:626)
+	at org.springframework.aop.aspectj.AspectJAfterReturningAdvice.afterReturning(AspectJAfterReturningAdvice.java:66)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at com.wsy.blog.aspect.RequestAspect.doAround(RequestAspect.java:68)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.wsy.blog.controller.TestController$$EnhancerBySpringCGLIB$$e910026c.testException(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-08-09 23:37:05.570 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarting:55 -Starting BlogApplication on DESKTOP-E7QN2JV with PID 10372 (D:\ideaProject\blog\target\classes started by wsy in D:\ideaProject\blog)
+2020-08-09 23:37:05.572 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-08-09 23:37:05.608 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-09 23:37:05.609 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-09 23:37:06.151 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:249 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-09 23:37:06.153 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-08-09 23:37:06.195 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 -Finished Spring Data repository scanning in 6ms. Found 0 Redis repository interfaces.
+2020-08-09 23:37:06.930 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:108 -Tomcat initialized with port(s): 8080 (http)
+2020-08-09 23:37:06.939 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:37:06.940 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-08-09 23:37:06.940 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-09 23:37:07.033 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-08-09 23:37:07.033 INFO  [restartedMain]o.s.b.w.s.context.ServletWebServerApplicationContext.prepareWebApplicationContext:285 -Root WebApplicationContext: initialization completed in 1424 ms
+2020-08-09 23:37:07.178 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-08-09 23:37:09.853 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-08-09 23:37:10.766 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:37:11.938 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-08-09 23:37:11.979 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:37:12.018 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:220 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-09 23:37:12.033 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarted:61 -Started BlogApplication in 7.059 seconds (JVM running for 8.375)
+2020-08-09 23:37:14.623 INFO  [http-nio-8080-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-09 23:37:14.623 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-08-09 23:37:14.655 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 31 ms
+2020-08-09 23:37:14.711 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:113 -请求地址 : /test/testException/
+2020-08-09 23:37:14.712 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:114 -请求方式 : GET
+2020-08-09 23:37:14.719 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:117 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 23:37:14.721 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:119 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 23:37:14.721 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:121 -请求参数：[1]
+2020-08-09 23:37:14.798 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.doAfterReturning:84 -返回值：{"code":20000,"msg":"操作成功！"}
+2020-08-09 23:37:14.948 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.doAround:70 -耗时 : 237
+2020-08-09 23:38:40.221 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarting:55 -Starting BlogApplication on DESKTOP-E7QN2JV with PID 18104 (D:\ideaProject\blog\target\classes started by wsy in D:\ideaProject\blog)
+2020-08-09 23:38:40.227 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-08-09 23:38:40.323 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-09 23:38:40.323 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-09 23:38:41.346 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:249 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-09 23:38:41.364 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-08-09 23:38:41.442 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 -Finished Spring Data repository scanning in 25ms. Found 0 Redis repository interfaces.
+2020-08-09 23:38:43.321 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:108 -Tomcat initialized with port(s): 8080 (http)
+2020-08-09 23:38:43.347 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:38:43.350 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-08-09 23:38:43.350 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-09 23:38:43.531 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-08-09 23:38:43.533 INFO  [restartedMain]o.s.b.w.s.context.ServletWebServerApplicationContext.prepareWebApplicationContext:285 -Root WebApplicationContext: initialization completed in 3209 ms
+2020-08-09 23:38:43.770 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-08-09 23:38:47.708 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-08-09 23:38:48.550 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:38:50.018 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-08-09 23:38:50.048 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:38:50.071 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:220 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-09 23:38:50.083 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarted:61 -Started BlogApplication in 10.885 seconds (JVM running for 14.812)
+2020-08-09 23:38:55.667 INFO  [http-nio-8080-exec-2]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-09 23:38:55.668 INFO  [http-nio-8080-exec-2]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-08-09 23:38:55.684 INFO  [http-nio-8080-exec-2]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 16 ms
+2020-08-09 23:38:55.724 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:113 -请求地址 : /test/testException/
+2020-08-09 23:38:55.725 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:114 -请求方式 : GET
+2020-08-09 23:38:55.733 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:117 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 23:38:55.735 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:119 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 23:38:55.736 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:121 -请求参数：[1]
+2020-08-09 23:38:55.822 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.doAfterReturning:84 -返回值：{"code":20000,"msg":"操作成功！"}
+2020-08-09 23:38:55.983 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.doAround:70 -耗时 : 259
+2020-08-09 23:43:21.938 INFO  [SpringContextShutdownHook]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:43:21.945 INFO  [SpringContextShutdownHook]com.alibaba.druid.pool.DruidDataSource.close:1825 -{dataSource-1} closed
+2020-08-09 23:43:27.336 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarting:55 -Starting BlogApplication on DESKTOP-E7QN2JV with PID 11500 (D:\ideaProject\blog\target\classes started by wsy in D:\ideaProject\blog)
+2020-08-09 23:43:27.339 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-08-09 23:43:27.392 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-09 23:43:27.392 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-09 23:43:28.178 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:249 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-09 23:43:28.186 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-08-09 23:43:28.210 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 -Finished Spring Data repository scanning in 8ms. Found 0 Redis repository interfaces.
+2020-08-09 23:43:29.165 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:108 -Tomcat initialized with port(s): 8080 (http)
+2020-08-09 23:43:29.175 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:43:29.176 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-08-09 23:43:29.177 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-09 23:43:29.278 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-08-09 23:43:29.279 INFO  [restartedMain]o.s.b.w.s.context.ServletWebServerApplicationContext.prepareWebApplicationContext:285 -Root WebApplicationContext: initialization completed in 1886 ms
+2020-08-09 23:43:29.423 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-08-09 23:43:32.828 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-08-09 23:43:34.294 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:43:35.710 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-08-09 23:43:35.754 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:43:35.791 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:220 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-09 23:43:35.809 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarted:61 -Started BlogApplication in 9.11 seconds (JVM running for 10.537)
+2020-08-09 23:43:46.409 INFO  [SpringContextShutdownHook]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:43:46.413 INFO  [SpringContextShutdownHook]com.alibaba.druid.pool.DruidDataSource.close:1825 -{dataSource-1} closed
+2020-08-09 23:43:50.207 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarting:55 -Starting BlogApplication on DESKTOP-E7QN2JV with PID 15808 (D:\ideaProject\blog\target\classes started by wsy in D:\ideaProject\blog)
+2020-08-09 23:43:50.210 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-08-09 23:43:50.256 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-09 23:43:50.257 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-09 23:43:50.932 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:249 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-09 23:43:50.939 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-08-09 23:43:50.960 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 -Finished Spring Data repository scanning in 7ms. Found 0 Redis repository interfaces.
+2020-08-09 23:43:51.907 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:108 -Tomcat initialized with port(s): 8080 (http)
+2020-08-09 23:43:51.916 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:43:51.917 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-08-09 23:43:51.918 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-09 23:43:52.021 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-08-09 23:43:52.022 INFO  [restartedMain]o.s.b.w.s.context.ServletWebServerApplicationContext.prepareWebApplicationContext:285 -Root WebApplicationContext: initialization completed in 1765 ms
+2020-08-09 23:43:52.160 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-08-09 23:43:56.718 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-08-09 23:43:57.361 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:43:58.370 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-08-09 23:43:58.393 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:43:58.412 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:220 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-09 23:43:58.421 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarted:61 -Started BlogApplication in 8.847 seconds (JVM running for 10.269)
+2020-08-09 23:44:05.500 INFO  [http-nio-8080-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-09 23:44:05.501 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-08-09 23:44:05.521 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 20 ms
+2020-08-09 23:44:05.566 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:113 -请求地址 : /test/testException/
+2020-08-09 23:44:05.567 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:114 -请求方式 : GET
+2020-08-09 23:44:05.571 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:117 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 23:44:05.573 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:119 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 23:44:05.574 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:121 -请求参数：[1]
+2020-08-09 23:44:05.680 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.doAfterReturning:84 -返回值：{"code":20000,"msg":"操作成功！"}
+2020-08-09 23:44:05.829 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.doAround:70 -耗时 : 263
+2020-08-09 23:44:50.619 INFO  [SpringContextShutdownHook]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:44:50.624 INFO  [SpringContextShutdownHook]com.alibaba.druid.pool.DruidDataSource.close:1825 -{dataSource-1} closed
+2020-08-09 23:44:53.991 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarting:55 -Starting BlogApplication on DESKTOP-E7QN2JV with PID 20256 (D:\ideaProject\blog\target\classes started by wsy in D:\ideaProject\blog)
+2020-08-09 23:44:53.996 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-08-09 23:44:54.045 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-09 23:44:54.046 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-09 23:44:54.873 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:249 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-09 23:44:54.881 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-08-09 23:44:54.910 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 -Finished Spring Data repository scanning in 9ms. Found 0 Redis repository interfaces.
+2020-08-09 23:44:55.951 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:108 -Tomcat initialized with port(s): 8080 (http)
+2020-08-09 23:44:55.962 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:44:55.963 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-08-09 23:44:55.964 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-09 23:44:56.091 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-08-09 23:44:56.092 INFO  [restartedMain]o.s.b.w.s.context.ServletWebServerApplicationContext.prepareWebApplicationContext:285 -Root WebApplicationContext: initialization completed in 2046 ms
+2020-08-09 23:44:56.269 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-08-09 23:44:59.603 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-08-09 23:45:00.279 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:45:01.403 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-08-09 23:45:01.428 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:45:01.470 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:220 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-09 23:45:01.484 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarted:61 -Started BlogApplication in 8.142 seconds (JVM running for 9.337)
+2020-08-09 23:45:05.610 INFO  [http-nio-8080-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-09 23:45:05.613 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-08-09 23:45:05.634 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 20 ms
+2020-08-09 23:45:05.703 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:113 -请求地址 : /test/testException/
+2020-08-09 23:45:05.704 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:114 -请求方式 : GET
+2020-08-09 23:45:05.709 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:117 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 23:45:05.712 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:119 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 23:45:05.715 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:121 -请求参数：[1]
+2020-08-09 23:45:05.790 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.doAfterReturning:84 -返回值：{"code":20000,"msg":"操作成功！"}
+2020-08-09 23:45:05.981 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.doAround:70 -耗时 : 278
+2020-08-09 23:46:28.390 INFO  [SpringContextShutdownHook]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:46:28.396 INFO  [SpringContextShutdownHook]com.alibaba.druid.pool.DruidDataSource.close:1825 -{dataSource-1} closed
+2020-08-09 23:46:32.515 ERROR [restartedMain]org.springframework.boot.SpringApplication.reportFailure:837 -Application run failed
+java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@19:51 - no applicable action for [logger], current ElementPath  is [[configuration][appender][logger]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@20:51 - no applicable action for [logger], current ElementPath  is [[configuration][appender][logger]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@21:80 - no applicable action for [logger], current ElementPath  is [[configuration][appender][logger]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@22:76 - no applicable action for [logger], current ElementPath  is [[configuration][appender][logger]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@23:91 - no applicable action for [logger], current ElementPath  is [[configuration][appender][logger]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@24:60 - no applicable action for [logger], current ElementPath  is [[configuration][appender][logger]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@25:59 - no applicable action for [logger], current ElementPath  is [[configuration][appender][logger]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@26:67 - no applicable action for [logger], current ElementPath  is [[configuration][appender][logger]]
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:306)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.wsy.blog.BlogApplication.main(BlogApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+2020-08-09 23:46:52.908 ERROR [restartedMain]org.springframework.boot.SpringApplication.reportFailure:837 -Application run failed
+java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@13:51 - no applicable action for [logger], current ElementPath  is [[configuration][appender][logger]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@14:51 - no applicable action for [logger], current ElementPath  is [[configuration][appender][logger]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@15:80 - no applicable action for [logger], current ElementPath  is [[configuration][appender][logger]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@16:76 - no applicable action for [logger], current ElementPath  is [[configuration][appender][logger]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@17:91 - no applicable action for [logger], current ElementPath  is [[configuration][appender][logger]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@18:60 - no applicable action for [logger], current ElementPath  is [[configuration][appender][logger]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@19:59 - no applicable action for [logger], current ElementPath  is [[configuration][appender][logger]]
+ERROR in ch.qos.logback.core.joran.spi.Interpreter@20:67 - no applicable action for [logger], current ElementPath  is [[configuration][appender][logger]]
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:169)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:306)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:281)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:239)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:216)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:80)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:345)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:308)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at com.wsy.blog.BlogApplication.main(BlogApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+2020-08-09 23:50:39.345 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarting:55 -Starting BlogApplication on DESKTOP-E7QN2JV with PID 10952 (D:\ideaProject\blog\target\classes started by wsy in D:\ideaProject\blog)
+2020-08-09 23:50:39.348 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-08-09 23:50:39.406 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-09 23:50:39.407 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-09 23:50:40.198 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:249 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-09 23:50:40.205 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-08-09 23:50:40.224 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 -Finished Spring Data repository scanning in 7ms. Found 0 Redis repository interfaces.
+2020-08-09 23:50:41.056 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:108 -Tomcat initialized with port(s): 8080 (http)
+2020-08-09 23:50:41.064 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:50:41.065 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-08-09 23:50:41.065 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-09 23:50:41.146 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-08-09 23:50:41.146 INFO  [restartedMain]o.s.b.w.s.context.ServletWebServerApplicationContext.prepareWebApplicationContext:285 -Root WebApplicationContext: initialization completed in 1739 ms
+2020-08-09 23:50:41.273 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-08-09 23:50:45.043 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-08-09 23:50:45.664 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:50:46.622 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-08-09 23:50:46.646 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:50:46.665 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:220 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-09 23:50:46.674 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarted:61 -Started BlogApplication in 7.942 seconds (JVM running for 8.979)
+2020-08-09 23:50:52.130 INFO  [http-nio-8080-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-09 23:50:52.131 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-08-09 23:50:52.158 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 26 ms
+2020-08-09 23:50:52.197 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:113 -请求地址 : /test/testException/
+2020-08-09 23:50:52.198 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:114 -请求方式 : GET
+2020-08-09 23:50:52.202 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:117 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 23:50:52.204 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:119 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 23:50:52.205 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.printRequestLog:121 -请求参数：[1]
+2020-08-09 23:50:52.288 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.doAfterReturning:84 -返回值：{"code":20000,"msg":"操作成功！"}
+2020-08-09 23:50:52.683 INFO  [http-nio-8080-exec-1]com.wsy.blog.aspect.RequestAspect.doAround:70 -耗时 : 486
+2020-08-09 23:55:24.488 INFO  [SpringContextShutdownHook]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:55:24.499 INFO  [SpringContextShutdownHook]com.alibaba.druid.pool.DruidDataSource.close:1825 -{dataSource-1} closed
+2020-08-09 23:55:32.246 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarting:55 -Starting BlogApplication on DESKTOP-E7QN2JV with PID 20528 (D:\ideaProject\blog\target\classes started by wsy in D:\ideaProject\blog)
+2020-08-09 23:55:32.256 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-08-09 23:55:32.336 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-09 23:55:32.337 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-09 23:55:33.567 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:249 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-09 23:55:33.581 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-08-09 23:55:33.626 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 -Finished Spring Data repository scanning in 12ms. Found 0 Redis repository interfaces.
+2020-08-09 23:55:34.635 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:108 -Tomcat initialized with port(s): 8080 (http)
+2020-08-09 23:55:34.643 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:55:34.644 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-08-09 23:55:34.644 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-09 23:55:34.734 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-08-09 23:55:34.734 INFO  [restartedMain]o.s.b.w.s.context.ServletWebServerApplicationContext.prepareWebApplicationContext:285 -Root WebApplicationContext: initialization completed in 2397 ms
+2020-08-09 23:55:34.879 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-08-09 23:55:37.732 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-08-09 23:55:38.486 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:55:39.506 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-08-09 23:55:39.533 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:55:39.554 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:220 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-09 23:55:39.564 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarted:61 -Started BlogApplication in 8.083 seconds (JVM running for 9.455)
+2020-08-09 23:55:42.538 INFO  [http-nio-8080-exec-2]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-09 23:55:42.539 INFO  [http-nio-8080-exec-2]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-08-09 23:55:42.553 INFO  [http-nio-8080-exec-2]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 14 ms
+2020-08-09 23:55:42.587 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:113 -请求地址 : /test/testException/
+2020-08-09 23:55:42.588 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:114 -请求方式 : GET
+2020-08-09 23:55:42.592 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:117 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 23:55:42.594 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:119 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 23:55:42.596 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:121 -请求参数：[1]
+2020-08-09 23:55:42.678 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.doAfterReturning:84 -返回值：{"code":20000,"msg":"操作成功！"}
+2020-08-09 23:55:42.825 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.doAround:70 -耗时 : 238
+2020-08-09 23:58:32.092 INFO  [SpringContextShutdownHook]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.shutdown:218 -Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:58:32.099 INFO  [SpringContextShutdownHook]com.alibaba.druid.pool.DruidDataSource.close:1825 -{dataSource-1} closed
+2020-08-09 23:58:42.840 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarting:55 -Starting BlogApplication on DESKTOP-E7QN2JV with PID 21056 (D:\ideaProject\blog\target\classes started by wsy in D:\ideaProject\blog)
+2020-08-09 23:58:42.843 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStartupProfileInfo:651 -No active profile set, falling back to default profiles: default
+2020-08-09 23:58:42.901 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-08-09 23:58:42.901 INFO  [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-08-09 23:58:43.536 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.multipleStoresDetected:249 -Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-08-09 23:58:43.538 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:127 -Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-08-09 23:58:43.566 INFO  [restartedMain]o.s.d.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn:187 -Finished Spring Data repository scanning in 11ms. Found 0 Redis repository interfaces.
+2020-08-09 23:58:44.366 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:108 -Tomcat initialized with port(s): 8080 (http)
+2020-08-09 23:58:44.387 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:58:44.388 INFO  [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-08-09 23:58:44.388 INFO  [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-09 23:58:44.549 INFO  [restartedMain]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring embedded WebApplicationContext
+2020-08-09 23:58:44.549 INFO  [restartedMain]o.s.b.w.s.context.ServletWebServerApplicationContext.prepareWebApplicationContext:285 -Root WebApplicationContext: initialization completed in 1647 ms
+2020-08-09 23:58:44.685 INFO  [restartedMain]c.a.d.s.boot.autoconfigure.DruidDataSourceAutoConfigure.dataSource:56 -Init DruidDataSource
+2020-08-09 23:58:48.007 INFO  [restartedMain]com.alibaba.druid.pool.DruidDataSource.init:930 -{dataSource-1} inited
+2020-08-09 23:58:49.069 INFO  [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-09 23:58:50.368 INFO  [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-08-09 23:58:50.417 INFO  [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8080"]
+2020-08-09 23:58:50.443 INFO  [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:220 -Tomcat started on port(s): 8080 (http) with context path ''
+2020-08-09 23:58:50.456 INFO  [restartedMain]com.wsy.blog.BlogApplication.logStarted:61 -Started BlogApplication in 8.23 seconds (JVM running for 9.241)
+2020-08-09 23:58:51.050 INFO  [http-nio-8080-exec-1]o.a.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-08-09 23:58:51.052 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-08-09 23:58:51.070 INFO  [http-nio-8080-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 18 ms
+2020-08-09 23:58:56.961 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:113 -请求地址 : /test/testException
+2020-08-09 23:58:56.964 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:114 -请求方式 : GET
+2020-08-09 23:58:56.973 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:117 -IP : 0:0:0:0:0:0:0:1
+2020-08-09 23:58:56.974 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:119 -方法 : com.wsy.blog.controller.TestController.testException
+2020-08-09 23:58:56.975 INFO  [http-nio-8080-exec-2]com.wsy.blog.aspect.RequestAspect.printRequestLog:121 -请求参数：[2]
+2020-08-09 23:58:57.380 ERROR [http-nio-8080-exec-2]com.wsy.blog.advice.BlogExceptionAdvice.exceptionHandler:29 -统一异常处理：
+com.wsy.blog.exception.BlogException: 出现异常了
+	at com.wsy.blog.controller.TestController.testException(TestController.java:21)
+	at com.wsy.blog.controller.TestController$$FastClassBySpringCGLIB$$d51549b2.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:771)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.AspectJAfterThrowingAdvice.invoke(AspectJAfterThrowingAdvice.java:62)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor.invoke(AfterReturningAdviceInterceptor.java:55)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor.invoke(MethodBeforeAdviceInterceptor.java:56)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint.proceed(MethodInvocationProceedingJoinPoint.java:88)
+	at com.wsy.blog.aspect.RequestAspect.doAround(RequestAspect.java:68)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethodWithGivenArgs(AbstractAspectJAdvice.java:644)
+	at org.springframework.aop.aspectj.AbstractAspectJAdvice.invokeAdviceMethod(AbstractAspectJAdvice.java:633)
+	at org.springframework.aop.aspectj.AspectJAroundAdvice.invoke(AspectJAroundAdvice.java:70)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.wsy.blog.controller.TestController$$EnhancerBySpringCGLIB$$2faa7f74.testException(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:123)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+2020-08-09 23:58:57.454 WARN  [http-nio-8080-exec-2]o.s.w.s.m.m.annotation.ExceptionHandlerExceptionResolver.logException:199 -Resolved [com.wsy.blog.exception.BlogException: 出现异常了]

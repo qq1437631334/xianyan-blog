@@ -1,0 +1,72 @@
+2020-08-27 17:00:59.096 ERROR [restartedMain]o.s.boot.diagnostics.LoggingFailureAnalysisReporter.report:40 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method redisTemplate in com.wsy.blog.config.RedisConfig required a bean of type 'org.springframework.data.redis.connection.jedis.JedisConnectionFactory' that could not be found.
+
+The following candidates were found but could not be injected:
+	- Bean method 'redisConnectionFactory' in 'JedisConnectionConfiguration' not loaded because @ConditionalOnClass did not find required class 'redis.clients.jedis.Jedis'
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'org.springframework.data.redis.connection.jedis.JedisConnectionFactory' in your configuration.
+
+2020-08-27 17:02:27.969 ERROR [restartedMain]o.s.boot.diagnostics.LoggingFailureAnalysisReporter.report:40 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method redisTemplate in com.wsy.blog.config.RedisConfig required a bean of type 'org.springframework.data.redis.connection.jedis.JedisConnectionFactory' that could not be found.
+
+The following candidates were found but could not be injected:
+	- Bean method 'redisConnectionFactory' in 'JedisConnectionConfiguration' not loaded because @ConditionalOnClass did not find required class 'redis.clients.jedis.Jedis'
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'org.springframework.data.redis.connection.jedis.JedisConnectionFactory' in your configuration.
+
+2020-08-27 17:03:25.435 ERROR [restartedMain]o.s.boot.diagnostics.LoggingFailureAnalysisReporter.report:40 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method redisTemplate in com.wsy.blog.config.RedisConfig required a bean of type 'org.springframework.data.redis.connection.jedis.JedisConnectionFactory' that could not be found.
+
+The following candidates were found but could not be injected:
+	- Bean method 'redisConnectionFactory' in 'JedisConnectionConfiguration' not loaded because @ConditionalOnClass did not find required class 'redis.clients.jedis.Jedis'
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'org.springframework.data.redis.connection.jedis.JedisConnectionFactory' in your configuration.
+
+2020-08-27 17:06:59.464 ERROR [restartedMain]o.s.boot.diagnostics.LoggingFailureAnalysisReporter.report:40 -
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method redisTemplate in com.wsy.blog.config.RedisConfig required a bean of type 'org.springframework.data.redis.connection.jedis.JedisConnectionFactory' that could not be found.
+
+The following candidates were found but could not be injected:
+	- Bean method 'redisConnectionFactory' in 'JedisConnectionConfiguration' not loaded because @ConditionalOnMissingBean (types: org.springframework.data.redis.connection.RedisConnectionFactory; SearchStrategy: all) found beans of type 'org.springframework.data.redis.connection.RedisConnectionFactory' redisConnectionFactory
+
+
+Action:
+
+Consider revisiting the entries above or defining a bean of type 'org.springframework.data.redis.connection.jedis.JedisConnectionFactory' in your configuration.
+
