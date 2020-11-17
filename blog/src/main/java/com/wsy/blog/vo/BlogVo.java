@@ -1,6 +1,5 @@
 package com.wsy.blog.vo;
 
-import com.wsy.blog.constant.Const;
 import com.wsy.blog.pojo.Blog;
 import lombok.Data;
 

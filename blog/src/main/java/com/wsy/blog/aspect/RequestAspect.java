@@ -1,7 +1,7 @@
 package com.wsy.blog.aspect;
 
 import com.alibaba.fastjson.JSON;
-import com.wsy.blog.constant.Const;
+import com.wsy.blog.constant.Constants;
 import com.wsy.blog.enums.StateEnum;
 import com.wsy.blog.pojo.Log;
 import com.wsy.blog.service.LogService;
@@ -72,7 +72,7 @@ public class RequestAspect {
         Log logger = ThreadLocalContext.get().getLogger();
         logger.setLogTime(time);
         //日志查询不记录到日志里
-        if(!Const.LOG_PAGE_URL.equals(logger.getLogUrl())){
+        if(!Constants.LOG_PAGE_URL.equals(logger.getLogUrl())){
             logService.save(logger);
         }
         return ob;

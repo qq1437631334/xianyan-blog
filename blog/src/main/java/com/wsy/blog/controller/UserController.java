@@ -2,11 +2,10 @@ package com.wsy.blog.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.wsy.blog.constant.Const;
+import com.wsy.blog.constant.Constants;
 import com.wsy.blog.enums.ResultEnum;
 import com.wsy.blog.enums.StateEnum;
 import com.wsy.blog.exception.BlogException;
-import com.wsy.blog.pojo.Admin;
 import com.wsy.blog.pojo.User;
 import com.wsy.blog.service.UserService;
 import com.wsy.blog.token.UsernamePasswordToken;
@@ -115,7 +114,7 @@ public class UserController {
      */
     @PostMapping("getPage")
     public Result<PageInfo<User>> getPage(@RequestBody Page page){
-        PageUtils.checkParams(page,Const.MUSIC_ORDER_BY_FIELDS);
+        PageUtils.checkParams(page, Constants.MUSIC_ORDER_BY_FIELDS);
         //设置当前页面和每页条数
         com.github.pagehelper.Page<Object> startPage = PageHelper.startPage(page.getPageNum(), page.getPageSize(), page.getOrderByField() + " " + page.getOrderByMode());
         List<User> list = userService.getPage();

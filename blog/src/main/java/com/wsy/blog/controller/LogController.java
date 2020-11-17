@@ -2,19 +2,17 @@ package com.wsy.blog.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.wsy.blog.constant.Const;
+import com.wsy.blog.constant.Constants;
 import com.wsy.blog.pojo.Log;
 import com.wsy.blog.service.LogService;
 import com.wsy.blog.utils.Page;
 import com.wsy.blog.utils.PageUtils;
 import com.wsy.blog.utils.Result;
-import org.apache.ibatis.logging.LogException;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -30,7 +28,7 @@ public class LogController {
 
     @PostMapping("getPage")
     public Result<PageInfo<Log>> getPage(@RequestBody Page page){
-        PageUtils.checkParams(page,Const.LOG_ORDER_BY_FIELDS);
+        PageUtils.checkParams(page, Constants.LOG_ORDER_BY_FIELDS);
         //设置当前页面和每页条数
         com.github.pagehelper.Page<Object> startPage = PageHelper.startPage(page.getPageNum(), page.getPageSize(), page.getOrderByField() + " " + page.getOrderByMode());
         List<Log> list = logService.getPage();

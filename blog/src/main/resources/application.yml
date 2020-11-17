@@ -13,7 +13,7 @@ mybatis:
 spring:
   datasource:
     druid:
-      url: jdbc:mysql://112.74.99.109:3306/blog?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+      url: jdbc:mysql://oopsw.top:3306/blog?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
       username: root
       password: wsy112233
       driver-class-name: com.mysql.cj.jdbc.Driver
@@ -32,30 +32,11 @@ spring:
   data:
     # 配置mongodb
     mongodb:
-      host: 112.74.99.109
+      host: oopsw.top
       database: blog
   redis:
-    host: 112.74.99.109
+    host: oopsw.top
     port: 6379
-
-fdfs:
-  so-timeout: 2500
-  connect-timeout: 600
-  thumb-image:
-    width: 100
-    height: 100
-  tracker-list:
-    - 112.74.99.109:22122
-upload:
-  base-url: http://112.74.99.109/
-  allow-types:
-    - image/jpeg
-    - image/png
-    - image/bmp
-    - image/gif
-    - audio/mpeg
-
-
 #配置分页插件
 pagehelper:
   helperDialect: mysql
@@ -63,3 +44,12 @@ pagehelper:
   supportMethodsArguments: true
   pageSizeZero: false #pageSize=0
   params: count=countSql
+
+#配置七牛云对象存储
+upload:
+  base-url: http://808km.top/
+  access-key: 5-U8eZh2aa1zVv9fENG1TrZ8mTcX5OKYjvpreVBN
+  secret-key: SIcqae8SXsHfab7kEbjfSw1oCCWcxRq4v5SmzV-G
+  bucket: oopsw
+  picture-prefix: blog/img/
+

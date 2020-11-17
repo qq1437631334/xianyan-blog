@@ -1,9 +1,9 @@
 package com.wsy.blog.controller;
 
+import com.wsy.blog.enums.ResultEnum;
 import com.wsy.blog.utils.Result;
 import com.wsy.blog.utils.UploadService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,12 +15,19 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping("upload")
 public class UploadController {
-    @Autowired
-    private UploadService uploadService;
+
+    private final UploadService uploadService;
+
+    public UploadController(UploadService uploadService) {
+        this.uploadService = uploadService;
+    }
 
     @RequestMapping("uploadImage")
-    public Result uploadImage(MultipartFile file){
-        String url = uploadService.uploadImage(file);
-        return new Result("上传成功！",url);
+    public Result<?> uploadImage(MultipartFile file) {
+        String url = uploadService.upload(file);
+        if (StringUtils.isNotBlank(url)) {
+            return new Result<>("上传成功！", url);
+        }
+        return new Result<>(ResultEnum.ERROR);
     }
 }

@@ -1,52 +1,66 @@
 package com.wsy.blog.utils;
 
-import com.github.tobato.fastdfs.domain.fdfs.StorePath;
-import com.github.tobato.fastdfs.service.FastFileStorageClient;
+import com.google.gson.Gson;
+import com.qiniu.http.Response;
+import com.qiniu.storage.Configuration;
+import com.qiniu.storage.Region;
+import com.qiniu.storage.UploadManager;
+import com.qiniu.storage.model.DefaultPutRet;
+import com.qiniu.util.Auth;
 import com.wsy.blog.config.UploadConfig;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
- * @program: fastdfs-demo
- * @author: 雷哥
- * @create: 2020-01-03 10:48
- **/
+ *
+ */
 @Component
 @EnableConfigurationProperties(UploadConfig.class)
 public class UploadService {
-    private Log log = LogFactory.getLog(UploadService.class);
 
-    @Autowired
-    private FastFileStorageClient storageClient;
+    private final UploadConfig uploadConfig;
 
-    @Autowired
-    private UploadConfig uploadConfig;
+    public UploadService(UploadConfig uploadConfig) {
+        this.uploadConfig = uploadConfig;
+    }
 
-    public String uploadImage(MultipartFile file) {
-        // 1、校验文件类型
-        String contentType = file.getContentType();
-        if (!uploadConfig.getAllowTypes().contains(contentType)) {
-            throw new RuntimeException("文件类型不支持");
+
+    /**
+     * 构造一个带指定 Region 对象的配置类
+     */
+    Configuration cfg = new Configuration(Region.huanan());
+    /**
+     * ...其他参数参考类注释
+     */
+    UploadManager uploadManager = new UploadManager(cfg);
+
+
+
+    public String upload( MultipartFile mf) {
+        if (!mf.isEmpty()) {
+            try {
+                //将文件转换为字节数据
+                byte[] fileBytes = mf.getBytes();
+                //生成上传凭证
+                Auth auth = Auth.create(uploadConfig.getAccessKey(), uploadConfig.getSecretKey());
+                String upToken = auth.uploadToken(uploadConfig.getBucket());
+                //key 不指定的话文件存储名就为Hash值
+                String key = uploadConfig.getPicturePrefix() + mf.hashCode();
+                Response response = uploadManager.put(fileBytes, key, upToken);
+                //解析上传成功的结果
+                DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
+                String fileUrl = uploadConfig.getBaseUrl() + putRet.key;
+                Map<String,Object> res = new HashMap<>(8);
+                return fileUrl;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-
-        try {
-            // 3、上传到FastDFS
-            // 3.1、获取扩展名
-            String extension = StringUtils.substringAfterLast(file.getOriginalFilename(), ".");
-            // 3.2、上传
-            StorePath storePath = storageClient.uploadFile(file.getInputStream(), file.getSize(), extension, null);
-            // 返回路径
-            return uploadConfig.getBaseUrl() + storePath.getFullPath();
-        } catch (IOException e) {
-            log.error("【文件上传】上传文件失败！....{}", e);
-            throw new RuntimeException("【文件上传】上传文件失败！" + e.getMessage());
-        }
+        return "";
     }
 }

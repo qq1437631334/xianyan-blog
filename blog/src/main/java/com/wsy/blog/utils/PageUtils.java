@@ -1,6 +1,6 @@
 package com.wsy.blog.utils;
 
-import com.wsy.blog.constant.Const;
+import com.wsy.blog.constant.Constants;
 import com.wsy.blog.enums.ResultEnum;
 import com.wsy.blog.exception.BlogException;
 
@@ -19,7 +19,7 @@ public class PageUtils {
      */
     public static void checkParams(Page page, String[] fields){
         List<String> fieldList = Arrays.asList(fields);
-        List<String> modeList = Arrays.asList(Const.ORDER_BY_MODE);
+        List<String> modeList = Arrays.asList(Constants.ORDER_BY_MODE);
         if(1 > page.getPageNum() || page.getPageSize() < 1 || !modeList.contains(page.getOrderByMode().toLowerCase())
         || !fieldList.contains(page.getOrderByField().toLowerCase())) {
             throw new BlogException(ResultEnum.PARAMS_ERROR);

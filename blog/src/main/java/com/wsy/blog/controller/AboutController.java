@@ -2,7 +2,7 @@ package com.wsy.blog.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.wsy.blog.constant.Const;
+import com.wsy.blog.constant.Constants;
 import com.wsy.blog.pojo.About;
 import com.wsy.blog.service.AboutService;
 import com.wsy.blog.utils.Page;
@@ -53,7 +53,7 @@ public class AboutController {
      */
     @PostMapping("getPage")
     public Result<List<PageInfo>> getPage(@RequestBody Page page){
-        PageUtils.checkParams(page, Const.ABOUT_ORDER_BY_FIELDS);
+        PageUtils.checkParams(page, Constants.ABOUT_ORDER_BY_FIELDS);
         com.github.pagehelper.Page<Object> startPage = PageHelper.startPage(page.getPageNum(), page.getPageSize(), page.getOrderByField() + " " + page.getOrderByMode());
         List<About> list = aboutService.getPage();
         PageInfo pageInfo = new PageInfo(list);

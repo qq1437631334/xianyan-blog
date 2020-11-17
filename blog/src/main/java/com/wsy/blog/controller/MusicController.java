@@ -2,19 +2,15 @@ package com.wsy.blog.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.wsy.blog.constant.Const;
-import com.wsy.blog.enums.ResultEnum;
-import com.wsy.blog.exception.BlogException;
+import com.wsy.blog.constant.Constants;
 import com.wsy.blog.pojo.Music;
 import com.wsy.blog.service.MusicService;
 import com.wsy.blog.utils.Page;
 import com.wsy.blog.utils.PageUtils;
 import com.wsy.blog.utils.Result;
-import com.wsy.blog.vo.BlogVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -100,7 +96,7 @@ public class MusicController {
      */
     @PostMapping("getPage")
     public Result<PageInfo<Music>> getPage(@RequestBody Page page){
-        PageUtils.checkParams(page,Const.MUSIC_ORDER_BY_FIELDS);
+        PageUtils.checkParams(page, Constants.MUSIC_ORDER_BY_FIELDS);
         //设置当前页面和每页条数
         com.github.pagehelper.Page<Object> startPage = PageHelper.startPage(page.getPageNum(), page.getPageSize(), page.getOrderByField() + " " + page.getOrderByMode());
         List<Music> list = musicService.getPage();

@@ -4,7 +4,7 @@ package com.wsy.blog.constant;
  * @author wsy
  * @date 2020-08-11 15:54
  */
-public interface Const {
+public interface Constants {
 
     /**
      *排序方式
@@ -36,4 +36,9 @@ public interface Const {
      * 请求日志分页查询url
      */
     public static final String LOG_PAGE_URL = "/log/getPage";
+
+    /**
+     * 限定文件上传大小为10M以内
+     */
+    long FILE_SIZE_LIMIT = 1024 * 1024 * 10;
 }

@@ -2,9 +2,7 @@ package com.wsy.blog.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.wsy.blog.constant.Const;
-import com.wsy.blog.enums.ResultEnum;
-import com.wsy.blog.exception.BlogException;
+import com.wsy.blog.constant.Constants;
 import com.wsy.blog.pojo.Blog;
 import com.wsy.blog.pojo.Collection;
 import com.wsy.blog.pojo.Good;
@@ -17,9 +15,7 @@ import com.wsy.blog.vo.TimeLineVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -35,7 +31,7 @@ public class BlogController {
 
     @PostMapping("getPage")
     public Result<PageInfo<BlogVo>> getPage(@RequestBody Page page){
-        PageUtils.checkParams(page,Const.BLOG_ORDER_BY_FIELDS);
+        PageUtils.checkParams(page, Constants.BLOG_ORDER_BY_FIELDS);
         //设置当前页面和每页条数
         com.github.pagehelper.Page<Object> startPage = PageHelper.startPage(page.getPageNum(), page.getPageSize(), page.getOrderByField() + " " + page.getOrderByMode());
         List<BlogVo> list = blogService.getPage(page);

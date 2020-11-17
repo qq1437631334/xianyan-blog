@@ -14,6 +14,20 @@ import java.util.List;
 @Configuration
 @ConfigurationProperties(prefix = "upload")
 public class UploadConfig {
+    /**
+     * 设置您七牛云配置的域名
+     */
+
     private String baseUrl;
-    private List<String> allowTypes;
+
+    /**
+     * 设置七牛云的秘钥和存储桶
+     */
+    private String accessKey;
+    private String secretKey;
+    private String bucket;
+    /**
+     * 上传文件的前缀
+     */
+    private String picturePrefix;
 }
