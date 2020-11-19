@@ -156,7 +156,7 @@ public final class ExcelImportHandler {
      * @return
      */
     private Map<Integer, String> getTitleMap(Sheet sheet, ImportParams params) {
-        Map<Integer, String> titleMap = new HashMap<>();
+        Map<Integer, String> titleMap = new HashMap<>(8);
         Iterator<Cell> cellTitle;
         // 标题行
         Row headRow = null;

@@ -16,8 +16,10 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+
 /**
- *
+ * 上传服务
+ * @author wsy
  */
 @Component
 @EnableConfigurationProperties(UploadConfig.class)

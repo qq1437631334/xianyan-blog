@@ -2,7 +2,7 @@
   <div>
     <div class="menu-container">
       <a class="nav-logo" href="/">
-        <img src="http://808km.top/blog/myblog/static/img/logo.png" class="logo-img">
+        <img src="../../assets/img/logo.png" class="logo-img">
         <span class="logo-text">闲言</span>
       </a>
       <div class="nav-menu-search">

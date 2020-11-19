@@ -41,4 +41,9 @@ public interface Constants {
      * 限定文件上传大小为10M以内
      */
     long FILE_SIZE_LIMIT = 1024 * 1024 * 10;
+
+    /**
+     *  博客默认封面图片
+     */
+    String DEFAULT_BLOG_IMAGE = "http://808km.top/blog/img/default.jpg";
 }

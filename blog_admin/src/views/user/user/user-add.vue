@@ -45,7 +45,6 @@
 <script>
 import userApi from '@/api/myUser'
 import { getToken } from '@/utils/auth'
-import md5 from 'js-md5'
 export default {
   data() {
     return {
@@ -66,7 +65,6 @@ export default {
   },
   methods: {
     onSubmit() {
-      this.user.password = md5(this.user.password)
       console.log(this.user.password)
       userApi.save(this.user).then(res => {
         this.$message.success(res.msg)

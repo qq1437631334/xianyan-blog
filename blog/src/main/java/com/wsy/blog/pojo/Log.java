@@ -10,12 +10,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
-* @author wsy
-* @date 2020-08-10 10:40
-*/
-
-/**
  * 接口访问日志表
+ *
+ * @author wsy
+ * @date 2020-08-10 10:40
  */
 @Data
 @AllArgsConstructor
@@ -70,14 +68,14 @@ public class Log implements Serializable {
     /**
      * 请求ip
      */
-    @Excel(name = "请求ip",autoSize = true)
+    @Excel(name = "请求ip", autoSize = true)
     private String logIp;
 
     /**
      * 创建时间
      */
-    @Excel(name = "创建时间",autoSize = true)
-    @JsonFormat(pattern = "yyyy-MM-dd hh-mm-ss",timezone = "GTM+8")
+    @Excel(name = "创建时间", autoSize = true)
+    @JsonFormat(pattern = "yyyy-MM-dd hh-mm-ss", timezone = "GTM+8")
     private Date createdTime;
 
     /**

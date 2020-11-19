@@ -1,17 +1,16 @@
 package com.wsy.blog.pojo;
 
 import java.io.Serializable;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
-* @author wsy
-* @date 2020-08-10 10:40
-*/
-
-/**
  * 帖子类型表
+ *
+ * @author wsy
+ * @date 2020-08-10 10:40
  */
 @Data
 @AllArgsConstructor

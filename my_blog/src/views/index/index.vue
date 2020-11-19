@@ -3,7 +3,7 @@
     <div class="index-carousel">
       <a-carousel autoplay>
         <div>
-          <img src="http://808km.top/blog/myblog/static/img/carousel.gif" class="carousel-image">
+          <img src="../../assets/img/carousel.gif" class="carousel-image">
         </div>
       </a-carousel>
     </div>

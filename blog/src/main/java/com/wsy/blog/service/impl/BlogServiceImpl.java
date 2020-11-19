@@ -1,5 +1,6 @@
 package com.wsy.blog.service.impl;
 
+import com.wsy.blog.constant.Constants;
 import com.wsy.blog.dao.CollectionDao;
 import com.wsy.blog.dao.GoodDao;
 import com.wsy.blog.mapper.TypeMapper;
@@ -8,14 +9,12 @@ import com.wsy.blog.utils.IdWorker;
 import com.wsy.blog.utils.Page;
 import com.wsy.blog.utils.ShiroUtils;
 import com.wsy.blog.vo.BlogVo;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.CachePut;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
+
 import com.wsy.blog.mapper.BlogMapper;
 import com.wsy.blog.service.BlogService;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,41 +32,47 @@ import java.util.List;
 public class BlogServiceImpl implements BlogService {
 
 
-    @Resource
-    private BlogMapper blogMapper;
+    private final BlogMapper blogMapper;
 
-    @Autowired
-    private TypeMapper typeMapper;
+    private final TypeMapper typeMapper;
 
-    @Autowired
-    private GoodDao goodDao;
+    private final GoodDao goodDao;
 
-    @Autowired
-    private CollectionDao collectionDao;
+    private final CollectionDao collectionDao;
 
-    @Autowired
-    private IdWorker idWorker;
+    private final IdWorker idWorker;
+
+    public BlogServiceImpl(BlogMapper blogMapper, TypeMapper typeMapper, GoodDao goodDao, CollectionDao collectionDao, IdWorker idWorker) {
+        this.blogMapper = blogMapper;
+        this.typeMapper = typeMapper;
+        this.goodDao = goodDao;
+        this.collectionDao = collectionDao;
+        this.idWorker = idWorker;
+    }
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    @CachePut(cacheNames = "blog", key = "#blog.blogId")
     public void save(Blog blog) {
-        blog.setBlogId(idWorker.nextId()+"");
+        //设置博客id
+        blog.setBlogId(idWorker.nextId() + "");
+        //判断博客有没有设置封面 没有的话就设置成默认封面
+        if (StringUtils.isNotBlank(blog.getBlogImage())) {
+            blog.setBlogImage(Constants.DEFAULT_BLOG_IMAGE);
+        }
         blogMapper.save(blog);
+        //更新对应的博客类型数量加1
         Type oldType = typeMapper.getById(blog.getBlogType());
         oldType.setTypeBlogCount(oldType.getTypeBlogCount() + 1);
         typeMapper.update(oldType);
     }
 
 
-
     @Override
-    @Cacheable(cacheNames = "blog", key = "#id")
     public BlogVo getById(String id) {
         //先根据id查询出Blog
         Blog byId = blogMapper.getById(id);
         BlogVo blogVo = new BlogVo();
-        BeanUtils.copyProperties(byId,blogVo);
+        BeanUtils.copyProperties(byId, blogVo);
         String typeName = typeMapper.getNameById(blogVo.getBlogType());
         blogVo.setTypeName(typeName);
         return blogVo;
@@ -76,23 +81,23 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    @CacheEvict(cacheNames = "blog", key = "#id")
     public void deleteById(String id) {
         Blog oldBlog = blogMapper.getById(id);
         blogMapper.deleteById(id);
+        //删除博客后博客数量-1
         Type oldType = typeMapper.getById(oldBlog.getBlogType());
         oldType.setTypeBlogCount(oldType.getTypeBlogCount() - 1);
         typeMapper.update(oldType);
+        //删除博客后删除博客相关的点赞信息、评论信息、收藏信息
     }
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    @CachePut(cacheNames = "blog", key = "#blog.blogId")
     public void update(Blog blog) {
         Blog oldBlog = blogMapper.getById(blog.getBlogId());
         blogMapper.update(blog);
-        //代表改变了类型
-        if(!oldBlog.getBlogType().equals(blog.getBlogType())) {
+        //代表改变了博客类型 将原类型数量-1 新类型数量+1
+        if (!oldBlog.getBlogType().equals(blog.getBlogType())) {
             Type oldBlogType = typeMapper.getById(oldBlog.getBlogType());
             oldBlogType.setTypeBlogCount(oldBlogType.getTypeBlogCount() - 1);
             typeMapper.update(oldBlogType);
@@ -109,7 +114,7 @@ public class BlogServiceImpl implements BlogService {
         //将Blog 的属性赋值到 BlogVo
         for (Blog blog : blogs) {
             BlogVo item = new BlogVo();
-            BeanUtils.copyProperties(blog,item);
+            BeanUtils.copyProperties(blog, item);
             //设置类型名
             String typeName = typeMapper.getNameById(item.getBlogType());
             item.setTypeName(typeName);
@@ -134,7 +139,7 @@ public class BlogServiceImpl implements BlogService {
         List<BlogVo> blogVos = new ArrayList<>();
         for (Blog blog : list) {
             BlogVo blogVo = new BlogVo();
-            BeanUtils.copyProperties(blog,blogVo);
+            BeanUtils.copyProperties(blog, blogVo);
             String typeName = typeMapper.getNameById(blogVo.getBlogType());
             blogVo.setTypeName(typeName);
             blogVos.add(blogVo);
@@ -163,11 +168,8 @@ public class BlogServiceImpl implements BlogService {
     public boolean getIsGood(String blogId) {
         User loginUser = (User) ShiroUtils.getLoginUser();
         int count = goodDao.countByBlogIdAndUserId(blogId, loginUser.getUserId());
-        if(count == 0) {
-            return false;
-        } else {
-            return true;
-        }
+        //如果count 不等于0的话代表已点赞
+        return count != 0;
     }
 
     @Override
@@ -187,11 +189,7 @@ public class BlogServiceImpl implements BlogService {
     public boolean getIsCollection(String blogId) {
         User loginUser = (User) ShiroUtils.getLoginUser();
         int count = collectionDao.countByBlogIdAndUserId(blogId, loginUser.getUserId());
-        if(count == 0) {
-            return false;
-        } else {
-            return true;
-        }
+        return count != 0;
     }
 }
 

@@ -4,7 +4,7 @@ import { message } from 'ant-design-vue'
 import store from '@/store'
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API,
-  timeout: 20000 // request timeout
+  timeout: 20000 // 请求超时时间
 })
 
 // request interceptor

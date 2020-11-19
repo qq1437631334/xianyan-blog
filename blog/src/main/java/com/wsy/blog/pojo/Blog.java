@@ -9,13 +9,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
+ * 博客表
 * @author wsy
 * @date 2020-08-10 10:40
 */
-
-/**
- * 博客表
- */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

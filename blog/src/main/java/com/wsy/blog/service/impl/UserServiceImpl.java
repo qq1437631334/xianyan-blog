@@ -6,6 +6,7 @@ import com.wsy.blog.dao.CommentGoodDao;
 import com.wsy.blog.dao.GoodDao;
 import com.wsy.blog.mapper.BlogMapper;
 import com.wsy.blog.pojo.*;
+import com.wsy.blog.utils.Md5Utils;
 import com.wsy.blog.utils.Page;
 import com.wsy.blog.utils.ShiroUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -100,6 +101,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updatePassword(Integer id, String password) {
+        password = Md5Utils.toMD5(password);
         userMapper.updatePassword(id, password);
     }
 
@@ -129,7 +131,7 @@ public class UserServiceImpl implements UserService {
         }
         User user=  (User)ShiroUtils.getLoginUser();
         int collectionCount = collectionDao.countByUserId(user.getUserId());
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>(8);
         map.put("collectionCount",collectionCount);
         int commentCount = commentDao.countByCommentUserId(user.getUserId());
         map.put("commentCount",commentCount);

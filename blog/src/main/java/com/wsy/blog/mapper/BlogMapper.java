@@ -39,8 +39,9 @@ public interface BlogMapper {
     void update(Blog blog);
 
     /**
-     * 分页查询博客
-     * @return
+     * 分页查询
+     * @param page  分页
+     * @return  博客列表
      */
     List<Blog> getPage(Page page);
 

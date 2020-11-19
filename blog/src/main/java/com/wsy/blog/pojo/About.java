@@ -9,12 +9,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
-* @author wsy
-* @date 2020-08-10 10:40
-*/
-
-/**
  * 关于闲言表
+ *
+ * @author wsy
+ * @date 2020-08-10 10:40
  */
 @Data
 @AllArgsConstructor
@@ -43,13 +41,13 @@ public class About implements Serializable {
     /**
      * 创建时间
      */
-    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss",timezone = "GTM+8")
+    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss", timezone = "GTM+8")
     private Date createdTime;
 
     /**
      * 更新时间
      */
-    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss",timezone = "GTM+8")
+    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss", timezone = "GTM+8")
     private Date updateTime;
 
     /**

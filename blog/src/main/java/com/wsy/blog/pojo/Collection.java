@@ -31,7 +31,7 @@ public class Collection implements Serializable {
     /**
      * 收藏人
      */
-    private User User;
+    private User user;
 
     /**
      * 收藏人id
@@ -41,11 +41,11 @@ public class Collection implements Serializable {
     /**
      * 收藏博客
      */
-    private Blog Blog;
+    private Blog blog;
     /**
      * 评论博客id
      */
-    private String BlogId;
+    private String blogId;
 
     /**
      * 收藏时间

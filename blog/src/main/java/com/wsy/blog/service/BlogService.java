@@ -48,7 +48,8 @@ public interface BlogService{
 
     /**
      * 阅读博客
-     * @param id
+     * @param id    博客id
+     * @return  博客传输对象
      */
     BlogVo read(String id);
 
@@ -72,7 +73,8 @@ public interface BlogService{
 
     /**
      * 查询当前用户当前博客是否已经点赞
-     * @param blogId
+     * @param blogId    博客id
+     * @return  boolean
      */
     boolean getIsGood(String blogId);
 

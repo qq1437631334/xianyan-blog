@@ -1,7 +1,7 @@
 <template>
   <div>
     <a-card class="my-back-card" hoverable>
-      <img src="http://808km.top/blog/myblog/static/img/my-back.jpg" class="my-back">
+      <img src="../../assets/img/my-back.jpg" class="my-back">
       <img :src="adminInfo.header" class="my-header">
       <div class="my-bottom-container">
         <div class="my-nickname">{{ adminInfo.name }}</div>
@@ -11,16 +11,16 @@
           <div class="social-text">社交：</div>
           <div class="social-item">
             <a href="https://blog.csdn.net/weixin_43448598" target="_blank">
-              <img src="http://808km.top/blog/myblog/static/img/icons/csdn.png" class="social-icon">
+              <img src="../../assets/img/icons/csdn.png" class="social-icon">
             </a>
             <a href="https://gitee.com/Pink_oops" target="_blank">
-              <img src="http://808km.top/blog/myblog/static/img/icons/gitee.png" class="social-icon">
+              <img src="../../assets/img/icons/gitee.png" class="social-icon">
             </a>
             <a href="http://wpa.qq.com/msgrd?v=3&uin=1437631334&site=qq&menu=yes" target="_blank">
-              <img src="http://808km.top/blog/myblog/static/img/icons/qq.png" class="social-icon">
+              <img src="../../assets/img/icons/qq.png" class="social-icon">
             </a>
             <a href="https://github.com/qq1437631334" target="_blank">
-              <img src="http://808km.top/blog/myblog/static/img/icons/github.png" class="social-icon">
+              <img src="../../assets/img/icons/github.png" class="social-icon">
             </a>
           </div>
         </div>
@@ -29,7 +29,7 @@
           <div class="social-text">加入我们：</div>
           <div class="join-item">
             <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=c3929a708c3565df98464b67b976dc29c02ded8367e5f6a7a779e79f3dd056f9">
-              <img src="http://808km.top/blog/myblog/static/img/icons/QQqun.png" class="social-icon">
+              <img src="../../assets/img/icons/QQqun.png" class="social-icon">
             </a>
           </div>
         </div>

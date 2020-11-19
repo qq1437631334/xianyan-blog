@@ -17,7 +17,6 @@
 
 <script>
 import userApi from '@/api/myUser'
-import md5 from 'js-md5'
 export default {
   props: {
     id: {
@@ -37,8 +36,6 @@ export default {
     },
     onSubmit() {
       if (this.password === this.password2) {
-        this.password = md5(this.password)
-        this.password2 = this.password
         userApi.updatePassword(this.id, this.password).then(res => {
           this.$message.success(res.msg)
           this.$emit('getUserList')

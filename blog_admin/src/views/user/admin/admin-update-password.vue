@@ -17,7 +17,6 @@
 
 <script>
 import adminApi from '@/api/admin'
-import md5 from 'js-md5'
 export default {
   data: function() {
     return {
@@ -32,7 +31,6 @@ export default {
     },
     onSubmit() {
       if (this.password === this.password2) {
-        this.admin.password = md5(this.password)
         adminApi.updatePassword(this.admin).then(res => {
           this.$message.success(res.msg)
           this.close()

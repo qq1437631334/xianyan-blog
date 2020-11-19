@@ -6,6 +6,7 @@ import com.wsy.blog.exception.BlogException;
 import com.wsy.blog.pojo.Admin;
 import com.wsy.blog.service.AdminService;
 import com.wsy.blog.token.UsernamePasswordToken;
+import com.wsy.blog.utils.Md5Utils;
 import com.wsy.blog.utils.Result;
 import com.wsy.blog.utils.ShiroUtils;
 import com.wsy.blog.utils.StringUtils;
@@ -41,7 +42,7 @@ public class AdminController {
         if(null == admin || StringUtils.isNullOrEmpty(admin.getUsername()) || StringUtils.isNullOrEmpty(admin.getPassword())){
             return new Result<Object>(ResultEnum.PARAMS_NULL,"用户名或密码不能为空！");
         }
-        AuthenticationToken token = new UsernamePasswordToken(StateEnum.ADMIN.getCode(),admin.getUsername(),admin.getPassword());
+        AuthenticationToken token = new UsernamePasswordToken(StateEnum.ADMIN.getCode(),admin.getUsername(), Md5Utils.toMD5(admin.getPassword()));
         Subject subject = SecurityUtils.getSubject();
         //做登录操作
         try{
@@ -53,7 +54,7 @@ public class AdminController {
         }
         //登录成功
         Serializable sessionId = subject.getSession().getId();
-        Map<String, Object>resultMap = new HashMap<>();
+        Map<String, Object>resultMap = new HashMap<>(8);
         resultMap.put("token",sessionId);
         return new Result<>(resultMap);
     }

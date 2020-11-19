@@ -50,7 +50,8 @@ public interface AboutMapper {
     List<About> getPage();
 
     /**
-     * 查询当前启用的
+     * 获得启用的关于列表
+     * @return  启动的关于列表
      */
     List<About> getByEnable();
 }

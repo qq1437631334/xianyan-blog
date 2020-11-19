@@ -85,28 +85,6 @@ public class UserController {
         return new Result("修改成功！");
     }
 
-//    /**
-//     * 启用方法
-//     * @param id
-//     * @return
-//     */
-//    @PutMapping("enable/{id}")
-//    public Result enable(@PathVariable Integer id) {
-//        userService.enable(id);
-//        return new Result("启用成功");
-//    }
-//
-//    /**
-//     * 弃用方法
-//     * @param id
-//     * @return
-//     */
-//    @PutMapping("disable/{id}")
-//    public Result disable(@PathVariable Integer id) {
-//        userService.disable(id);
-//        return new Result("弃用成功");
-//    }
-
     /**
      * 分页查询
      * @param page
@@ -149,7 +127,7 @@ public class UserController {
         if(null == user || StringUtils.isNullOrEmpty(user.getUsername()) || StringUtils.isNullOrEmpty(user.getPassword())){
             return new Result<Object>(ResultEnum.PARAMS_NULL,"用户名或密码不能为空！");
         }
-        AuthenticationToken token = new UsernamePasswordToken(StateEnum.USER.getCode(),user.getUsername(),user.getPassword());
+        AuthenticationToken token = new UsernamePasswordToken(StateEnum.USER.getCode(),user.getUsername(),Md5Utils.toMD5(user.getPassword()));
         Subject subject = SecurityUtils.getSubject();
         //做登录操作
         try{
@@ -162,7 +140,7 @@ public class UserController {
         //登录成功
         Serializable sessionId = subject.getSession().getId();
         User loginUser = (User) ShiroUtils.getLoginUser();
-        Map<String, Object> resultMap = new HashMap<>();
+        Map<String, Object> resultMap = new HashMap<>(8);
         resultMap.put("token",sessionId);
         resultMap.put("userInfo",loginUser);
         return new Result("登陆成功",resultMap);

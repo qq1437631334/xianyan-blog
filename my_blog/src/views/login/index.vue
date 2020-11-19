@@ -149,7 +149,7 @@ export default {
   width: 100%;
   height: 100%;
   position: fixed;
-  background-image: url("http://808km.top/blog/myblog/login-back.jpg");
+  background-image: url("/public/login-back.jpg");
 }
 
 .login-container {
