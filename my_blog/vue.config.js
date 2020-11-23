@@ -33,6 +33,20 @@ module.exports = {
     }
   },
   configureWebpack: {
+    externals: {
+      /**
+       * 这里采用Object的形式
+       * 更多的形式参考(https://webpack.js.org/configuration/externals/#src/components/Sidebar/Sidebar.jsx)
+       * key: 依赖包的名字
+       * value: 依赖包挂载在项目中的变量名
+       * 挂载的变量必须与依赖包中挂载的一样，在项目中使用也是这个变量名
+       */
+      'vue': 'Vue',
+      'vuex': 'Vuex',
+      'vue-router': 'VueRouter',
+      'ant-design-vue': 'antd',
+      'Axios': 'axios'
+    },
     // provide the app's title in webpack's name field, so that
     // it can be accessed in index.html to inject the correct title.
     name: name,
