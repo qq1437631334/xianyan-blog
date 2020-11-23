@@ -1,9 +1,9 @@
 package com.wsy.blog.controller;
 
+import com.wsy.blog.annotation.Log;
 import com.wsy.blog.pojo.Link;
 import com.wsy.blog.service.LinkService;
 import com.wsy.blog.utils.Result;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,8 +16,11 @@ import java.util.List;
 @RequestMapping("link")
 public class LinkController {
 
-    @Autowired
-    private LinkService linkService;
+    private final LinkService linkService;
+
+    public LinkController(LinkService linkService) {
+        this.linkService = linkService;
+    }
 
     /**
      * 前台获得所有友情链接的方法
@@ -53,6 +56,7 @@ public class LinkController {
      * @param link
      * @return
      */
+    @Log(title = "保存友情链接")
     @PostMapping("save")
     public Result save(@RequestBody Link link) {
         linkService.save(link);
@@ -64,6 +68,7 @@ public class LinkController {
      * @param id
      * @return
      */
+    @Log(title = "删除友情链接")
     @DeleteMapping("delete/{id}")
     public Result delete(@PathVariable Integer id) {
         linkService.deleteById(id);
@@ -74,6 +79,7 @@ public class LinkController {
      * 根据id更新友情链接
      * @param link
      */
+    @Log(title = "更新友情链接")
     @PutMapping("update")
     public Result update(@RequestBody Link link){
         linkService.update(link);

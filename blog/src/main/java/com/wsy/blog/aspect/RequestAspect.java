@@ -3,25 +3,27 @@ package com.wsy.blog.aspect;
 import com.alibaba.fastjson.JSON;
 import com.wsy.blog.constant.Constants;
 import com.wsy.blog.enums.StateEnum;
-import com.wsy.blog.pojo.Log;
+import com.wsy.blog.annotation.Log;
 import com.wsy.blog.service.LogService;
 import com.wsy.blog.utils.StringUtils;
 import com.wsy.blog.utils.ThreadLocalContext;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 
 /**
@@ -36,13 +38,17 @@ import java.util.Arrays;
 @Slf4j
 public class RequestAspect {
 
-    @Autowired
-    LogService logService;
+
+    private final LogService logService;
+
+    public RequestAspect(LogService logService) {
+        this.logService = logService;
+    }
 
     /**
-     * 两个..代表所有子目录，最后括号里的两个..代表所有参数
+     * 配置切入点为标注了Log注解的方法
      */
-    @Pointcut("execution( * com.wsy.*.controller..*(..))")
+    @Pointcut("@annotation(com.wsy.blog.annotation.Log)")
     public void logPointCut() {
     }
 
@@ -51,6 +57,7 @@ public class RequestAspect {
      */
     @Before("logPointCut()")
     public void doBefore(JoinPoint joinPoint) throws Exception {
+        Log log = getAnnotationLog(joinPoint);
         // 接收到请求，记录请求内容
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         assert attributes != null;
@@ -58,9 +65,13 @@ public class RequestAspect {
         String uri = request.getRequestURI();
         // 记录下请求内容
         printRequestLog(joinPoint, request, uri);
-        Log logger = ThreadLocalContext.get().getLogger();
+        com.wsy.blog.pojo.Log logger = ThreadLocalContext.get().getLogger();
         //默认设置为正常状态
         logger.setLogStatus(StateEnum.REQUEST_SUCCESS.getCode());
+        //如果注解不为空则去获取注解中的title
+        if(null != log) {
+            logger.setLogTitle(log.title());
+        }
     }
 
     @Around("logPointCut()")
@@ -69,7 +80,7 @@ public class RequestAspect {
         Object ob = pjp.proceed();
         long time = System.currentTimeMillis() - startTime;
         log.info("耗时 : {}", time);
-        Log logger = ThreadLocalContext.get().getLogger();
+        com.wsy.blog.pojo.Log logger = ThreadLocalContext.get().getLogger();
         logger.setLogTime(time);
         //日志查询不记录到日志里
         if(!Constants.LOG_PAGE_URL.equals(logger.getLogUrl())){
@@ -87,7 +98,7 @@ public class RequestAspect {
     public void doAfterReturning(Object ret) {
         String result = JSON.toJSONString(ret);
         log.info("返回值：{}", JSON.toJSONString(ret));
-        Log logger = ThreadLocalContext.get().getLogger();
+        com.wsy.blog.pojo.Log logger = ThreadLocalContext.get().getLogger();
         logger.setLogResult(JSON.toJSONString(ret));
     }
 
@@ -99,7 +110,7 @@ public class RequestAspect {
      */
     @AfterThrowing(pointcut = "logPointCut()", throwing = "e")
     public void saveExceptionLog(JoinPoint joinPoint, Throwable e) {
-        Log logger = ThreadLocalContext.get().getLogger();
+        com.wsy.blog.pojo.Log logger = ThreadLocalContext.get().getLogger();
         logger.setLogStatus(StateEnum.REQUEST_ERROR.getCode());
         String exception = StringUtils.getPackageException(e, "com.wsy");
         logger.setLogMessage(exception);
@@ -129,7 +140,7 @@ public class RequestAspect {
 //        }
         log.info("请求参数：{}", params);
         // 获取日志实体
-        Log logger = ThreadLocalContext.get().getLogger();
+        com.wsy.blog.pojo.Log logger = ThreadLocalContext.get().getLogger();
 
         logger.setLogUrl(uri);
         logger.setLogMethod(request.getMethod());
@@ -137,4 +148,20 @@ public class RequestAspect {
         logger.setLogParams(params);
     }
 
+    /**
+     * 是否存在注解，如果存在就获取
+     *
+     * @param joinPoint
+     * @return
+     */
+    private Log getAnnotationLog(JoinPoint joinPoint) {
+        Signature signature = joinPoint.getSignature();
+        MethodSignature methodSignature = (MethodSignature) signature;
+        Method method = methodSignature.getMethod();
+
+        if (method != null) {
+            return method.getAnnotation(Log.class);
+        }
+        return null;
+    }
 }

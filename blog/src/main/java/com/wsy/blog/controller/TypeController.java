@@ -1,10 +1,10 @@
 package com.wsy.blog.controller;
 
+import com.wsy.blog.annotation.Log;
 import com.wsy.blog.enums.ResultEnum;
 import com.wsy.blog.pojo.Type;
 import com.wsy.blog.service.TypeService;
 import com.wsy.blog.utils.Result;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,8 +17,11 @@ import java.util.List;
 @RequestMapping("type")
 public class TypeController {
 
-    @Autowired
-    private TypeService typeService;
+    private final TypeService typeService;
+
+    public TypeController(TypeService typeService) {
+        this.typeService = typeService;
+    }
 
     /**
      * 前台获得所有类型的方法（启用了的）
@@ -72,6 +75,7 @@ public class TypeController {
      * @param type
      * @return
      */
+    @Log(title = "保存类型")
     @PostMapping("save")
     public Result save(@RequestBody Type type) {
         typeService.save(type);
@@ -83,6 +87,7 @@ public class TypeController {
      * @param id
      * @return
      */
+    @Log(title = "删除类型")
     @DeleteMapping("delete/{id}")
     public Result delete(@PathVariable Integer id) {
         typeService.deleteById(id);
@@ -93,6 +98,7 @@ public class TypeController {
      * 根据id更新类型
      * @param type
      */
+    @Log(title = "更新类型")
     @PutMapping("update")
     public Result update(@RequestBody Type type){
         typeService.update(type);
@@ -104,6 +110,7 @@ public class TypeController {
      * @param id
      * @return
      */
+    @Log(title = "启用类型")
     @PutMapping("enable/{id}")
     public Result enable(@PathVariable Integer id) {
         typeService.enable(id);
@@ -115,6 +122,7 @@ public class TypeController {
      * @param id
      * @return
      */
+    @Log(title = "弃用类型")
     @PutMapping("disable/{id}")
     public Result disable(@PathVariable Integer id) {
         typeService.disable(id);

@@ -26,6 +26,12 @@ public class Log implements Serializable {
     private Integer logId;
 
     /**
+     * 标题
+     */
+    @Excel(name = "标题")
+    private String logTitle;
+
+    /**
      * 请求路径
      */
     @Excel(name = "请求路径")
@@ -75,7 +81,7 @@ public class Log implements Serializable {
      * 创建时间
      */
     @Excel(name = "创建时间", autoSize = true)
-    @JsonFormat(pattern = "yyyy-MM-dd hh-mm-ss", timezone = "GTM+8")
+    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss", timezone = "GTM+8")
     private Date createdTime;
 
     /**

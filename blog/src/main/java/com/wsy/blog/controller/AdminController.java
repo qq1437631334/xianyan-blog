@@ -1,5 +1,7 @@
 package com.wsy.blog.controller;
 
+import com.wsy.blog.annotation.Log;
+import com.wsy.blog.dto.LoginDto;
 import com.wsy.blog.enums.ResultEnum;
 import com.wsy.blog.enums.StateEnum;
 import com.wsy.blog.exception.BlogException;
@@ -13,7 +15,6 @@ import com.wsy.blog.utils.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.subject.Subject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.Serializable;
@@ -28,21 +29,25 @@ import java.util.Map;
 @RequestMapping("admin")
 public class AdminController {
 
-    @Autowired
-    private AdminService adminService;
+    private final AdminService adminService;
+
+    public AdminController(AdminService adminService) {
+        this.adminService = adminService;
+    }
 
     /**
      * 登录功能
-     * @param admin 登录账号实体
+     * @param loginDto 登录账号实体
      * @return 结果集
      */
+    @Log(title = "登录")
     @PostMapping("login")
-    public Result<Object> login(@RequestBody Admin admin){
+    public Result<Object> login(@RequestBody LoginDto loginDto){
         //判断参数是否为空
-        if(null == admin || StringUtils.isNullOrEmpty(admin.getUsername()) || StringUtils.isNullOrEmpty(admin.getPassword())){
+        if(null == loginDto || StringUtils.isNullOrEmpty(loginDto.getUsername()) || StringUtils.isNullOrEmpty(loginDto.getPassword())){
             return new Result<Object>(ResultEnum.PARAMS_NULL,"用户名或密码不能为空！");
         }
-        AuthenticationToken token = new UsernamePasswordToken(StateEnum.ADMIN.getCode(),admin.getUsername(), Md5Utils.toMD5(admin.getPassword()));
+        AuthenticationToken token = new UsernamePasswordToken(StateEnum.ADMIN.getCode(),loginDto.getUsername(), Md5Utils.toMD5(loginDto.getPassword()));
         Subject subject = SecurityUtils.getSubject();
         //做登录操作
         try{
@@ -63,6 +68,7 @@ public class AdminController {
      * 获得当前登录信息
      * @return 结果集
      */
+    @Log(title = "获取当前登录信息")
     @GetMapping("info")
     public Result<Admin> info(){
         Admin loginUser = (Admin) ShiroUtils.getLoginUser();
@@ -88,6 +94,7 @@ public class AdminController {
      * @param admin 管理员实体
      * @return 结果集
      */
+    @Log(title = "更新管理员信息")
     @PutMapping("updateInfo")
     public Result updateInfo(@RequestBody Admin admin){
         adminService.updateInfo(admin);
@@ -99,6 +106,7 @@ public class AdminController {
      * @param admin 管理员实体
      * @return  结果集
      */
+    @Log(title = "更新管理员密码")
     @PutMapping("updatePassword")
     public Result updatePassword(@RequestBody Admin admin){
         adminService.updatePassword(admin);

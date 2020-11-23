@@ -93,7 +93,6 @@
 </template>
 <script>
 import userApi from '@/api/myUser'
-import md5 from 'js-md5'
 import { getToken } from '@/utils/auth'
 export default {
   data() {
@@ -151,7 +150,6 @@ export default {
       this.passwordForm.validateFields((err, values) => {
         if (values.password) {
           values.userId = this.user.userId
-          values.password = md5(values.password)
           if (this.header != null) {
             values.header = this.header
           }

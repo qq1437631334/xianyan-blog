@@ -2,13 +2,13 @@ package com.wsy.blog.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.wsy.blog.annotation.Log;
 import com.wsy.blog.constant.Constants;
 import com.wsy.blog.pojo.Music;
 import com.wsy.blog.service.MusicService;
 import com.wsy.blog.utils.Page;
 import com.wsy.blog.utils.PageUtils;
 import com.wsy.blog.utils.Result;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,8 +22,11 @@ import java.util.List;
 @RequestMapping("music")
 public class MusicController {
 
-    @Autowired
-    private MusicService musicService;
+    private final MusicService musicService;
+
+    public MusicController(MusicService musicService) {
+        this.musicService = musicService;
+    }
 
     /**
      * 根据id查询音乐
@@ -40,6 +43,7 @@ public class MusicController {
      * @param music 音乐 实体
      * @return  结果集
      */
+    @Log(title = "保存音乐")
     @PostMapping("save")
     public Result<Object> save(@RequestBody Music music) {
         musicService.save(music);
@@ -51,6 +55,7 @@ public class MusicController {
      * @param id id
      * @return  结果集
      */
+    @Log(title = "删除音乐")
     @DeleteMapping("delete/{id}")
     public Result delete(@PathVariable Integer id) {
         musicService.deleteById(id);
@@ -61,6 +66,7 @@ public class MusicController {
      * 根据id更新音乐
      * @param music
      */
+    @Log(title = "更新音乐")
     @PutMapping("update")
     public Result update(@RequestBody Music music){
         musicService.update(music);
@@ -72,6 +78,7 @@ public class MusicController {
      * @param id
      * @return
      */
+    @Log(title = "启用音乐")
     @PutMapping("enable/{id}")
     public Result enable(@PathVariable Integer id) {
         musicService.enable(id);
@@ -83,6 +90,7 @@ public class MusicController {
      * @param id
      * @return
      */
+    @Log(title = "弃用音乐")
     @PutMapping("disable/{id}")
     public Result disable(@PathVariable Integer id) {
         musicService.disable(id);
@@ -106,6 +114,10 @@ public class MusicController {
         return new Result<>("查询成功！",pageInfo);
     }
 
+    /**
+     * 查询所有音乐
+     * @return  音乐列表
+     */
     @GetMapping("getList")
     public Result getList(){
         List<Music> list = musicService.getList();

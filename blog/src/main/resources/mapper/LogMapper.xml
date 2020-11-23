@@ -5,6 +5,7 @@
         <!--@mbg.generated-->
         <!--@Table bl_log-->
         <id column="log_id" jdbcType="INTEGER" property="logId"/>
+        <result column="log_title" jdbcType="VARCHAR" property="logTitle"/>
         <result column="log_url" jdbcType="VARCHAR" property="logUrl"/>
         <result column="log_params" jdbcType="VARCHAR" property="logParams"/>
         <result column="log_status" jdbcType="INTEGER" property="logStatus"/>
@@ -18,8 +19,8 @@
     </resultMap>
 
     <insert id="save" parameterType="com.wsy.blog.pojo.Log">
-        insert into bl_log (log_url, log_params, log_status, log_message, log_method, log_time, log_result, log_ip)
-        values (#{logUrl}, #{logParams}, #{logStatus}, #{logMessage}, #{logMethod}, #{logTime}, #{logResult}, #{logIp})
+        insert into bl_log (log_url,log_title, log_params, log_status, log_message, log_method, log_time, log_result, log_ip)
+        values (#{logUrl},#{logTitle}, #{logParams}, #{logStatus}, #{logMessage}, #{logMethod}, #{logTime}, #{logResult}, #{logIp})
     </insert>
 
     <delete id="deleteById">
@@ -29,6 +30,7 @@
     </delete>
     <select id="getPage" resultMap="BaseResultMap">
         select log_id,
+               log_title,
                log_url,
                log_params,
                log_status,
@@ -42,6 +44,7 @@
     </select>
     <select id="getById" resultType="com.wsy.blog.pojo.Log">
         select log_id,
+               log_title,
                log_url,
                log_params,
                log_status,
@@ -56,6 +59,7 @@
     </select>
     <select id="getAll" resultMap="BaseResultMap">
         select log_id,
+               log_title,
                log_url,
                log_params,
                log_status,

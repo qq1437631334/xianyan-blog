@@ -12,6 +12,7 @@
     >
       <el-table-column type="selection" width="55" select-on-indeterminate />
       <el-table-column prop="logId" label="编号" width="70" />
+      <el-table-column prop="logTitle" label="标题" width="100" />
       <el-table-column prop="logUrl" label="请求地址" width="180" />
       <el-table-column prop="logParams" label="请求参数" width="300" show-overflow-tooltip />
       <el-table-column prop="logStatus" label="请求状态" width="60">

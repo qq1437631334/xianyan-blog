@@ -2,13 +2,13 @@ package com.wsy.blog.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.wsy.blog.annotation.Log;
 import com.wsy.blog.constant.Constants;
 import com.wsy.blog.pojo.About;
 import com.wsy.blog.service.AboutService;
 import com.wsy.blog.utils.Page;
 import com.wsy.blog.utils.PageUtils;
 import com.wsy.blog.utils.Result;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,8 +22,11 @@ import java.util.List;
 @RequestMapping("about")
 public class AboutController {
 
-    @Autowired
-    private AboutService aboutService;
+    private final AboutService aboutService;
+
+    public AboutController(AboutService aboutService) {
+        this.aboutService = aboutService;
+    }
 
     /**
      * 根据id查询关于我的
@@ -40,6 +43,7 @@ public class AboutController {
      * @param about 关于我的 实体
      * @return  结果集
      */
+    @Log(title = "保存关于我的")
     @PostMapping("save")
     public Result<Object> save(@RequestBody About about) {
         aboutService.save(about);
@@ -67,6 +71,7 @@ public class AboutController {
      * @param id id
      * @return  结果集
      */
+    @Log(title = "删除关于我的")
     @DeleteMapping("delete/{id}")
     public Result delete(@PathVariable Integer id) {
         aboutService.deleteById(id);
@@ -77,6 +82,7 @@ public class AboutController {
      * 根据id更新关于我的
      * @param about
      */
+    @Log(title = "更新关于我的")
     @PutMapping("update")
     public Result update(@RequestBody About about){
         aboutService.update(about);
@@ -88,6 +94,7 @@ public class AboutController {
      * @param id
      * @return
      */
+    @Log(title = "启用关于我的")
     @PutMapping("enable/{id}")
     public Result enable(@PathVariable Integer id) {
         aboutService.enable(id);
@@ -99,6 +106,7 @@ public class AboutController {
      * @param id
      * @return
      */
+    @Log(title = "弃用关于我的")
     @PutMapping("disable/{id}")
     public Result disable(@PathVariable Integer id) {
         aboutService.disable(id);
@@ -109,6 +117,7 @@ public class AboutController {
      * 阅读关于我的
      * @return
      */
+    @Log(title = "阅读关于我的")
     @PutMapping("read")
     public Result<About> read() {
         About about = aboutService.read();

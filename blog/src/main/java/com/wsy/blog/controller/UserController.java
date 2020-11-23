@@ -2,7 +2,9 @@ package com.wsy.blog.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.wsy.blog.annotation.Log;
 import com.wsy.blog.constant.Constants;
+import com.wsy.blog.dto.LoginDto;
 import com.wsy.blog.enums.ResultEnum;
 import com.wsy.blog.enums.StateEnum;
 import com.wsy.blog.exception.BlogException;
@@ -13,7 +15,6 @@ import com.wsy.blog.utils.*;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.subject.Subject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.Serializable;
@@ -30,8 +31,11 @@ import java.util.Map;
 @RequestMapping("user")
 public class UserController {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
     /**
      * 根据id查询用户
@@ -48,6 +52,7 @@ public class UserController {
      * @param user 用户 实体
      * @return  结果集
      */
+    @Log(title = "保存用户")
     @PostMapping("save")
     public Result<Object> save(@RequestBody User user) {
         userService.save(user);
@@ -59,6 +64,7 @@ public class UserController {
      * @param id id
      * @return  结果集
      */
+    @Log(title = "删除用户")
     @DeleteMapping("delete/{id}")
     public Result delete(@PathVariable Integer id) {
         userService.deleteById(id);
@@ -69,6 +75,7 @@ public class UserController {
      * 根据id更新用户
      * @param user
      */
+    @Log(title = "更新用户")
     @PutMapping("update")
     public Result update(@RequestBody User user){
         userService.update(user);
@@ -79,6 +86,7 @@ public class UserController {
      * 根据id修改用户密码
      * @param id
      */
+    @Log(title = "修改用户密码")
     @PutMapping("updatePassword/{id}&{password}")
     public Result update(@PathVariable Integer id, @PathVariable String password) {
         userService.updatePassword(id, password);
@@ -107,6 +115,7 @@ public class UserController {
      * @param user
      * @return
      */
+    @Log(title = "注册用户")
     @PostMapping("register")
     public Result register(@RequestBody User user){
         if(userService.getByUsername(user.getUsername()) != null){
@@ -118,16 +127,17 @@ public class UserController {
 
     /**
      * 登录功能
-     * @param user 登录账号实体
+     * @param loginDto 登录账号实体
      * @return 结果集
      */
+    @Log(title = "登录")
     @PostMapping("login")
-    public Result<Object> login(@RequestBody User user){
+    public Result<Object> login(@RequestBody LoginDto loginDto){
         //判断参数是否为空
-        if(null == user || StringUtils.isNullOrEmpty(user.getUsername()) || StringUtils.isNullOrEmpty(user.getPassword())){
+        if(null == loginDto || StringUtils.isNullOrEmpty(loginDto.getUsername()) || StringUtils.isNullOrEmpty(loginDto.getPassword())){
             return new Result<Object>(ResultEnum.PARAMS_NULL,"用户名或密码不能为空！");
         }
-        AuthenticationToken token = new UsernamePasswordToken(StateEnum.USER.getCode(),user.getUsername(),Md5Utils.toMD5(user.getPassword()));
+        AuthenticationToken token = new UsernamePasswordToken(StateEnum.USER.getCode(),loginDto.getUsername(),Md5Utils.toMD5(loginDto.getPassword()));
         Subject subject = SecurityUtils.getSubject();
         //做登录操作
         try{
@@ -175,6 +185,7 @@ public class UserController {
      * @param id
      * @return
      */
+    @Log(title = "取消收藏")
     @DeleteMapping("deleteCollection/{id}")
     public Result deleteCollection(@PathVariable String id) {
         userService.deleteCollection(id);

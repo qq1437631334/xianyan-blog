@@ -93,7 +93,6 @@
 </template>
 <script>
 import userApi from '@/api/myUser'
-import md5 from 'js-md5'
 import { setToken } from '@/utils/auth'
 export default {
   data() {
@@ -121,7 +120,7 @@ export default {
       e.preventDefault()
       // eslint-disable-next-line handle-callback-err
       this.loginForm.validateFields((err, values) => {
-        values.password = md5(values.password)
+        console.log(values)
         userApi.login(values).then(res => {
           setToken(res.data.token)
           this.$store.commit('SET_USER_INFO', res.data.userInfo)
@@ -134,7 +133,6 @@ export default {
       e.preventDefault()
       // eslint-disable-next-line handle-callback-err
       this.registerForm.validateFields((err, values) => {
-        values.password = md5(values.password)
         userApi.register(values).then(res => {
           this.$message.info(res.msg)
           location.reload()
@@ -149,7 +147,7 @@ export default {
   width: 100%;
   height: 100%;
   position: fixed;
-  background-image: url("/public/login-back.jpg");
+  background-image: url("http://808km.top/public/login-back.jpg");
 }
 
 .login-container {

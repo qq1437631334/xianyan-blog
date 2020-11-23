@@ -1,10 +1,10 @@
 package com.wsy.blog.controller;
 
+import com.wsy.blog.annotation.Log;
 import com.wsy.blog.pojo.Comment;
 import com.wsy.blog.service.CommentService;
 import com.wsy.blog.utils.Page;
 import com.wsy.blog.utils.Result;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,14 +17,18 @@ import java.util.List;
 @RequestMapping("comment")
 public class CommentController {
 
-    @Autowired
-    private CommentService commentService;
+    private final CommentService commentService;
+
+    public CommentController(CommentService commentService) {
+        this.commentService = commentService;
+    }
 
     /**
      * 保存
      * @param comment
      * @return
      */
+    @Log(title = "保存评论")
     @PostMapping("save")
     public Result save(@RequestBody Comment comment) {
         commentService.save(comment);
@@ -47,6 +51,7 @@ public class CommentController {
      * @param commentId
      * @return
      */
+    @Log(title = "评论点赞")
     @PostMapping("commentGood/{blogId}&{commentId}")
     public Result commentGood(@PathVariable String blogId, @PathVariable String commentId) {
         commentService.commentGood(blogId,commentId);
@@ -75,6 +80,7 @@ public class CommentController {
         return new Result(page);
     }
 
+    @Log(title = "删除评论")
     @DeleteMapping("delete/{id}")
     public Result delete(@PathVariable String id) {
         commentService.delete(id);

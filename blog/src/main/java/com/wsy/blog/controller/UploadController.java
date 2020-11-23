@@ -1,5 +1,6 @@
 package com.wsy.blog.controller;
 
+import com.wsy.blog.annotation.Log;
 import com.wsy.blog.enums.ResultEnum;
 import com.wsy.blog.utils.Result;
 import com.wsy.blog.utils.UploadService;
@@ -22,6 +23,7 @@ public class UploadController {
         this.uploadService = uploadService;
     }
 
+    @Log(title = "上传图片")
     @RequestMapping("uploadImage")
     public Result<?> uploadImage(MultipartFile file) {
         String url = uploadService.upload(file);

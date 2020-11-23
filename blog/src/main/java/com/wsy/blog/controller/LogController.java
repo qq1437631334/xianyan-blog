@@ -9,7 +9,6 @@ import com.wsy.blog.utils.Page;
 import com.wsy.blog.utils.PageUtils;
 import com.wsy.blog.utils.Result;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
@@ -23,8 +22,11 @@ import java.util.List;
 @RequestMapping("log")
 public class LogController {
 
-    @Autowired
-    private LogService logService;
+    private final LogService logService;
+
+    public LogController(LogService logService) {
+        this.logService = logService;
+    }
 
     @PostMapping("getPage")
     public Result<PageInfo<Log>> getPage(@RequestBody Page page){
@@ -53,6 +55,7 @@ public class LogController {
      * @param id
      * @return
      */
+    @com.wsy.blog.annotation.Log(title = "删除日志")
     @DeleteMapping("delete/{id}")
     public Result delete(@PathVariable Integer id) {
         logService.deleteById(id);
@@ -64,6 +67,7 @@ public class LogController {
      * @param ids
      * @return
      */
+    @com.wsy.blog.annotation.Log(title = "删除日志")
     @DeleteMapping("deleteByIds")
     public Result deleteByIds(@RequestBody List<Integer> ids){
         logService.deleteByIds(ids);
@@ -73,6 +77,7 @@ public class LogController {
     /**
      * 导出所有日志
      */
+    @com.wsy.blog.annotation.Log(title = "导出日志")
     @GetMapping("export")
     public void export(HttpServletResponse response) throws Exception{
         Workbook workbook = logService.export();

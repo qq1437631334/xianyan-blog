@@ -2,6 +2,7 @@ package com.wsy.blog.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.wsy.blog.annotation.Log;
 import com.wsy.blog.constant.Constants;
 import com.wsy.blog.pojo.Blog;
 import com.wsy.blog.pojo.Collection;
@@ -12,7 +13,6 @@ import com.wsy.blog.utils.PageUtils;
 import com.wsy.blog.utils.Result;
 import com.wsy.blog.vo.BlogVo;
 import com.wsy.blog.vo.TimeLineVo;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -26,8 +26,11 @@ import java.util.List;
 @RequestMapping("blog")
 public class BlogController {
 
-    @Autowired
-    private BlogService blogService;
+    private final BlogService blogService;
+
+    public BlogController(BlogService blogService) {
+        this.blogService = blogService;
+    }
 
     @PostMapping("getPage")
     public Result<PageInfo<BlogVo>> getPage(@RequestBody Page page){
@@ -57,6 +60,7 @@ public class BlogController {
      * @param blog
      * @return
      */
+    @Log(title = "保存博客")
     @PostMapping("save")
     public Result save(@RequestBody Blog blog) {
         blogService.save(blog);
@@ -68,6 +72,7 @@ public class BlogController {
      * @param id
      * @return
      */
+    @Log(title = "删除博客")
     @DeleteMapping("delete/{id}")
     public Result delete(@PathVariable String id) {
         blogService.deleteById(id);
@@ -78,6 +83,7 @@ public class BlogController {
      * 根据id更新博客
      * @param blog
      */
+    @Log(title = "更新博客")
     @PutMapping("update")
     public Result update(@RequestBody Blog blog){
         blogService.update(blog);
@@ -89,6 +95,7 @@ public class BlogController {
      * @param id
      * @return
      */
+    @Log(title = "阅读博客")
     @PutMapping("read/{id}")
     public Result<BlogVo> read(@PathVariable String id) {
         BlogVo blogVo = blogService.read(id);
@@ -111,6 +118,7 @@ public class BlogController {
      *
      * @return
      */
+    @Log(title = "查询时间轴")
     @GetMapping("getTimeLine")
     public Result<List<TimeLineVo>> getTimeLine() {
         List<TimeLineVo> timeList = new ArrayList<>(16);
@@ -146,6 +154,7 @@ public class BlogController {
      * @param good
      * @return
      */
+    @Log(title = "点赞")
     @PostMapping("good")
     public Result good(@RequestBody Good good) {
         blogService.good(good);
@@ -168,6 +177,7 @@ public class BlogController {
      * @param collection
      * @return
      */
+    @Log(title = "收藏博客")
     @PostMapping("collection")
     public Result collection(@RequestBody Collection collection) {
         blogService.collection(collection);
