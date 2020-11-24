@@ -1,13 +1,16 @@
 package com.wsy.blog.interceptor;
 
+import com.wsy.blog.config.ShiroFilterConfig;
 import com.wsy.blog.enums.ResultEnum;
 import com.wsy.blog.exception.BlogException;
 import com.wsy.blog.utils.ShiroUtils;
 import com.wsy.blog.utils.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * @Author: WSY
@@ -15,26 +18,9 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class LoginInterceptor implements HandlerInterceptor {
 
-    /**
-     * 放行的白名单
-     */
-    private static String[] whiteList = {
-            "/admin/login",
-            "/user/login",
-            "/user/register",
-            "/link/getAll",
-            "/music/getList",
-            "/about/read",
-            "/type/getAll",
-            "/blog/recomRead",
-            "/blog/read",
-            "/blog/getTimeLine",
-            "/blog/getPage",
-            "/comment/getByBlog",
-            "/admin/getAdmin",
-            "/blog/recommendedRead",
-            "/comment/getByBlogList/",
-    };
+    @Autowired
+    private ShiroFilterConfig shiroFilterConfig;
+
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -61,8 +47,9 @@ public class LoginInterceptor implements HandlerInterceptor {
      * @return
      */
     private boolean containsWhiteList(String s) {
-        for (String url : whiteList) {
-            if (s.contains(url)) {
+        List<String> anons = this.shiroFilterConfig.getAnons();
+        for (String url : anons) {
+            if (url.contains(s)) {
                 return true;
             }
         }

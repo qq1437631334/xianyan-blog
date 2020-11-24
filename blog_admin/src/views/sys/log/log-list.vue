@@ -26,6 +26,7 @@
       <el-table-column prop="logTime" label="响应时间（毫秒）" width="80" />
       <el-table-column prop="logResult" label="返回结果" width="300" show-overflow-tooltip />
       <el-table-column prop="logIp" label="请求ip" width="200" />
+      <el-table-column prop="createdBy" label="请求用户" width="180" />
       <el-table-column prop="createdTime" label="创建时间" width="180" />
     </el-table>
     <!-- 分页组件 -->

@@ -1,5 +1,6 @@
 package com.wsy.blog.service.impl;
 
+import cn.hutool.core.date.DateUtil;
 import com.wsy.blog.enums.ResultEnum;
 import com.wsy.blog.exception.BlogException;
 import com.wsy.blog.mapper.LinkMapper;
@@ -22,6 +23,7 @@ public class LinkServiceImpl implements LinkService {
 
     @Override
     public void save(Link link) {
+        link.setCreatedTime(DateUtil.date());
         linkMapper.save(link);
     }
 
@@ -47,6 +49,7 @@ public class LinkServiceImpl implements LinkService {
 
     @Override
     public void update(Link link) {
+        link.setUpdateTime(DateUtil.date());
         linkMapper.update(link);
     }
 }

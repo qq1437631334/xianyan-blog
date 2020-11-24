@@ -9,7 +9,6 @@ import com.wsy.blog.pojo.*;
 import com.wsy.blog.utils.Md5Utils;
 import com.wsy.blog.utils.Page;
 import com.wsy.blog.utils.ShiroUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -33,20 +32,23 @@ public class UserServiceImpl implements UserService {
     @Resource
     private UserMapper userMapper;
 
-    @Autowired
-    private CollectionDao collectionDao;
+    private final CollectionDao collectionDao;
 
-    @Autowired
-    private CommentDao commentDao;
+    private final CommentDao commentDao;
 
-    @Autowired
-    private GoodDao goodDao;
+    private final GoodDao goodDao;
 
-    @Autowired
-    private CommentGoodDao commentGoodDao;
+    private final CommentGoodDao commentGoodDao;
 
-    @Autowired
-    private BlogMapper blogMapper;
+    private final BlogMapper blogMapper;
+
+    public UserServiceImpl(CollectionDao collectionDao, CommentDao commentDao, GoodDao goodDao, CommentGoodDao commentGoodDao, BlogMapper blogMapper) {
+        this.collectionDao = collectionDao;
+        this.commentDao = commentDao;
+        this.goodDao = goodDao;
+        this.commentGoodDao = commentGoodDao;
+        this.blogMapper = blogMapper;
+    }
 
     @Override
     public User getById(Integer id) {

@@ -5,7 +5,7 @@
         <div class="blog-title">{{ item.blogTitle }}</div>
         <div class="blog-type">分类：<a-tag color="green">{{ item.typeName }}</a-tag></div>
         <div class="blog-bottom">
-          <div class="blog-time">{{ item.createdTime }}}</div>
+          <div class="blog-time">{{ item.createdTime }}</div>
           <div class="blog-meta">
             <a-icon type="eye" /> {{ item.blogRead }}
             <a-icon type="heart" /> {{ item.blogCollection }}

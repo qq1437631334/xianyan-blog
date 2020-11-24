@@ -36,6 +36,13 @@
         <div v-show="register" class="register">
           <a-form :form="registerForm" @submit="registerSubmit">
             <a-form-item>
+              <div class="update-img-container">
+                <img :src="header?header:defaultHeaderUrl" class="user-header"><br>
+                <a href="javascript:void(0);" @click="openHeaderUploadDialog">点我上传</a>
+                <a-input v-decorator="['header', { rules: [{ required: true, message: '请上传头像' }] }]" hidden />
+              </div>
+            </a-form-item>
+            <a-form-item>
               <a-input
                 v-decorator="[
                   'username',
@@ -89,11 +96,23 @@
         </div>
       </div>
     </div>
+    <a-modal
+      title="上传头像"
+      :visible="uploadDialog"
+      @cancel="uploadCancel"
+    >
+      <a-upload-dragger name="file" :multiple="true" :action="uploadUrl" :headers="headers" @change="handleChange">
+        <p class="ant-upload-drag-icon">
+          <a-icon type="inbox" />
+        </p>
+        <p class="ant-upload-text">点击上传或拖拽到这里</p>
+      </a-upload-dragger>
+    </a-modal>
   </div>
 </template>
 <script>
 import userApi from '@/api/myUser'
-import { setToken } from '@/utils/auth'
+import { setToken, getToken } from '@/utils/auth'
 export default {
   data() {
     return {
@@ -101,7 +120,19 @@ export default {
       login: true,
       loginForm: this.$form.createForm(this),
       registerForm: this.$form.createForm(this),
-      register: false
+      register: false,
+      // 控制上传弹窗
+      uploadDialog: false,
+      // 上传图片路径
+      uploadUrl: process.env.VUE_APP_UPLOAD_URL,
+      // 上传文件的请求头
+      headers: {
+        Authorization: getToken()
+      },
+      //  默认头像路径
+      defaultHeaderUrl: 'http://808km.top/blog/myblog/static/img/78a381109dd1919a0bde420b62525b2df37ac73f17b1-rx7BWq_fw658.png',
+      //  注册表单的header
+      header: undefined
     }
   },
   methods: {
@@ -120,7 +151,6 @@ export default {
       e.preventDefault()
       // eslint-disable-next-line handle-callback-err
       this.loginForm.validateFields((err, values) => {
-        console.log(values)
         userApi.login(values).then(res => {
           setToken(res.data.token)
           this.$store.commit('SET_USER_INFO', res.data.userInfo)
@@ -133,11 +163,35 @@ export default {
       e.preventDefault()
       // eslint-disable-next-line handle-callback-err
       this.registerForm.validateFields((err, values) => {
-        userApi.register(values).then(res => {
-          this.$message.info(res.msg)
-          location.reload()
-        })
+        //  必须表单校验通过才注册
+        if (!err) {
+          userApi.register(values).then(res => {
+            this.$message.info(res.msg)
+            location.reload()
+          })
+        }
       })
+    },
+    // 打开头像上传弹窗
+    openHeaderUploadDialog() {
+      this.uploadDialog = true
+    },
+    // 上传弹窗取消回调
+    uploadCancel() {
+      this.uploadDialog = false
+    },
+    // 文件上传触发
+    handleChange(info) {
+      const status = info.file.status
+      if (status === 'done') {
+        const res = info.file.response
+        this.$message.success(res.msg)
+        this.registerForm.setFieldsValue({
+          'header': res.data
+        })
+        this.header = res.data
+        this.uploadDialog = false
+      }
     }
   }
 }
@@ -154,7 +208,7 @@ export default {
   background-color: #fff;
   width: 450px;
   min-height: 450px;
-  margin: 150px auto;
+  margin: 50px auto;
   border: 1px solid #e5e5e5;
   padding: 50px 50px 0 50px;
   border-radius: 5px;
@@ -175,4 +229,17 @@ export default {
 .content {
   margin-top: 20px;
 }
+
+.user-header {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid #e5e5e5;
+}
+
+.update-img-container {
+  flex-direction: column;
+  text-align: center;
+}
 </style>
+

@@ -1,5 +1,6 @@
 package com.wsy.blog.service.impl;
 
+import cn.hutool.core.date.DateUtil;
 import com.wsy.blog.enums.ResultEnum;
 import com.wsy.blog.enums.StateEnum;
 import com.wsy.blog.exception.BlogException;
@@ -11,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -25,6 +27,7 @@ public class AboutServiceImpl implements AboutService {
 
     @Override
     public void save(About about) {
+        about.setCreatedTime(DateUtil.date());
         aboutMapper.save(about);
     }
 
@@ -41,6 +44,7 @@ public class AboutServiceImpl implements AboutService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void update(About about) {
+        about.setUpdateTime(DateUtil.date());
         aboutMapper.update(about);
     }
 

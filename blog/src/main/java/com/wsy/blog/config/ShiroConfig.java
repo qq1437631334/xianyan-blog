@@ -1,6 +1,5 @@
 package com.wsy.blog.config;
 
-import com.google.common.collect.Maps;
 import com.wsy.blog.filter.LoginFilter;
 import com.wsy.blog.realm.AdminRealm;
 import org.apache.shiro.mgt.SecurityManager;
@@ -9,7 +8,6 @@ import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSource
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,6 +15,7 @@ import org.springframework.context.annotation.DependsOn;
 
 import javax.servlet.Filter;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -26,7 +25,14 @@ import java.util.Map;
 @Configuration
 @ConfigurationProperties(prefix = "shiro")
 public class ShiroConfig {
+
     private String logOutUrl = "/logout*";
+
+    private final ShiroFilterConfig shiroFilterConfig;
+
+    public ShiroConfig(ShiroFilterConfig shiroFilterConfig) {
+        this.shiroFilterConfig = shiroFilterConfig;
+    }
 
     /**
      * 创建ShiroFilterFactoryBean
@@ -48,21 +54,14 @@ public class ShiroConfig {
 //         *  role：该资源必须得到角色权限才可以访问
 //         */
         Map<String, String> filterMap =new LinkedHashMap<>();
-        filterMap.put("/*/login", "anon");
-        filterMap.put("/user/login", "anon");
-        filterMap.put("/*/register", "anon");
-        filterMap.put("/link/getAll", "anon");
-        filterMap.put("/music/getList", "anon");
-        filterMap.put("/type/getAll", "anon");
-        filterMap.put("/blog/recommendedRead", "anon");
-        filterMap.put("/blog/getPage", "anon");
-        filterMap.put("/blog/read/**", "anon");
-        filterMap.put("/blog/getTimeLine", "anon");
-        filterMap.put("/comment/getByBlogId/**", "anon");
-        filterMap.put("/about/read", "anon");
-        filterMap.put("/admin/getAdmin", "anon");
-        filterMap.put("/comment/getByBlog/**", "anon");
-        filterMap.put("/**","authc");
+        List<String> annos = this.shiroFilterConfig.getAnons();
+        for (String anno : annos) {
+            filterMap.put(anno,"anon");
+        }
+        List<String> authc = this.shiroFilterConfig.getAuthc();
+        for (String s : authc) {
+            filterMap.put(s,"authc");
+        }
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
         return shiroFilterFactoryBean;
     }

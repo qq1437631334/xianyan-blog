@@ -1,5 +1,6 @@
 package com.wsy.blog.service.impl;
 
+import cn.hutool.core.date.DateUtil;
 import com.wsy.blog.constant.Constants;
 import com.wsy.blog.dao.CollectionDao;
 import com.wsy.blog.dao.GoodDao;
@@ -59,6 +60,7 @@ public class BlogServiceImpl implements BlogService {
         if (StringUtils.isNotBlank(blog.getBlogImage())) {
             blog.setBlogImage(Constants.DEFAULT_BLOG_IMAGE);
         }
+        blog.setCreatedTime(DateUtil.date());
         blogMapper.save(blog);
         //更新对应的博客类型数量加1
         Type oldType = typeMapper.getById(blog.getBlogType());
@@ -95,6 +97,7 @@ public class BlogServiceImpl implements BlogService {
     @Transactional(rollbackFor = Exception.class)
     public void update(Blog blog) {
         Blog oldBlog = blogMapper.getById(blog.getBlogId());
+        blog.setUpdateTime(DateUtil.date());
         blogMapper.update(blog);
         //代表改变了博客类型 将原类型数量-1 新类型数量+1
         if (!oldBlog.getBlogType().equals(blog.getBlogType())) {
@@ -160,7 +163,7 @@ public class BlogServiceImpl implements BlogService {
         User loginUser = (User) ShiroUtils.getLoginUser();
         good.setUserId(loginUser.getUserId());
         good.setUser(loginUser);
-        good.setCreatedTime(new SimpleDateFormat("yyyy-MM-dd hh-mm-ss").format(new Date()));
+        good.setCreatedTime(DateUtil.date().toString());
         goodDao.save(good);
     }
 
@@ -181,7 +184,7 @@ public class BlogServiceImpl implements BlogService {
         User loginUser = (User) ShiroUtils.getLoginUser();
         collection.setUserId(loginUser.getUserId());
         collection.setUser(loginUser);
-        collection.setCreatedTime(new SimpleDateFormat("yyyy-MM-dd hh-mm-ss").format(new Date()));
+        collection.setCreatedTime(DateUtil.date().toString());
         collectionDao.save(collection);
     }
 

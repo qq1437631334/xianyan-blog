@@ -53,3 +53,23 @@ upload:
   bucket: oopsw
   picture-prefix: blog/img/
 
+# 配置需要过滤的数据
+shiro:
+  filter:
+    anons:
+      - /user/login
+      - /user/register
+      - /link/getAll
+      - /music/getList
+      - /type/getAll
+      - /blog/recommendedRead
+      - /blog/getPage
+      - /blog/read/**
+      - /blog/getTimeLine
+      - /comment/getByBlogId/**
+      - /about/read
+      - /admin/getAdmin
+      - /comment/getByBlog/**
+      - /upload/uploadImage
+    authc:
+      - /**

@@ -1,5 +1,6 @@
 package com.wsy.blog.service.impl;
 
+import cn.hutool.core.date.DateUtil;
 import com.wsy.blog.enums.ResultEnum;
 import com.wsy.blog.enums.StateEnum;
 import com.wsy.blog.exception.BlogException;
@@ -29,6 +30,7 @@ public class MusicServiceImpl implements MusicService {
 
     @Override
     public void save(Music music) {
+        music.setCreatedTime(DateUtil.date());
         musicMapper.save(music);
     }
 

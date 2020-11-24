@@ -1,12 +1,16 @@
 package com.wsy.blog.service.impl;
 
+import cn.hutool.core.date.DateUtil;
 import com.wsy.blog.excel.entity.ExportParams;
 import com.wsy.blog.excel.handler.ExcelExportHandler;
 import com.wsy.blog.mapper.LogMapper;
 import com.wsy.blog.pojo.Log;
+import com.wsy.blog.pojo.User;
 import com.wsy.blog.service.LogService;
+import com.wsy.blog.utils.ShiroUtils;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
 
 import java.util.List;
@@ -22,11 +26,16 @@ public class LogServiceImpl implements LogService {
     private LogMapper logMapper;
 
     @Override
-    public void save(Log log){
+    public void save(Log log) {
+        User user = (User) ShiroUtils.getLoginUser();
+        if (null != user) {
+            log.setCreatedBy(user.getUsername() + ":" + user.getNickname());
+        }
+        log.setCreatedTime(DateUtil.date());
         logMapper.save(log);
     }
 
-    
+
     @Override
     public Log getById(Integer id) {
         return logMapper.getById(id);

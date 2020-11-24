@@ -32,6 +32,15 @@
                   placeholder="请输入昵称"
                 />
               </a-form-item>
+              <a-form-item label="姓名" :label-col="{ span: 5 }" :wrapper-col="{ span: 19 }">
+                <a-input
+                  v-decorator="[
+                    'name',
+                    { rules: [{ required: true, message: '请输入姓名!' }] }
+                  ]"
+                  placeholder="请输入姓名"
+                />
+              </a-form-item>
               <a-form-item label="邮箱" :label-col="{ span: 5 }" :wrapper-col="{ span: 19 }">
                 <a-input
                   v-decorator="[
@@ -129,20 +138,23 @@ export default {
       e.preventDefault()
       // eslint-disable-next-line handle-callback-err
       this.infoForm.validateFields((err, values) => {
-        values.userId = this.user.userId
-        userApi.update(values).then(res => {
-          this.$message.info(res.msg)
-          if (values.nickname) {
-            this.user.nickname = values.nickname
-          }
-          if (values.userEmail) {
-            this.user.userEmail = values.userEmail
-          }
-          if (values.sex) {
-            this.user.sex = values.sex
-          }
-          this.$store.commit('SET_USER_INFO', this.user)
-        })
+        // 在校验数据成功后才更新
+        if (!err) {
+          values.userId = this.user.userId
+          userApi.update(values).then(res => {
+            this.$message.info(res.msg)
+            if (values.nickname) {
+              this.user.nickname = values.nickname
+            }
+            if (values.userEmail) {
+              this.user.userEmail = values.userEmail
+            }
+            if (values.sex) {
+              this.user.sex = values.sex
+            }
+            this.$store.commit('SET_USER_INFO', this.user)
+          })
+        }
       })
     },
     handleOk(e) { // 提交
