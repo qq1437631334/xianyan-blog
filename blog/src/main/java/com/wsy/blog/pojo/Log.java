@@ -81,7 +81,7 @@ public class Log implements Serializable {
      * 创建时间
      */
     @Excel(name = "创建时间", autoSize = true)
-    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss", timezone = "GTM+8")
+
     private Date createdTime;
 
     /**

@@ -67,6 +67,7 @@ export default {
   methods: {
     getLogList() {
       logApi.getPage(this.page).then((res) => {
+        console.log(res)
         this.logList = res.data.list
         this.log = res.data
       })

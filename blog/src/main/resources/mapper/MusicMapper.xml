@@ -16,9 +16,9 @@
     </resultMap>
     <insert id="save" parameterType="com.wsy.blog.pojo.Music">
         insert into bl_music (
-          `name`, artist, url, cover, lrc
+          `name`, artist, url, cover, lrc, created_time
         ) values(
-        #{name},#{artist},#{url},#{cover},#{lrc}
+        #{name},#{artist},#{url},#{cover},#{lrc},#{createdTime}
         )
     </insert>
     <update id="deleteById">

@@ -1,5 +1,6 @@
 package com.wsy.blog.interceptor;
 
+import com.wsy.blog.config.InterceptorConfig;
 import com.wsy.blog.config.ShiroFilterConfig;
 import com.wsy.blog.enums.ResultEnum;
 import com.wsy.blog.exception.BlogException;
@@ -13,13 +14,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
- * @Author: WSY
- * @Date: 2020/8/10 11:34
+ * @author: WSY
+ * @date: 2020/8/10 11:34
  */
 public class LoginInterceptor implements HandlerInterceptor {
 
     @Autowired
-    private ShiroFilterConfig shiroFilterConfig;
+    private InterceptorConfig interceptorConfig;
 
 
     @Override
@@ -47,9 +48,9 @@ public class LoginInterceptor implements HandlerInterceptor {
      * @return
      */
     private boolean containsWhiteList(String s) {
-        List<String> anons = this.shiroFilterConfig.getAnons();
+        List<String> anons = this.interceptorConfig.getWhiteList();
         for (String url : anons) {
-            if (url.contains(s)) {
+            if (s.contains(url)) {
                 return true;
             }
         }

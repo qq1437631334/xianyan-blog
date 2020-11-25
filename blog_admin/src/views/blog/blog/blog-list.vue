@@ -5,13 +5,13 @@
     <el-table :data="blogList" border style="width: 100%" @sort-change="changeSort">
       <el-table-column prop="blogId" label="编号" width="180" show-overflow-tooltip />
       <el-table-column prop="blogTitle" label="标题" width="180" show-overflow-tooltip />
-      <el-table-column prop="typeName" label="类型" width="180" sortable="custom" />
+      <el-table-column prop="typeName" label="类型" width="100" sortable="custom" />
       <el-table-column prop="blogImage" label="封面" width="100">
         <template slot-scope="scope">
           <div class="demo-image__preview">
             <el-image
               style="width: 100px; height: 100px"
-              :src="scope.row.blogImage!=null? scope.row.blogImage : 'http://112.74.99.109/group1/M00/00/00/rBQJmV839laAULAHAABNuWAcQZw582.png'"
+              :src="scope.row.blogImage"
               :preview-src-list="[scope.row.blogImage]"
             />
           </div>
@@ -21,10 +21,9 @@
       <el-table-column prop="blogGoods" label="点赞数" width="70" sortable="custom" />
       <el-table-column prop="blogComment" label="评论数" width="70" sortable="custom" />
       <el-table-column prop="blogCollection" label="收藏数" width="70" sortable="custom" />
-      <el-table-column prop="blogRemark" label="简介" width="180" />
-      <el-table-column prop="blogSource" label="来源" width="180" />
-      <el-table-column prop="createdTime" label="创建时间" width="180" sortable="custom" />
-      <el-table-column prop="updateTime" label="更新时间" width="180" sortable="custom" />
+      <el-table-column prop="blogRemark" label="简介" width="215" />
+      <el-table-column prop="createdTime" label="创建时间" width="155" sortable="custom" />
+      <el-table-column prop="updateTime" label="更新时间" width="155" sortable="custom" />
       <el-table-column prop="enable" fixed="right" label="操作" width="130">
         <template slot-scope="scope">
           <el-dropdown>

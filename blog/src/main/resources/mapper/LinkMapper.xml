@@ -14,8 +14,8 @@
   </resultMap>
 
   <insert id="save">
-    insert into bl_link (link_name,link_url)
-    values (#{linkName},#{linkUrl})
+    insert into bl_link (link_name,link_url,created_time)
+    values (#{linkName},#{linkUrl},#{createdTime})
   </insert>
 
   <update id="deleteById" parameterType="java.lang.Integer">
@@ -27,7 +27,8 @@
   <update id="update" parameterType="com.wsy.blog.pojo.Link">
     update bl_link
     set
-    version = version + 1
+    version = version + 1,
+    update_time = #{updateTime}
     <if test="linkName!=null and linkName!=''">
         ,link_name = #{linkName}
     </if>

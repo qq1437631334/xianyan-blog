@@ -13,7 +13,7 @@
           <el-tag v-else>女</el-tag>
         </template>
       </el-table-column>
-      <el-table-column prop="userImage" label="头像" width="100">
+      <el-table-column prop="userImage" label="头像" width="120">
         <template slot-scope="scope">
           <div class="demo-image__preview">
             <el-image

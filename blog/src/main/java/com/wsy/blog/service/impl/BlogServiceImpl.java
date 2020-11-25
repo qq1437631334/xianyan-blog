@@ -14,15 +14,12 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 
 import com.wsy.blog.mapper.BlogMapper;
 import com.wsy.blog.service.BlogService;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -57,7 +54,7 @@ public class BlogServiceImpl implements BlogService {
         //设置博客id
         blog.setBlogId(idWorker.nextId() + "");
         //判断博客有没有设置封面 没有的话就设置成默认封面
-        if (StringUtils.isNotBlank(blog.getBlogImage())) {
+        if (!StringUtils.isNotBlank(blog.getBlogImage())) {
             blog.setBlogImage(Constants.DEFAULT_BLOG_IMAGE);
         }
         blog.setCreatedTime(DateUtil.date());

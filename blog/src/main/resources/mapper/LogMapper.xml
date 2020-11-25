@@ -19,8 +19,8 @@
     </resultMap>
 
     <insert id="save" parameterType="com.wsy.blog.pojo.Log">
-        insert into bl_log (log_url,log_title, log_params, log_status, log_message, log_method, log_time, log_result, log_ip)
-        values (#{logUrl},#{logTitle}, #{logParams}, #{logStatus}, #{logMessage}, #{logMethod}, #{logTime}, #{logResult}, #{logIp})
+        insert into bl_log (log_url,log_title, log_params, log_status, log_message, log_method, log_time, log_result, log_ip, created_by, created_time)
+        values (#{logUrl},#{logTitle}, #{logParams}, #{logStatus}, #{logMessage}, #{logMethod}, #{logTime}, #{logResult}, #{logIp},#{createdBy},#{createdTime})
     </insert>
 
     <delete id="deleteById">
@@ -39,6 +39,7 @@
                log_time,
                log_result,
                log_ip,
+               created_by,
                created_time
         from bl_log
     </select>
@@ -53,6 +54,7 @@
                log_time,
                log_result,
                log_ip,
+               created_by,
                created_time
         from bl_log
         where log_id = #{value}
@@ -68,6 +70,7 @@
                log_time,
                log_result,
                log_ip,
+               created_by,
                created_time
         from bl_log
     </select>

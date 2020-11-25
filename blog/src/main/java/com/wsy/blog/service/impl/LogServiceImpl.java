@@ -4,6 +4,7 @@ import cn.hutool.core.date.DateUtil;
 import com.wsy.blog.excel.entity.ExportParams;
 import com.wsy.blog.excel.handler.ExcelExportHandler;
 import com.wsy.blog.mapper.LogMapper;
+import com.wsy.blog.pojo.Admin;
 import com.wsy.blog.pojo.Log;
 import com.wsy.blog.pojo.User;
 import com.wsy.blog.service.LogService;
@@ -27,9 +28,16 @@ public class LogServiceImpl implements LogService {
 
     @Override
     public void save(Log log) {
-        User user = (User) ShiroUtils.getLoginUser();
+        User user = null;
+        //如果当前登录的是普通用户的话得到当前用户的信息
+        if(ShiroUtils.getLoginUser() instanceof User) {
+            user = (User) ShiroUtils.getLoginUser();
+        }
         if (null != user) {
             log.setCreatedBy(user.getUsername() + ":" + user.getNickname());
+        }
+        if(ShiroUtils.getLoginUser() instanceof Admin) {
+            log.setCreatedBy("管理员");
         }
         log.setCreatedTime(DateUtil.date());
         logMapper.save(log);

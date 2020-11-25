@@ -19,8 +19,8 @@
     </resultMap>
     <insert id="save">
         insert into bl_user (username, `password`, sex,
-                             nickname, user_email)
-        values (#{username}, #{password}, #{sex}, #{nickname}, #{userEmail})
+                             nickname, user_email,created_time)
+        values (#{username}, #{password}, #{sex}, #{nickname}, #{userEmail},#{createdTime})
     </insert>
     <update id="deleteById">
         update bl_user
@@ -29,7 +29,8 @@
     </update>
     <update id="update" parameterType="com.wsy.blog.pojo.User">
         update bl_user
-        set version = version + 1
+        set version = version + 1,
+        update_time = #{updateTime}
         <if test="username!=null and username!=''">
             ,username = #{username}
         </if>

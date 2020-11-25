@@ -13,7 +13,7 @@ mybatis:
 spring:
   datasource:
     druid:
-      url: jdbc:mysql://oopsw.top:3306/blog?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf8
+      url: jdbc:mysql://oopsw.top:3306/blog?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8
       username: root
       password: wsy112233
       driver-class-name: com.mysql.cj.jdbc.Driver
@@ -37,6 +37,12 @@ spring:
   redis:
     host: oopsw.top
     port: 6379
+  mvc:
+    format:
+      date-time: yyyy-MM-dd HH:mm:ss
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
 #配置分页插件
 pagehelper:
   helperDialect: mysql
@@ -58,6 +64,7 @@ shiro:
   filter:
     anons:
       - /user/login
+      - /admin/login
       - /user/register
       - /link/getAll
       - /music/getList
@@ -73,3 +80,20 @@ shiro:
       - /upload/uploadImage
     authc:
       - /**
+interceptor:
+  white-list:
+    - /user/login
+    - /admin/login
+    - /user/register
+    - /link/getAll
+    - /music/getList
+    - /type/getAll
+    - /blog/recommendedRead
+    - /blog/getPage
+    - /blog/read
+    - /blog/getTimeLine
+    - /comment/getByBlogId
+    - /about/read
+    - /admin/getAdmin
+    - /comment/getByBlog
+    - /upload/uploadImage
