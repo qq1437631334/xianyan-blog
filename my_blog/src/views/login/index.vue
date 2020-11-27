@@ -202,16 +202,19 @@ export default {
   height: 100%;
   position: fixed;
   background-image: url("http://808km.top/public/login-back.jpg");
+  background-size: cover;
+  overflow:auto;
 }
 
 .login-container {
   background-color: #fff;
-  width: 450px;
-  min-height: 450px;
+  width: 30%;
+  min-height: 30%;
   margin: 50px auto;
   border: 1px solid #e5e5e5;
   padding: 50px 50px 0 50px;
   border-radius: 5px;
+  overflow:auto;
 }
 
 .login-title {
@@ -228,6 +231,7 @@ export default {
 
 .content {
   margin-top: 20px;
+  overflow:auto;
 }
 
 .user-header {
@@ -240,6 +244,25 @@ export default {
 .update-img-container {
   flex-direction: column;
   text-align: center;
+}
+
+/* 设置滚动条的样式 设置成纯黑色 */
+::-webkit-scrollbar {
+width:12px;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+-webkit-box-shadow:inset006pxrgba(0,0,0,0.3);
+border-radius:10px;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+border-radius:10px;
+background:rgba(255, 255, 255, 0.3);
+-webkit-box-shadow:inset006pxrgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+background:rgba(0,0,0,0.1);
 }
 </style>
 
