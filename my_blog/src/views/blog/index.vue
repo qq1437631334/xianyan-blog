@@ -10,9 +10,9 @@
           <a-icon type="like" /> {{ blog.blogGoods }}
         </div>
       </div>
-      <div class="blog-content" v-html="blog.blogContent" />
+      <div class="markdown-body" v-html="blogContent" />
       <div v-if="userInfo.username" class="blog-action">
-        <a class="blog-good" href="javascript:void(0);" :class="isGood ? 'blog-good meta-active' : 'blog-good'" @click="good">
+        <a class="blog-good" href="java script:void(0);" :class="isGood ? 'blog-good meta-active' : 'blog-good'" @click="good">
           <a-icon type="like" /> 点赞
         </a>
         <a class="blog-collection" href="javascript:void(0);" :class="isCollection ? 'blog-collection meta-active' : 'blog-collection'" @click="collection">
@@ -49,9 +49,15 @@
 import blogApi from '@/api/blog'
 import store from '@/store/index'
 import commentApi from '@/api/comment'
+import marked from 'marked'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/atom-one-dark.css'
+// 导入本地markdown样式
+import '../../styles/markdown.css'
 export default {
   data() {
     return {
+      // 评论内容
       content: '',
       countShow: false, // 控制是否显示字符个数提示
       commentContentCount: 300, // 显示还能输入的字符数量
@@ -61,7 +67,9 @@ export default {
       commentList: [], // 评论
       comment: {},
       isGood: false,
-      isCollection: false
+      isCollection: false,
+      // 博客显示类型
+      blogContent: ''
     }
   },
   watch: {
@@ -95,6 +103,22 @@ export default {
     read() {
       blogApi.read(this.id).then(res => {
         this.blog = res.data
+        // 展现经过markdown渲染后的html
+        marked.setOptions({
+          renderer: new marked.Renderer(),
+          highlight: function(code) {
+            return hljs.highlightAuto(code).value
+          },
+          pedantic: false,
+          gfm: true,
+          tables: true,
+          breaks: false,
+          sanitize: false,
+          smartLists: true,
+          smartypants: false,
+          xhtml: false
+        })
+        this.blogContent = marked(res.data.blogContent)
       })
     },
     getBlog() {

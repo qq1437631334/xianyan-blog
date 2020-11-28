@@ -5,7 +5,7 @@
         <el-input v-model="about.aboutTitle" />
       </el-form-item>
       <el-form-item label="内容">
-        <tinymce v-model="about.aboutContent" />
+        <mavon-editor ref="md" v-model="about.aboutContent" @imgAdd="uploadImg" />
       </el-form-item>
       <el-form-item>
         <el-button type="primary" size="mini" @click="onSubmit">提交</el-button>
@@ -17,11 +17,8 @@
 
 <script>
 import aboutApi from '@/api/about'
-import Tinymce from '@/components/Tinymce/index'
+import { uploadImage } from '@/api/upload'
 export default {
-  components: {
-    Tinymce
-  },
   data() {
     return {
       about: {}
@@ -34,6 +31,19 @@ export default {
         this.about = {}
         this.$emit('getAboutList')
         this.$emit('closeAddWindow')
+      })
+    },
+    // 图片上传
+    uploadImg(pos, $file) {
+      // 定义上传uri
+      const uploadUri = 'img/blogImg/'
+      // 定义上传对象
+      var formData = new FormData()
+      formData.append('file', $file)
+      formData.append('uploadUri', uploadUri)
+      uploadImage(formData).then(res => {
+        // 将markdown插入的图片url更换为返回的ul
+        this.$refs.md.$img2Url(pos, res.data)
       })
     }
   }

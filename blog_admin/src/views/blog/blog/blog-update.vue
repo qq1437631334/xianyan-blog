@@ -26,7 +26,7 @@
         </el-upload>
       </el-form-item>
       <el-form-item label="内容">
-        <tinymce v-model="blog.blogContent" />
+        <mavon-editor ref="md" v-model="blog.blogContent" @imgAdd="uploadImg" />
       </el-form-item>
       <el-form-item label="备注">
         <el-input v-model="blog.blogRemark" type="textarea" />
@@ -40,13 +40,10 @@
 </template>
 
 <script>
-import Tinymce from '@/components/Tinymce/index'
 import blogApi from '@/api/blog'
+import uploadImage from '@/api/upload'
 import { getToken } from '@/utils/auth'
 export default {
-  components: {
-    Tinymce
-  },
   props: {
     blog: {
       type: Object,
@@ -84,6 +81,19 @@ export default {
       this.$message.success(res.msg)
       this.imageUrl = res.data
       this.blog.blogImage = res.data
+    },
+    // 图片上传
+    uploadImg(pos, $file) {
+      // 定义上传uri
+      const uploadUri = 'img/blogImg/'
+      // 定义上传对象
+      var formData = new FormData()
+      formData.append('file', $file)
+      formData.append('uploadUri', uploadUri)
+      uploadImage(formData).then(res => {
+        // 将markdown插入的图片url更换为返回的ul
+        this.$refs.md.$img2Url(pos, res.data)
+      })
     }
   }
 }

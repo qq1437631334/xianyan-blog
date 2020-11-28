@@ -7,6 +7,9 @@ import router from './router'
 import store from './store'
 import ELEMENT from 'element-ui'
 import 'normalize.css/normalize.css' // A modern alternative to CSS resets
+// 引入markdown组件
+import mavonEditor from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -19,6 +22,7 @@ import '@/permission' // permission control
 
 
 Vue.use(ELEMENT)
+Vue.use(mavonEditor)
 
 // set ElementUI lang to EN
 // Vue.use(ElementUI, { locale })

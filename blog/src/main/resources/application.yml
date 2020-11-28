@@ -57,7 +57,7 @@ upload:
   access-key: 5-U8eZh2aa1zVv9fENG1TrZ8mTcX5OKYjvpreVBN
   secret-key: SIcqae8SXsHfab7kEbjfSw1oCCWcxRq4v5SmzV-G
   bucket: oopsw
-  picture-prefix: blog/img/
+  picture-prefix: blog/
 
 # 配置需要过滤的数据
 shiro:

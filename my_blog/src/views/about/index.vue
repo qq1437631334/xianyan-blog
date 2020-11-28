@@ -8,17 +8,24 @@
           <a-icon type="eye" /> {{ about.aboutRead }} 阅读
         </div>
       </div>
-      <div class="blog-content" v-html="about.aboutContent" />
+      <div class="markdown-body" v-html="content" />
     </div>
   </div>
 </template>
 
 <script>
 import aboutApi from '@/api/about'
+import marked from 'marked'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/atom-one-dark.css'
+// 导入本地markdown样式
+import '../../styles/markdown.css'
 export default {
   data: function() {
     return {
-      about: {}
+      about: {},
+      // 显示的内容
+      content: ''
     }
   },
   created() {
@@ -28,6 +35,22 @@ export default {
     getAbout() {
       aboutApi.read().then(res => {
         this.about = res.data
+        // 展现经过markdown渲染后的html
+        marked.setOptions({
+          renderer: new marked.Renderer(),
+          highlight: function(code) {
+            return hljs.highlightAuto(code).value
+          },
+          pedantic: false,
+          gfm: true,
+          tables: true,
+          breaks: false,
+          sanitize: false,
+          smartLists: true,
+          smartypants: false,
+          xhtml: false
+        })
+        this.content = marked(res.data.aboutContent)
       })
     }
   }

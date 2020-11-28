@@ -19,6 +19,7 @@ import java.util.Map;
 
 /**
  * 上传服务
+ *
  * @author wsy
  */
 @Component
@@ -42,23 +43,21 @@ public class UploadService {
     UploadManager uploadManager = new UploadManager(cfg);
 
 
-
-    public String upload( MultipartFile mf) {
-        if (!mf.isEmpty()) {
+    public String upload(MultipartFile mf, String uploadUri) {
+        if (null != mf && !mf.isEmpty()) {
             try {
                 //将文件转换为字节数据
                 byte[] fileBytes = mf.getBytes();
                 //生成上传凭证
                 Auth auth = Auth.create(uploadConfig.getAccessKey(), uploadConfig.getSecretKey());
                 String upToken = auth.uploadToken(uploadConfig.getBucket());
-                //key 不指定的话文件存储名就为Hash值
-                String key = uploadConfig.getPicturePrefix() + mf.hashCode();
+                // 存储uri + 雪花算法得到的id
+                String key = uploadConfig.getPicturePrefix() + uploadUri + new IdWorker().nextId();
                 Response response = uploadManager.put(fileBytes, key, upToken);
                 //解析上传成功的结果
                 DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
-                String fileUrl = uploadConfig.getBaseUrl() + putRet.key;
-                Map<String,Object> res = new HashMap<>(8);
-                return fileUrl;
+                //返回访问路径
+                return uploadConfig.getBaseUrl() + putRet.key;
             } catch (IOException e) {
                 e.printStackTrace();
             }

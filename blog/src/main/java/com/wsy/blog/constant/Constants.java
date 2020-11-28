@@ -46,4 +46,9 @@ public interface Constants {
      *  博客默认封面图片
      */
     String DEFAULT_BLOG_IMAGE = "http://808km.top/blog/img/default.jpg";
+
+    /**
+     * 上传图片默认uri
+     */
+    String DEFAULT_IMG_UPLOAD_URI = "img/default/";
 }

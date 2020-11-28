@@ -26,14 +26,16 @@
         </el-upload>
       </el-form-item>
       <el-form-item label="内容">
-        <tinymce v-model="blog.blogContent" />
+        <mavon-editor ref="md" v-model="blog.blogContent" @imgAdd="uploadImg" />
       </el-form-item>
       <el-form-item label="备注">
         <el-input v-model="blog.blogRemark" type="textarea" />
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" size="mini" @click="onSubmit">添加</el-button>
-        <el-button size="mini">取消</el-button>
+        <el-button type="primary" @click="onSubmit">添加</el-button>
+        <router-link :to="'/blog'" class="link-type">
+          <el-button>返回</el-button>
+        </router-link>
       </el-form-item>
     </el-form>
   </div>
@@ -41,19 +43,16 @@
 
 <script>
 import blogApi from '@/api/blog'
-import Tinymce from '@/components/Tinymce/index'
 import { getToken } from '@/utils/auth'
+import { uploadImage } from '@/api/upload'
 export default {
-  components: {
-    Tinymce
-  },
   data() {
     return {
       blog: {
         blogId: '',
         blogTitle: '',
         blogImage: null,
-        blogContent: null,
+        blogContent: '',
         blogRemark: null
       },
       imageUrl: null, // 上传图片回显
@@ -68,15 +67,26 @@ export default {
     onSubmit() {
       blogApi.save(this.blog).then(res => {
         this.$message.success(res.msg)
-        this.blog = {}
-        this.$emit('getBlogList')
-        this.$emit('closeAddWindow')
+        this.$router.push('/blog')
       })
     },
     uploadSuccess(res, file) {
       this.$message.success(res.msg)
       this.imageUrl = res.data
       this.blog.blogImage = res.data
+    },
+    // 图片上传
+    uploadImg(pos, $file) {
+      // 定义上传uri
+      const uploadUri = 'img/blogImg/'
+      // 定义上传对象
+      var formData = new FormData()
+      formData.append('file', $file)
+      formData.append('uploadUri', uploadUri)
+      uploadImage(formData).then(res => {
+        // 将markdown插入的图片url更换为返回的ul
+        this.$refs.md.$img2Url(pos, res.data)
+      })
     }
   }
 }

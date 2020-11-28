@@ -1,6 +1,8 @@
 <template>
   <div>
-    <el-button size="mini" type="primary" class="add_button" @click="openAddWindow()">添加</el-button>
+    <router-link :to="'/blog/add'" class="link-type">
+      <el-button size="mini" type="primary" class="add_button">写博客</el-button>
+    </router-link>
     <!-- 数据表格开始 -->
     <el-table :data="blogList" border style="width: 100%" @sort-change="changeSort">
       <el-table-column prop="blogId" label="编号" width="180" show-overflow-tooltip />
@@ -48,12 +50,6 @@
     </el-table>
     <!-- 数据表格结束 -->
 
-    <!-- 添加弹出层开始 -->
-    <el-dialog title="添加" :visible.sync="dialogFormVisible">
-      <BlogAdd @closeAddWindow="closeAddWindow" @getBlogList="getBlogList" />
-    </el-dialog>
-    <!-- 添加弹出层结束 -->
-
     <!-- 更新弹出层开始 -->
     <el-dialog title="更新" :visible.sync="drawer">
       <blog-update :blog="blog" @closeUpdateWindow="closeUpdateWindow" @getBlogList="getBlogList" />
@@ -62,7 +58,7 @@
 
     <!-- 阅读弹出层开始 -->
     <el-dialog title="阅读" :visible.sync="readWindow">
-      <p v-html="content" />
+      <p class="markdown-body" v-html="content" />
     </el-dialog>
     <!-- 阅读弹出层结束 -->
 
@@ -82,11 +78,14 @@
 
 <script>
 import blogApi from '@/api/blog'
-import BlogAdd from './blog-add'
 import BlogUpdate from './blog-update'
+import marked from 'marked'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/monokai-sublime.css'
+// 导入自己写的markdown样式
+import '../../../styles/markdown.css'
 export default {
   components: {
-    BlogAdd,
     BlogUpdate
   },
   data: function() {
@@ -136,12 +135,6 @@ export default {
         this.getBlogList()
       })
     },
-    openAddWindow() {
-      this.dialogFormVisible = true
-    },
-    closeAddWindow() {
-      this.dialogFormVisible = false
-    },
     openUpdateWindow(id) {
       // 打开更新窗口之前先加载数据
       blogApi.getById(id).then(res => {
@@ -155,7 +148,23 @@ export default {
     openReadWindow(id) {
       this.readWindow = true
       blogApi.getById(id).then(res => {
-        this.content = res.data.blogContent
+        // 展现经过markdown渲染后的html
+
+        marked.setOptions({
+          renderer: new marked.Renderer(),
+          highlight: function(code) {
+            return hljs.highlightAuto(code).value
+          },
+          pedantic: false,
+          gfm: true,
+          tables: true,
+          breaks: false,
+          sanitize: false,
+          smartLists: true,
+          smartypants: false,
+          xhtml: false
+        })
+        this.content = marked(res.data.blogContent)
       })
     },
     closeReadWindow(id) {
