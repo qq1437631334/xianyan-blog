@@ -169,4 +169,9 @@
         where deleted = 0
         order by created_time desc
     </select>
+    <update id="read">
+        update bl_blog
+        set blog_read = blog_read + 1
+        where id = #{blogId}
+    </update>
 </mapper>

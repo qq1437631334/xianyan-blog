@@ -87,4 +87,10 @@ public interface BlogMapper {
      * @param blogId
      */
     void reduceCollection(String blogId);
+
+    /**
+     * 阅读博客时，使阅读数+1
+     * @param blogId  博客id
+     */
+    void read(String blogId);
 }

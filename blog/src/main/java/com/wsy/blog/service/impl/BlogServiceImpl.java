@@ -128,8 +128,7 @@ public class BlogServiceImpl implements BlogService {
     public BlogVo read(String id) {
         //先根据id查询出博客信息 然后阅读数+1
         BlogVo byId = this.getById(id);
-        byId.setBlogRead(byId.getBlogRead() + 1);
-        blogMapper.update(byId);
+        this.blogMapper.read(id);
         return byId;
     }
 
