@@ -172,6 +172,6 @@
     <update id="read">
         update bl_blog
         set blog_read = blog_read + 1
-        where id = #{blogId}
+        where blog_id = #{blogId}
     </update>
 </mapper>

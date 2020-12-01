@@ -51,7 +51,7 @@ export default {
       music: {},
       imageUrl: null, // 上传图片回显
       headers: { // 上传文件的请求头
-        Authorization: getToken()
+        token: getToken()
       },
       uploadUrl: process.env.VUE_APP_UPLOAD_URL, // 上传图片路径
       fileList: []

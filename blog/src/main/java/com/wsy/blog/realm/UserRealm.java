@@ -58,14 +58,14 @@ public class UserRealm extends AuthorizingRealm {
             if (null == admin) {
                 throw new BlogException(ResultEnum.ERROR.getCode(), "用户不存在！");
             }
-            return new SimpleAuthenticationInfo(admin, admin.getPassword(), ByteSource.Util.bytes(admin.getSalt()),this.getName());
+            return new SimpleAuthenticationInfo(admin, admin.getPassword(), ByteSource.Util.bytes(admin.getSalt()), this.getName());
         } else {
             User user = userService.getByUsername(username);
             //判断是否查询到该用户名
             if (null == user) {
                 throw new BlogException(ResultEnum.ERROR.getCode(), "用户不存在！");
             }
-            return new SimpleAuthenticationInfo(user, user.getPassword(), this.getName());
+            return new SimpleAuthenticationInfo(user, user.getPassword(), ByteSource.Util.bytes(user.getSalt()), this.getName());
         }
     }
 }

@@ -54,7 +54,7 @@ export default {
     return {
       imageUrl: this.blog.blogImage, // 上传图片回显
       headers: { // 上传文件的请求头
-        Authorization: getToken()
+        token: getToken()
       },
       uploadUrl: process.env.VUE_APP_UPLOAD_URL, // 上传图片路径
       typeList: this.$store.getters.typeList

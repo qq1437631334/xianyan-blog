@@ -142,18 +142,18 @@ public class UserController {
         //做登录操作
         try{
             subject.login(token);
+            //登录成功
+            Serializable sessionId = subject.getSession().getId();
+            User loginUser = (User)ShiroUtils.getLoginUser();
+            Map<String, Object> resultMap = new HashMap<>(8);
+            resultMap.put("token",sessionId);
+            resultMap.put("userInfo",loginUser);
+            return new Result("登陆成功",resultMap);
         } catch (Exception e) {
             //登录失败
             e.printStackTrace();
             return new Result<>(ResultEnum.TOKEN_ERROR);
         }
-        //登录成功
-        Serializable sessionId = subject.getSession().getId();
-        String loginInfo = ShiroUtils.getLoginInfo();
-        Map<String, Object> resultMap = new HashMap<>(8);
-        resultMap.put("token",sessionId);
-        resultMap.put("userInfo",loginInfo);
-        return new Result("登陆成功",resultMap);
     }
 
     /**

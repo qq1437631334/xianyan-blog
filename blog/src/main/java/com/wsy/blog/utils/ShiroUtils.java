@@ -50,10 +50,7 @@ public class ShiroUtils {
         Object loginUser = getLoginUser();
         if (null != loginUser) {
             JSONObject user = JSON.parseObject(JSON.toJSON(loginUser).toString());
-            //获取用户名和姓名
-            String username = user.get("username").toString();
-            String name = user.get("name").toString();
-            return name + ": " + username;
+            return user.get("username").toString();
         }else {
             return null;
         }

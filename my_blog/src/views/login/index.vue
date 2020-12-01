@@ -127,7 +127,7 @@ export default {
       uploadUrl: process.env.VUE_APP_UPLOAD_URL,
       // 上传文件的请求头
       headers: {
-        Authorization: getToken()
+        token: getToken()
       },
       //  默认头像路径
       defaultHeaderUrl: 'http://808km.top/blog/myblog/static/img/78a381109dd1919a0bde420b62525b2df37ac73f17b1-rx7BWq_fw658.png',
@@ -154,6 +154,7 @@ export default {
         userApi.login(values).then(res => {
           setToken(res.data.token)
           this.$store.commit('SET_USER_INFO', res.data.userInfo)
+          console.log(res)
           this.$message.info(res.msg)
           this.$router.back()
         })

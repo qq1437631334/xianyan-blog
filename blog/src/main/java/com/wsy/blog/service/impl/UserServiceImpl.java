@@ -1,5 +1,6 @@
 package com.wsy.blog.service.impl;
 
+import cn.hutool.core.date.DateUtil;
 import com.wsy.blog.config.ShiroFilterConfig;
 import com.wsy.blog.dao.CollectionDao;
 import com.wsy.blog.dao.CommentDao;
@@ -63,6 +64,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void save(User user) {
+        user.setSalt(Md5Utils.createSalt());
+        user.setPassword(Md5Utils.md5(user.getPassword(),user.getSalt(),this.shiroFilterConfig.getHashIterations()));
+        user.setCreatedTime(DateUtil.date());
         userMapper.save(user);
     }
 

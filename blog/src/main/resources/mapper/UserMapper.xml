@@ -19,9 +19,9 @@
         <result column="deleted" jdbcType="INTEGER" property="deleted"/>
     </resultMap>
     <insert id="save">
-        insert into bl_user (username, `password`, sex,
-                             nickname, user_email,salt,created_time)
-        values (#{username}, #{password}, #{sex}, #{nickname}, #{userEmail},#{salt},#{createdTime})
+        insert into bl_user (username, `password`, sex, header,
+                             nickname, user_email, salt, created_time)
+        values (#{username}, #{password}, #{sex}, #{header}, #{nickname}, #{userEmail}, #{salt}, #{createdTime})
     </insert>
     <update id="deleteById">
         update bl_user
@@ -106,6 +106,6 @@
                version
         from bl_user
         where deleted = 0
-        and username = #{value}
+          and username = #{value}
     </select>
 </mapper>

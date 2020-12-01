@@ -112,7 +112,7 @@ export default {
       dataCount: {},
       uploadUrl: process.env.VUE_APP_UPLOAD_URL, // 上传图片路径
       headers: { // 上传文件的请求头
-        Authorization: getToken()
+        token: getToken()
       },
       uploadDialog: false, // 控制修改头像弹窗显示
       visible: false, // 控制修改密码弹窗展示
