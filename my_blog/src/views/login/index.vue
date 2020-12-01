@@ -210,11 +210,35 @@ export default {
   background-color: #fff;
   width: 30%;
   min-height: 30%;
+  min-width: 200px;
   margin: 50px auto;
   border: 1px solid #e5e5e5;
   padding: 50px 50px 0 50px;
   border-radius: 5px;
   overflow:auto;
+}
+/* 设配手机端css */
+@media screen and (max-width: 500px) {
+ .login-container {
+  background-color: #fff;
+  width: 100%;
+  min-height: 30%;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  overflow:auto;
+}
+}
+
+/* 设配平板端css */
+@media screen and (max-width: 1200px) {
+ .login-container {
+  background-color: #fff;
+  width: 70%;
+  min-height: 30%;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  overflow:auto;
+}
 }
 
 .login-title {
