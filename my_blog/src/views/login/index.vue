@@ -154,7 +154,6 @@ export default {
         userApi.login(values).then(res => {
           setToken(res.data.token)
           this.$store.commit('SET_USER_INFO', res.data.userInfo)
-          console.log(res)
           this.$message.info(res.msg)
           this.$router.back()
         })
