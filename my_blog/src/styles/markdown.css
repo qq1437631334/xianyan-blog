@@ -636,7 +636,7 @@
     overflow: auto;
     font-size: 85%;
     line-height: 1.45;
-    background-color: #f6f8fa;
+    background-color: #282c34;
     border-radius: 3px
 }
 
@@ -649,7 +649,8 @@
     line-height: inherit;
     word-wrap: normal;
     background-color: transparent;
-    border: 0
+    border: 0;
+    color:#abb2bf;
 }
 
 .markdown-body .full-commit .btn-outline:not(:disabled):hover {

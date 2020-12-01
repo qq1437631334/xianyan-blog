@@ -26,4 +26,8 @@ background:rgba(0,0,0,0.1);
 ::-webkit-scrollbar-thumb:window-inactive {
 background:rgba(0,0,0,0.1);
 }
+::-webkit-scrollbar-thumb:horizontal{
+background:rgb(124, 124, 124);
+}
+
 </style>
