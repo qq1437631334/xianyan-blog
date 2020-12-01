@@ -28,19 +28,12 @@ public class LogServiceImpl implements LogService {
 
     @Override
     public void save(Log log) {
-        User user = null;
-        //如果当前登录的是普通用户的话得到当前用户的信息
-        if(ShiroUtils.getLoginUser() instanceof User) {
-            user = (User) ShiroUtils.getLoginUser();
+        if (!(ShiroUtils.getLoginUser() instanceof Admin)) {
+            //获得当前登录用户的简单名字
+            log.setCreatedBy(ShiroUtils.getSimpleName());
+            log.setCreatedTime(DateUtil.date());
+            logMapper.save(log);
         }
-        if (null != user) {
-            log.setCreatedBy(user.getUsername() + ":" + user.getNickname());
-        }
-        if(ShiroUtils.getLoginUser() instanceof Admin) {
-            log.setCreatedBy("管理员");
-        }
-        log.setCreatedTime(DateUtil.date());
-        logMapper.save(log);
     }
 
 

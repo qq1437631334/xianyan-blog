@@ -1,5 +1,6 @@
 package com.wsy.blog.service.impl;
 
+import com.wsy.blog.config.ShiroFilterConfig;
 import com.wsy.blog.dao.CollectionDao;
 import com.wsy.blog.dao.CommentDao;
 import com.wsy.blog.dao.CommentGoodDao;
@@ -13,7 +14,9 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
 import javax.annotation.Resource;
+
 import com.wsy.blog.mapper.UserMapper;
 import com.wsy.blog.service.UserService;
 import org.springframework.transaction.annotation.Transactional;
@@ -42,12 +45,15 @@ public class UserServiceImpl implements UserService {
 
     private final BlogMapper blogMapper;
 
-    public UserServiceImpl(CollectionDao collectionDao, CommentDao commentDao, GoodDao goodDao, CommentGoodDao commentGoodDao, BlogMapper blogMapper) {
+    private final ShiroFilterConfig shiroFilterConfig;
+
+    public UserServiceImpl(CollectionDao collectionDao, CommentDao commentDao, GoodDao goodDao, CommentGoodDao commentGoodDao, BlogMapper blogMapper, ShiroFilterConfig shiroFilterConfig) {
         this.collectionDao = collectionDao;
         this.commentDao = commentDao;
         this.goodDao = goodDao;
         this.commentGoodDao = commentGoodDao;
         this.blogMapper = blogMapper;
+        this.shiroFilterConfig = shiroFilterConfig;
     }
 
     @Override
@@ -103,8 +109,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updatePassword(Integer id, String password) {
-        password = Md5Utils.toMD5(password);
-        userMapper.updatePassword(id, password);
+        User user = this.userMapper.getById(id);
+        //设置盐
+        user.setSalt(Md5Utils.createSalt());
+        //设置密码
+        user.setPassword(Md5Utils.md5(password, user.getSalt(), this.shiroFilterConfig.getHashIterations()));
+        userMapper.update(user);
     }
 
     @Override
@@ -121,22 +131,22 @@ public class UserServiceImpl implements UserService {
         Pageable pageable = PageRequest.of(page.getPageNum() - 1, page.getPageSize());
         org.springframework.data.domain.Page<Collection> all = collectionDao.findAll(example, pageable);
         page.setData(all.getContent());
-        page.setTotalCount((int)all.getTotalElements());
+        page.setTotalCount((int) all.getTotalElements());
         page.setTotalPage(all.getTotalPages());
         return page;
     }
 
     @Override
     public Map<String, Object> getCommentAndCollectionCount() {
-        if(ShiroUtils.getLoginUser() instanceof Admin) {
+        if (ShiroUtils.getLoginUser() instanceof Admin) {
             return null;
         }
-        User user=  (User)ShiroUtils.getLoginUser();
+        User user = (User) ShiroUtils.getLoginUser();
         int collectionCount = collectionDao.countByUserId(user.getUserId());
         Map<String, Object> map = new HashMap<>(8);
-        map.put("collectionCount",collectionCount);
+        map.put("collectionCount", collectionCount);
         int commentCount = commentDao.countByCommentUserId(user.getUserId());
-        map.put("commentCount",commentCount);
+        map.put("commentCount", commentCount);
         return map;
     }
 

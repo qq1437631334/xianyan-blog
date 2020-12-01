@@ -15,6 +15,14 @@ import java.util.List;
 @ConfigurationProperties(prefix = "shiro.filter")
 public class ShiroFilterConfig {
     /**
+     * 密码加密方式
+     */
+    private String hashAlgorithmName="md5";
+    /**
+     * 密码散列次数
+     */
+    private Integer hashIterations=2;
+    /**
      * 放行的路径
      */
     List<String> anons;

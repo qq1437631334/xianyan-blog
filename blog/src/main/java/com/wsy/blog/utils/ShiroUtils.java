@@ -1,10 +1,14 @@
 package com.wsy.blog.utils;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.SimplePrincipalCollection;
 import org.apache.shiro.subject.support.DefaultSubjectContext;
 import org.springframework.stereotype.Component;
+
+import java.util.Objects;
 
 /**
  * Shiro相关工具类
@@ -25,11 +29,45 @@ public class ShiroUtils {
      * @return
      */
     public static Object getLoginUser() {
-        Session session = SecurityUtils.getSubject().getSession();
-        SimplePrincipalCollection principalCollection = (SimplePrincipalCollection) session.getAttribute(DefaultSubjectContext.PRINCIPALS_SESSION_KEY);
-        if (principalCollection == null) {
+        //判断是否有session如果没有也不创建session
+        Session session = SecurityUtils.getSubject().getSession(false);
+        if (null != session) {
+            SimplePrincipalCollection principalCollection = (SimplePrincipalCollection) session.getAttribute(DefaultSubjectContext.PRINCIPALS_SESSION_KEY);
+            if (principalCollection == null) {
+                return null;
+            }
+            return principalCollection.getPrimaryPrincipal();
+        }
+        return null;
+    }
+
+    /**
+     * 获取登录中的用户的名字和用户名
+     *
+     * @return 登录中的用户的名字和用户名
+     */
+    public static String getSimpleName() {
+        Object loginUser = getLoginUser();
+        if (null != loginUser) {
+            JSONObject user = JSON.parseObject(JSON.toJSON(loginUser).toString());
+            //获取用户名和姓名
+            String username = user.get("username").toString();
+            String name = user.get("name").toString();
+            return name + ": " + username;
+        }else {
             return null;
         }
-        return principalCollection.getPrimaryPrincipal();
+    }
+
+    /**
+     * 获得登陆者的信息
+     * @return  登陆者的信息
+     */
+    public static String getLoginInfo() {
+        Object loginUser = getLoginUser();
+        if(null != loginUser) {
+            return JSON.toJSONString(loginUser);
+        }
+        return null;
     }
 }

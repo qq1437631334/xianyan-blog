@@ -1,5 +1,6 @@
 package com.wsy.blog.service.impl;
 
+import com.wsy.blog.config.ShiroFilterConfig;
 import com.wsy.blog.pojo.Admin;
 import com.wsy.blog.utils.Md5Utils;
 import org.springframework.stereotype.Service;
@@ -15,8 +16,14 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class AdminServiceImpl implements AdminService {
 
-    @Resource
-    private AdminMapper adminMapper;
+    private final AdminMapper adminMapper;
+
+    private final ShiroFilterConfig shiroFilterConfig;
+
+    public AdminServiceImpl(AdminMapper adminMapper, ShiroFilterConfig shiroFilterConfig) {
+        this.adminMapper = adminMapper;
+        this.shiroFilterConfig = shiroFilterConfig;
+    }
 
     @Override
     public Admin getByUsername(String username) {
@@ -39,8 +46,12 @@ public class AdminServiceImpl implements AdminService {
     public void updatePassword(Admin admin) {
         //先查询之前的老管理员信息
         Admin oldAdmin = adminMapper.getAdmin();
-        oldAdmin.setPassword(Md5Utils.toMD5(admin.getPassword()));
-        adminMapper.update(admin);
+        //设置盐
+        oldAdmin.setSalt(Md5Utils.createSalt());
+        //设置密码
+        oldAdmin.setPassword(Md5Utils.md5(admin.getPassword(), oldAdmin.getSalt(), shiroFilterConfig.getHashIterations()));
+        adminMapper.update(oldAdmin);
     }
 }
+
 

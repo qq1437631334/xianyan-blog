@@ -1,5 +1,10 @@
 package com.wsy.blog.utils;
 
+import cn.hutool.Hutool;
+import cn.hutool.core.lang.UUID;
+import cn.hutool.crypto.SecureUtil;
+import org.apache.catalina.security.SecurityUtil;
+import org.apache.shiro.SecurityUtils;
 import org.springframework.stereotype.Component;
 
 import java.lang.management.ManagementFactory;
@@ -179,6 +184,10 @@ public final class IdWorker {
         }
         return id;
     }
+
+//    public static void main(String[] args) {
+//        System.out.println(UUID.randomUUID().toString().replace("-", "").toLowerCase());
+//    }
 
 
 }

@@ -48,5 +48,10 @@ public class Admin implements Serializable {
      */
     private String password;
 
+    /**
+     * 盐
+     */
+    private String salt;
+
     private static final long serialVersionUID = 1L;
 }

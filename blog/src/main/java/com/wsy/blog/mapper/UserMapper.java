@@ -44,13 +44,6 @@ public interface UserMapper {
     List<User> getPage();
 
     /**
-     * 根据id修改密码
-     * @param id
-     * @param password
-     */
-    void updatePassword(Integer id, String password);
-
-    /**
      * 根据用户名查询
      * @param username
      * @return

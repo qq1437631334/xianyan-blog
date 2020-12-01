@@ -1,7 +1,7 @@
 package com.wsy.blog.config;
 
 import com.wsy.blog.filter.LoginFilter;
-import com.wsy.blog.realm.AdminRealm;
+import com.wsy.blog.realm.UserRealm;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
@@ -22,8 +22,8 @@ import java.util.Map;
  * @author wsy
  * @date 2020-08-10 10:55
  */
-@Configuration
-@ConfigurationProperties(prefix = "shiro")
+//@Configuration
+//@ConfigurationProperties(prefix = "shiro")
 public class ShiroConfig {
 
     private String logOutUrl = "/logout*";
@@ -70,7 +70,7 @@ public class ShiroConfig {
      * 创建DefaultSecurityManager
      */
     @Bean
-    public SecurityManager securityManager(AdminRealm adminRealm) {
+    public SecurityManager securityManager(UserRealm adminRealm) {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         // 关联realm
         securityManager.setRealm(adminRealm);
@@ -81,8 +81,8 @@ public class ShiroConfig {
      * 创建Realm
      */
     @Bean
-    public AdminRealm adminRealm() {
-        return new AdminRealm();
+    public UserRealm adminRealm() {
+        return new UserRealm();
     }
 
     @Bean

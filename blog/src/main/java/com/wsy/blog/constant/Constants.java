@@ -51,4 +51,8 @@ public interface Constants {
      * 上传图片默认uri
      */
     String DEFAULT_IMG_UPLOAD_URI = "img/default/";
+    /**
+     * token头
+     */
+    String TOKEN = "token";
 }

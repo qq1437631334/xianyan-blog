@@ -1,30 +1,28 @@
 package com.wsy.blog.utils;
 
+import org.apache.shiro.crypto.hash.Md5Hash;
+
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.UUID;
 
 /**
- * @version 1.0
- * @author 杨德石
- * @date 2019/3/31 0031 下午 1:49
+ * @Author: wsy
  */
 public class Md5Utils {
-    public static String toMD5(String plainText) {
-        byte[] secretBytes = null;
-        try {
-            secretBytes = MessageDigest.getInstance("md5").digest(plainText.getBytes());
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("加密失败！");
-        }
-        StringBuilder md5code = new StringBuilder(new BigInteger(1, secretBytes).toString(16));
-        for (int i = 0; i < 32 - md5code.length(); i++) {
-            md5code.append(0);
-        }
-        return md5code.toString();
+
+    /**
+     * 生成盐
+     */
+    public static String createSalt(){
+        return UUID.randomUUID().toString().replace("-","").toUpperCase();
     }
 
-    public static void main(String[] args) {
-        System.out.println(Md5Utils.toMD5("wsy112233"));
+    /**
+     * 生成加密字符串
+     */
+    public static String md5(String source,String salt,Integer hashIterations){
+        return new Md5Hash(source,salt,hashIterations).toString();
     }
 }

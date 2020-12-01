@@ -12,6 +12,7 @@
         <result column="header" jdbcType="VARCHAR" property="header"/>
         <result column="nickname" jdbcType="VARCHAR" property="nickname"/>
         <result column="user_email" jdbcType="VARCHAR" property="userEmail"/>
+        <result column="salt" jdbcType="VARCHAR" property="salt"/>
         <result column="created_time" jdbcType="TIMESTAMP" property="createdTime"/>
         <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
         <result column="version" jdbcType="INTEGER" property="version"/>
@@ -19,8 +20,8 @@
     </resultMap>
     <insert id="save">
         insert into bl_user (username, `password`, sex,
-                             nickname, user_email,created_time)
-        values (#{username}, #{password}, #{sex}, #{nickname}, #{userEmail},#{createdTime})
+                             nickname, user_email,salt,created_time)
+        values (#{username}, #{password}, #{sex}, #{nickname}, #{userEmail},#{salt},#{createdTime})
     </insert>
     <update id="deleteById">
         update bl_user
@@ -36,6 +37,9 @@
         </if>
         <if test="password!=null and password!=''">
             ,password = #{password}
+        </if>
+        <if test="salt!=null and salt!=''">
+            ,salt = #{salt}
         </if>
         <if test="name!=null and name!=''">
             ,name = #{name}
@@ -55,12 +59,6 @@
         where user_id = #{userId}
         and version = #{version}
         and deleted = 0
-    </update>
-    <update id="updatePassword">
-        update bl_user
-        set password = #{password}
-        where deleted = 0
-          and user_id = #{id}
     </update>
     <select id="getById" resultMap="BaseResultMap">
         select user_id,
@@ -102,6 +100,7 @@
                `header`,
                nickname,
                user_email,
+               salt,
                created_time,
                update_time,
                version

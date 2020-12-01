@@ -1,5 +1,7 @@
 package com.wsy.blog.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.qiniu.util.Json;
 import com.wsy.blog.annotation.Log;
 import com.wsy.blog.dto.LoginDto;
 import com.wsy.blog.enums.ResultEnum;
@@ -37,78 +39,69 @@ public class AdminController {
 
     /**
      * 登录功能
+     *
      * @param loginDto 登录账号实体
      * @return 结果集
      */
     @Log(title = "登录")
     @PostMapping("login")
-    public Result<Object> login(@RequestBody LoginDto loginDto){
+    public Result<Object> login(@RequestBody LoginDto loginDto) {
         //判断参数是否为空
-        if(null == loginDto || StringUtils.isNullOrEmpty(loginDto.getUsername()) || StringUtils.isNullOrEmpty(loginDto.getPassword())){
-            return new Result<Object>(ResultEnum.PARAMS_NULL,"用户名或密码不能为空！");
+        if (null == loginDto || StringUtils.isNullOrEmpty(loginDto.getUsername()) || StringUtils.isNullOrEmpty(loginDto.getPassword())) {
+            return new Result<Object>(ResultEnum.PARAMS_NULL, "用户名或密码不能为空！");
         }
-        AuthenticationToken token = new UsernamePasswordToken(StateEnum.ADMIN.getCode(),loginDto.getUsername(), Md5Utils.toMD5(loginDto.getPassword()));
+        AuthenticationToken token = new UsernamePasswordToken(StateEnum.ADMIN.getCode(), loginDto.getUsername(), loginDto.getPassword());
         Subject subject = SecurityUtils.getSubject();
         //做登录操作
-        try{
+        try {
             subject.login(token);
+            //登录成功
+            Serializable sessionId = subject.getSession().getId();
+            Map<String, Object> resultMap = new HashMap<>(8);
+            resultMap.put("token", sessionId);
+            return new Result<>(resultMap);
         } catch (Exception e) {
             //登录失败
             e.printStackTrace();
             return new Result<>(ResultEnum.TOKEN_ERROR);
         }
-        //登录成功
-        Serializable sessionId = subject.getSession().getId();
-        Map<String, Object>resultMap = new HashMap<>(8);
-        resultMap.put("token",sessionId);
-        return new Result<>(resultMap);
+
     }
 
-    /**
-     * 获得当前登录信息
-     * @return 结果集
-     */
-    @Log(title = "获取当前登录信息")
-    @GetMapping("info")
-    public Result<Admin> info(){
-        Admin loginUser = (Admin) ShiroUtils.getLoginUser();
-        if(loginUser!=null) {
-            loginUser.setPassword(null);
-            return new Result<>(loginUser);
-        }
-        throw new BlogException(ResultEnum.NOT_LOGIN);
-    }
 
     /**
      * 获得管理员
+     *
      * @return 结果集
      */
     @GetMapping("getAdmin")
-    public Result<Admin> getAdmin(){
-       Admin admin = adminService.getAdmin();
-       return new Result<>(admin);
+    public Result<Admin> getAdmin() {
+        Admin admin = this.adminService.getAdmin();
+        return new Result<>(ResultEnum.SUCCESS, admin);
     }
 
     /**
      * 更新管理员信息
+     *
      * @param admin 管理员实体
      * @return 结果集
      */
     @Log(title = "更新管理员信息")
     @PutMapping("updateInfo")
-    public Result updateInfo(@RequestBody Admin admin){
+    public Result updateInfo(@RequestBody Admin admin) {
         adminService.updateInfo(admin);
         return new Result("修改信息成功！");
     }
 
     /**
      * 更新管理员密码
+     *
      * @param admin 管理员实体
-     * @return  结果集
+     * @return 结果集
      */
     @Log(title = "更新管理员密码")
     @PutMapping("updatePassword")
-    public Result updatePassword(@RequestBody Admin admin){
+    public Result updatePassword(@RequestBody Admin admin) {
         adminService.updatePassword(admin);
         return new Result("修改密码成功！");
     }

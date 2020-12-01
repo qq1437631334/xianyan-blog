@@ -16,13 +16,14 @@ import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
+import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * @author wsy
  * @date 2020-08-10 10:56
  */
-public class AdminRealm extends AuthorizingRealm {
+public class UserRealm extends AuthorizingRealm {
     @Autowired
     AdminService adminService;
 
@@ -57,7 +58,7 @@ public class AdminRealm extends AuthorizingRealm {
             if (null == admin) {
                 throw new BlogException(ResultEnum.ERROR.getCode(), "用户不存在！");
             }
-            return new SimpleAuthenticationInfo(admin, admin.getPassword(), this.getName());
+            return new SimpleAuthenticationInfo(admin, admin.getPassword(), ByteSource.Util.bytes(admin.getSalt()),this.getName());
         } else {
             User user = userService.getByUsername(username);
             //判断是否查询到该用户名

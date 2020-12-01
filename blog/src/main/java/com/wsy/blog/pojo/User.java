@@ -59,6 +59,11 @@ public class User implements Serializable {
     private String userEmail;
 
     /**
+     * 盐
+     */
+    private String salt;
+
+    /**
      * 创建时间
      */
 

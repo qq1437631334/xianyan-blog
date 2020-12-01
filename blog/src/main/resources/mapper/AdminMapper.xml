@@ -14,11 +14,11 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, `name`, `header`, signature, `comment`, username, `password`
+    id, `name`, `header`, signature, `comment`, username, `password`,`salt`
   </sql>
 
   <select id="getByUsername" resultMap="BaseResultMap">
-    select `name`,header,signature,username,password from bl_admin where username=#{value}
+    select `name`,header,signature,username,password,salt from bl_admin where username=#{value}
   </select>
 
   <select id="getAdmin" resultType="com.wsy.blog.pojo.Admin">
@@ -46,6 +46,9 @@
         </if>
         <if test="password!=null and password!=''">
             password = #{password},
+        </if>
+        <if test="salt!=null and salt!=''">
+            salt = #{salt},
         </if>
     </set>
     where id = 1

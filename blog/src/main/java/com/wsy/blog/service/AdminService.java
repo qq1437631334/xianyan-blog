@@ -9,6 +9,7 @@ import com.wsy.blog.pojo.Admin;
 public interface AdminService {
     /**
      * 根据用户名得到admin
+     *
      * @param username
      * @return
      */
@@ -16,19 +17,23 @@ public interface AdminService {
 
     /**
      * 获得管理员
+     *
      * @return
      */
     Admin getAdmin();
 
     /**
      * 更新管理员信息
+     *
      * @param admin
      */
     void updateInfo(Admin admin);
 
     /**
      * 更新管理员密码
+     *
      * @param admin
      */
     void updatePassword(Admin admin);
 }
+

@@ -37,6 +37,7 @@ spring:
   redis:
     host: oopsw.top
     port: 6379
+    password: wsy112233
   mvc:
     format:
       date-time: yyyy-MM-dd HH:mm:ss

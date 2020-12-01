@@ -2,6 +2,7 @@ package com.wsy.blog.interceptor;
 
 import com.wsy.blog.config.InterceptorConfig;
 import com.wsy.blog.config.ShiroFilterConfig;
+import com.wsy.blog.constant.Constants;
 import com.wsy.blog.enums.ResultEnum;
 import com.wsy.blog.exception.BlogException;
 import com.wsy.blog.utils.ShiroUtils;
@@ -29,11 +30,11 @@ public class LoginInterceptor implements HandlerInterceptor {
             return true;
         }
         // 获取token
-        String token = request.getHeader("Authorization");
+        String token = request.getHeader(Constants.TOKEN);
         if (StringUtils.isNotBlank(token)) {
             // token不为空，获取当前登录用户
-            Object loginUser = ShiroUtils.getLoginUser();
-            if (loginUser != null) {
+            String loginInfo = ShiroUtils.getLoginInfo();
+            if (loginInfo != null) {
                 // 说明token有效
                 return true;
             }

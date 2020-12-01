@@ -157,10 +157,12 @@ public class BlogServiceImpl implements BlogService {
         //存储点赞信息到mongodb
         good.setBlog(blogMapper.getById(good.getBlogId()));
         User loginUser = (User) ShiroUtils.getLoginUser();
-        good.setUserId(loginUser.getUserId());
-        good.setUser(loginUser);
-        good.setCreatedTime(DateUtil.date().toString());
-        goodDao.save(good);
+        if (null != loginUser) {
+            good.setUserId(loginUser.getUserId());
+            good.setUser(loginUser);
+            good.setCreatedTime(DateUtil.date().toString());
+            goodDao.save(good);
+        }
     }
 
     @Override

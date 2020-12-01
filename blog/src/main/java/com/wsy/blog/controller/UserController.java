@@ -137,7 +137,7 @@ public class UserController {
         if(null == loginDto || StringUtils.isNullOrEmpty(loginDto.getUsername()) || StringUtils.isNullOrEmpty(loginDto.getPassword())){
             return new Result<Object>(ResultEnum.PARAMS_NULL,"用户名或密码不能为空！");
         }
-        AuthenticationToken token = new UsernamePasswordToken(StateEnum.USER.getCode(),loginDto.getUsername(),Md5Utils.toMD5(loginDto.getPassword()));
+        AuthenticationToken token = new UsernamePasswordToken(StateEnum.USER.getCode(),loginDto.getUsername(),loginDto.getPassword());
         Subject subject = SecurityUtils.getSubject();
         //做登录操作
         try{
@@ -149,10 +149,10 @@ public class UserController {
         }
         //登录成功
         Serializable sessionId = subject.getSession().getId();
-        User loginUser = (User) ShiroUtils.getLoginUser();
+        String loginInfo = ShiroUtils.getLoginInfo();
         Map<String, Object> resultMap = new HashMap<>(8);
         resultMap.put("token",sessionId);
-        resultMap.put("userInfo",loginUser);
+        resultMap.put("userInfo",loginInfo);
         return new Result("登陆成功",resultMap);
     }
 

@@ -7,7 +7,7 @@ export default {
       method: 'get'
     })
   },
-  update(admin) { // 更新
+  update(admin) { // 更新管理员信息
     return request({
       url: `/${group_name}/updateInfo`,
       method: 'put',
