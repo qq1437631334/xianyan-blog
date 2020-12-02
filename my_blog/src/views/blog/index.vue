@@ -12,7 +12,7 @@
       </div>
       <div class="markdown-body" v-html="blogContent" />
       <div v-if="userInfo.username" class="blog-action">
-        <a class="blog-good" href="java script:void(0);" :class="isGood ? 'blog-good meta-active' : 'blog-good'" @click="good">
+        <a class="blog-good" href="javascript:void(0);" :class="isGood ? 'blog-good meta-active' : 'blog-good'" @click="good">
           <a-icon type="like" /> 点赞
         </a>
         <a class="blog-collection" href="javascript:void(0);" :class="isCollection ? 'blog-collection meta-active' : 'blog-collection'" @click="collection">
