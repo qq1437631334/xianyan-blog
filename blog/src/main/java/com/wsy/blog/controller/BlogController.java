@@ -36,11 +36,8 @@ public class BlogController {
     public Result<PageInfo<BlogVo>> getPage(@RequestBody Page page){
         PageUtils.checkParams(page, Constants.BLOG_ORDER_BY_FIELDS);
         //设置当前页面和每页条数
-        com.github.pagehelper.Page<Object> startPage = PageHelper.startPage(page.getPageNum(), page.getPageSize(), page.getOrderByField() + " " + page.getOrderByMode());
         List<BlogVo> list = blogService.getPage(page);
         page.setData(list);
-        page.setTotalCount((int)startPage.getTotal());
-        page.setTotalPage(startPage.getPages());
         return new Result("查询成功！",page);
     }
 

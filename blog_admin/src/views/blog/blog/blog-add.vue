@@ -26,7 +26,7 @@
         </el-upload>
       </el-form-item>
       <el-form-item label="内容">
-        <mavon-editor ref="md" v-model="blog.blogContent" @imgAdd="uploadImg" />
+        <mavon-editor ref="md" v-model="content" @imgAdd="uploadImg" />
       </el-form-item>
       <el-form-item label="备注">
         <el-input v-model="blog.blogRemark" type="textarea" />
@@ -60,11 +60,15 @@ export default {
         token: getToken()
       },
       uploadUrl: process.env.VUE_APP_UPLOAD_URL, // 上传图片路径
-      typeList: this.$store.getters.typeList
+      typeList: this.$store.getters.typeList,
+      content: ''
     }
   },
   methods: {
     onSubmit() {
+      // 存入markdown渲染成html的代码
+      this.blog.blogContent = this.$refs.md.d_render
+      console.log(this.$refs.md.d_render)
       blogApi.save(this.blog).then(res => {
         this.$message.success(res.msg)
         this.$router.push('/blog')

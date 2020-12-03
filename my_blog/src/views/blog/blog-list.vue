@@ -24,7 +24,7 @@
     </div>
 
     <div class="blog-list-container">
-      <a-card v-for="item in blog.data" :key="item.blogId" :body-style="blogBodyStyle" class="blog-card">
+      <a-card v-for="item in blog" :key="item.blogId" :body-style="blogBodyStyle" class="blog-card">
         <div class="blog-main">
           <div v-if="item.blogImage" class="blog-image">
             <img :src="item.blogImage" class="blog-cover">
@@ -50,11 +50,16 @@
         </div>
       </a-card>
     </div>
+    <div v-if="blog.length > 0" class="load-blog-container">
+      <a-tag color="cyan" style="display:block;margin:0 auto" @click="loadBlog">
+        <!-- <div class="load-blog-button"> -->
+        <a-icon type="arrow-down" />
+        加载更多
+      <!-- </div> -->
 
-    <div class="blog-pagination">
-      <a-pagination :show-total="total => `共 ${total} 条`" :page-size="parseInt(page.pageSize)" show-quick-jumper :default-current="1" :total="blog.totalCount" @change="pageChange" />
+      </a-tag>
+
     </div>
-
   </div>
 </template>
 
@@ -74,8 +79,8 @@ export default {
         padding: '18px'
       },
       page: {
-        'pageNum': '1',
-        'pageSize': '5',
+        'pageNum': 1,
+        'pageSize': 5,
         'orderByField': 'created_time',
         'orderByMode': 'desc',
         'typeId': ''
@@ -89,19 +94,47 @@ export default {
     }
     this.getPage()
   },
+
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll, true)
+  },
   methods: {
-    pageChange(pageNumber) {
-      this.page.pageNum = pageNumber
-      this.getPage()
-    },
     getPage() {
       blogApi.getPage(this.page).then(res => {
-        this.blog = res.data
+        // 代表没数据了
+        if (res.data.data.length <= 0) {
+          this.$message.info('没有更多博客了……')
+        }
+        res.data.data.forEach(element => {
+          this.blog.push(element)
+        })
       })
     },
     changeSort(e) {
+      // 将原博客置空
+      this.blog = []
+      this.page.pageNum = 1
       this.page.orderByField = e.key
       this.getPage()
+    },
+    loadBlog() {
+      this.page.pageNum += 1
+      this.getPage()
+    },
+    /* eslint-disable */
+    handleScroll(e) {
+      // 变量scrollTop是滚动条滚动时，距离顶部的距离
+      var scrollTop = e.target.scrollTop
+      // 变量windowHeight是可视区的高度
+      var windowHeight = e.target.clientHeight
+      // 变量scrollHeight是滚动条的总高度
+   		var scrollHeight = e.target.scrollHeight
+      // 滚动条到底部的条件
+      if (scrollTop + windowHeight === scrollHeight) {
+        // 写后台加载数据的函数
+         	console.log('距顶部' + scrollTop + '可视区高度' + windowHeight + '滚动条总高度' + scrollHeight)
+        alert('距顶部' + scrollTop + '可视区高度' + windowHeight + '滚动条总高度' + scrollHeight)
+      }
     }
   }
 }
@@ -115,6 +148,9 @@ export default {
   padding: 0 5px;
   align-items: center;
   line-height: 70px;
+}
+.load-blog-container {
+   display: flex;
 }
 
 .button-text {

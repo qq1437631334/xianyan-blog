@@ -43,6 +43,7 @@
 import blogApi from '@/api/blog'
 import uploadImage from '@/api/upload'
 import { getToken } from '@/utils/auth'
+
 export default {
   props: {
     blog: {
@@ -67,6 +68,8 @@ export default {
   },
   methods: {
     updateblog() {
+      // 存入markdown渲染成html的代码
+      this.blog.blogContent = this.$refs.md.d_render
       blogApi.update(this.blog).then(res => {
         this.$message.success(res.msg)
         this.closeWindow()
@@ -95,6 +98,7 @@ export default {
         this.$refs.md.$img2Url(pos, res.data)
       })
     }
+
   }
 }
 </script>

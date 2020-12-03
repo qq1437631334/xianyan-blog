@@ -4,6 +4,7 @@ import com.wsy.blog.pojo.Blog;
 import com.wsy.blog.utils.Page;
 import com.wsy.blog.vo.BlogVo;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -43,7 +44,7 @@ public interface BlogMapper {
      * @param page  分页
      * @return  博客列表
      */
-    List<Blog> getPage(Page page);
+    List<Blog> getPage(@Param("page") Page page);
 
 
     /**

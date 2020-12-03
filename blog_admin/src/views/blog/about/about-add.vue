@@ -5,7 +5,7 @@
         <el-input v-model="about.aboutTitle" />
       </el-form-item>
       <el-form-item label="内容">
-        <mavon-editor ref="md" v-model="about.aboutContent" @imgAdd="uploadImg" />
+        <mavon-editor ref="md" v-model="content" @imgAdd="uploadImg" />
       </el-form-item>
       <el-form-item>
         <el-button type="primary" size="mini" @click="onSubmit">提交</el-button>
@@ -21,11 +21,16 @@ import { uploadImage } from '@/api/upload'
 export default {
   data() {
     return {
-      about: {}
+      about: {},
+      // 输入的内容
+      content: ''
     }
   },
   methods: {
     onSubmit() {
+      console.log(this.$refs.md)
+      // 保存html代码
+      this.about.aboutContent = this.$refs.md.d_render
       aboutApi.save(this.about).then(res => {
         this.$message.success(res.msg)
         this.about = {}

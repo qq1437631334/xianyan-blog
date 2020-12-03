@@ -18,8 +18,6 @@ import aboutApi from '@/api/about'
 import marked from 'marked'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
-// 导入本地markdown样式
-import '../../styles/markdown.css'
 export default {
   data: function() {
     return {

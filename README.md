@@ -18,3 +18,5 @@
 - 2020-12-01 16:11 update:session存入服务器改为存入redis
 - 2020-12-01 17:50 fix:部署后token问题
 - 2020-12-02 08:30 fix:点赞超链接问题
+- 2020-12-03 22:02 update:更换markdown存储方式，从存储markdown源码改为存储HTML源码
+

@@ -79,11 +79,7 @@
 <script>
 import blogApi from '@/api/blog'
 import BlogUpdate from './blog-update'
-import marked from 'marked'
-import hljs from 'highlight.js'
-import 'highlight.js/styles/monokai-sublime.css'
-// 导入自己写的markdown样式
-import '../../../styles/markdown.css'
+var { Sitdown } = require('sitdown')
 export default {
   components: {
     BlogUpdate
@@ -139,6 +135,8 @@ export default {
       // 打开更新窗口之前先加载数据
       blogApi.getById(id).then(res => {
         this.blog = res.data
+        this.transformationContent()
+        console.log(this.blog)
         this.drawer = true
       })
     },
@@ -148,23 +146,7 @@ export default {
     openReadWindow(id) {
       this.readWindow = true
       blogApi.getById(id).then(res => {
-        // 展现经过markdown渲染后的html
-
-        marked.setOptions({
-          renderer: new marked.Renderer(),
-          highlight: function(code) {
-            return hljs.highlightAuto(code).value
-          },
-          pedantic: false,
-          gfm: true,
-          tables: true,
-          breaks: false,
-          sanitize: false,
-          smartLists: true,
-          smartypants: false,
-          xhtml: false
-        })
-        this.content = marked(res.data.blogContent)
+        this.content = res.data.blogContent
       })
     },
     closeReadWindow(id) {
@@ -197,6 +179,57 @@ export default {
         this.page.orderByMode = 'desc'
       }
       this.getBlogList()
+    },
+    // 将博客内容从HTML转换成MD
+    transformationContent() {
+      var sitdown = new Sitdown()
+      sitdown.service.addRule('strikethrough', {
+        filter: function(node, options) {
+          var Class = node.getAttribute('class')
+          return (
+            node.nodeName === 'DIV' &&
+      Class &&
+      Class.indexOf('hljs') !== -1 &&
+      Class.indexOf('hljs-') === -1
+          )
+        },
+        replacement: function(content, node, options) {
+          node = node.children[0]
+          return (
+            '``` ' + node.className.substring(5) + '\n' + node.innerText + '\n```\n'
+          )
+        }
+      })
+      sitdown.service.addRule('strikethrough', {
+        filter: function(node, options) {
+          var Class = node.getAttribute('class')
+          return (
+            node.nodeName === 'DIV' && Class && Class.indexOf('hljs-center') !== -1
+          )
+        },
+        replacement: function(content, node, options) {
+          console.log({ node })
+          node = node.children[0]
+          return '::: hljs-center' + '\n' + node.innerText + '\n:::\n'
+        }
+      })
+      sitdown.service.addRule('strikethrough', {
+        filter: ['ins'],
+        replacement: function(content, node, options) {
+          return '++' + content + '++'
+        }
+      })
+      sitdown.service.addRule('strikethrough', {
+        filter: ['sub', 'sup'],
+        replacement: function(content, node, options) {
+          if (node.nodeName === 'SUB') {
+            return '~' + content + '~'
+          } else {
+            return '^' + content + '^'
+          }
+        }
+      })
+      this.blog.blogContent = sitdown.HTMLToMD(this.blog.blogContent)
     }
   }
 }

@@ -41,8 +41,7 @@
         insert into bl_blog(blog_id, blog_title, blog_image, blog_content, blog_type, blog_remark, blog_source,
                             created_time)
         values (#{blogId}, #{blogTitle}, #{blogImage}, #{blogContent}, #{blogType},
-                #{blogRemark}, #{blogSource},#{createdTime}
-               )
+                #{blogRemark}, #{blogSource}, #{createdTime})
     </insert>
     <select id="getById" resultMap="BaseResultMap">
         select blog_id,
@@ -71,7 +70,7 @@
     <update id="update" parameterType="com.wsy.blog.pojo.Blog">
         update bl_blog
         set version = version + 1,
-            update_time = #{updateTime}
+        update_time = #{updateTime}
         <if test="blogTitle!=null and blogTitle!=''">
             ,blog_Title = #{blogTitle}
         </if>
@@ -136,12 +135,28 @@
         blog_type, blog_remark, blog_comment,blog_source,created_time, update_time,version
         from bl_blog
         where deleted = 0
-        <if test="params.blogTitle!=null and params.blogTitle!=''">
-            and blog_title like CONCAT('%', #{params.blogTitle}, '%')
+        <if test="page.params.blogTitle!=null and page.params.blogTitle!=''">
+            and blog_title like CONCAT('%', #{page.params.blogTitle}, '%')
         </if>
-        <if test="typeId!=null and typeId != ''">
-            and blog_type = #{typeId}
+        <if test="page.typeId!=null and page.typeId != ''">
+            and blog_type = #{page.typeId}
         </if>
+        <if test="page.orderByField!=null and page.orderByField!= ''">
+            order by ${page.orderByField}
+        </if>
+        <if test="page.orderByMode!=null and page.orderByMode!= ''">
+            ${page.orderByMode}
+        </if>
+        <if test="page.pageSize!=null and page.pageSize!=0">
+            limit
+            <if test="page.pageNum!=null and page.pageNum!=1">
+                ${(page.pageNum-1) * page.pageSize},
+            </if>
+            <if test="page.pageSize!=null and page.pageSize!=''">
+                #{page.pageSize}
+            </if>
+        </if>
+
     </select>
     <select id="recommendedRead" resultMap="BaseResultMap">
         select blog_id,

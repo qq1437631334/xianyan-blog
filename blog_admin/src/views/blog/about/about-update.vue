@@ -5,7 +5,7 @@
         <el-input v-model="about.aboutTitle" />
       </el-form-item>
       <el-form-item label="内容">
-        <mavon-editor ref="md" v-model="about.aboutContent" @imgAdd="uploadImg" />
+        <mavon-editor ref="md" v-model="content" @imgAdd="uploadImg" />
 
       </el-form-item>
       <el-form-item>
@@ -28,11 +28,18 @@ export default {
   },
   data: function() {
     return {
-      typeList: this.$store.getters.typeList
+      typeList: this.$store.getters.typeList,
+      // 显示的内容
+      content: ''
     }
+  },
+  created() {
+    this.content = this.about.aboutContent
   },
   methods: {
     updateabout() {
+      console.log(this.$refs.md)
+      this.about.aboutContent = this.$refs.md.d_render
       aboutApi.update(this.about).then(res => {
         this.$message.success(res.msg)
         this.$emit('closeUpdateWindow')
